@@ -11,7 +11,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import cn.thepetshop.dao.petDAO;
+import cn.thepetshop.dao.PetDAO;
 import cn.thepetshop.form.UserForm;
 
 
@@ -28,7 +28,7 @@ public class LoginAction extends Action {
 		UserForm userForm = (UserForm)form;
 		String username = userForm.getUsername();
 		String password = userForm.getPassword();
-		petDAO petdao = new petDAO();
+		PetDAO petdao = new PetDAO();
 		boolean b = petdao.login(username, password);
 		if(b){
 			
