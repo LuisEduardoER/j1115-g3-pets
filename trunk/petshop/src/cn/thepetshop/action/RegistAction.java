@@ -8,7 +8,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import cn.thepetshop.dao.petDAO;
+import cn.thepetshop.dao.PetDAO;
 import cn.thepetshop.form.UserForm;
 
 
@@ -27,7 +27,7 @@ public class RegistAction extends Action {
 			String username = userForm.getUsername();
 			String password = userForm.getPassword();
 			
-			petDAO petdao = new petDAO();
+			PetDAO petdao = new PetDAO();
 			boolean b = petdao.register(username,password);
 			if(b){
 				//说明注册成功，并提示是否要登录
