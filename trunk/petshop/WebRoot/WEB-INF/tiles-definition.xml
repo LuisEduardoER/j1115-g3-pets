@@ -7,35 +7,15 @@
 <tiles-definitions>
 
 	<definition name="IndexViewUnLogin" template="/template/hometemplate.jsp">
-		<put name="topline" value="/pages/"></put>
+		<put name="topline" value="/pages/toplogin.jsp"></put>
+		<put name="topmenu" value="/pages/topmenu.jsp"></put>
+		<put name="topmenu" value="/pages/homecontent.jsp"></put>
 	</definition>
 	
-	<definition name="IndexViewLogin" template="/template/hometemplate.jsp">
-		<put name="topline"></put>
-	</definition>
-	
-	<definition name="MyAccountView" template="/template.jsp">
-	</definition>
-	
-	<definition name="AlreadyLogonView" template="/jsp/template.jsp">
-		<put name="menu" value="/jsp/menu_1.jsp" />
-		<put name="content" value="/jsp/alreadylogon.jsp" />
-	</definition>
-	
-	<definition name="LogonView" template="/jsp/template.jsp">
-		<put name="menu" value="/jsp/menu_1.jsp" />
-		<put name="content" value="/jsp/logon_form.jsp" />
-	</definition>
-	
-	<definition
-		name="BookListView" template="/jsp/template.jsp">
-		<put name="menu" value="/jsp/menu_1.jsp" />
-		<put name="content" value="/jsp/book_list.jsp" />
-	</definition>
-	
-	<definition name="BookFormView" template="/jsp/template.jsp">
-		<put name="menu" value="/jsp/menu_1.jsp" />
-		<put name="content" value="/jsp/book_form.jsp" />
+	<definition name="IndexViewAlreadyLogin" template="/template/hometemplate.jsp">
+		<put name="topline" value="/pages/topalreadylogin.jsp"></put>
+		<put name="topmenu" value="/pages/topmenu.jsp"></put>
+		<put name="topmenu" value="/pages/homecontent.jsp"></put>
 	</definition>
 	
 </tiles-definitions>
