@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans>
+		<form-bean name="userForm" type="cn.thepetshop.form.UserForm" />
+    	<form-bean name="modAdminPassForm" type="cn.thepetshop.form.ModAdminPassForm" />
+	</form-beans>
+	
+	<global-exceptions />
+	<global-forwards />
+	<action-mappings>
+		<action path="/register" type="cn.thepetshop.action.RegistAction"
+			name="userForm" validate="false">
+		</action>
+		<action path="/login" type="cn.thepetshop.action.LoginAction"
+			name="userForm" validate="false">
+		</action>
+		<action path="/getUserMsgAction" type="cn.thepetshop.action.GetUserMsgAction"
+			name="userForm" validate="false">
+		</action>
+		<action path="/updateUserPass" type="cn.thepetshop.action.UpdateUserPassAction"
+			name="userForm" validate="false">  
+		</action>
+		<action path="/unfinishedOrders" type="cn.thepetshop.action.UnfinishedOrdersAction"
+			validate="false">
+			<set-property property="cancellable" value="true" />
+		</action>
+    <action
+      attribute="modAdminPassForm"
+      input="/modAdminPass.jsp"
+      name="modAdminPassForm"
+      path="/modAdminPass"
+      scope="request"
+      type="cn.thepetshop.action.ModAdminPassAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+
+	</action-mappings>
+	<message-resources parameter="ApplicationResources" />
+</struts-config>
