@@ -15,12 +15,7 @@ import cn.thepetshop.dao.PetDAO;
 import cn.thepetshop.form.UserForm;
 
 
-/**
- * µÇÂ¼Action
- * @author Administrator
- *
- */
-public class LoginAction extends Action {
+public class UpdateUserPassAction extends Action {
 
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
@@ -29,16 +24,12 @@ public class LoginAction extends Action {
 		String username = userForm.getUsername();
 		String password = userForm.getPassword();
 		PetDAO petdao = new PetDAO();
-		String userid = petdao.login(username, password);
-		if(userid!=null){
-			request.getSession().setAttribute("userid", userid);
-			System.out.println("logining.......");
-			return new ActionForward("/myaccount/default.jsp",true);
+		boolean b = petdao.updateUserPass(username, password);
+		if(b){
+		return new ActionForward("/usermsg.jsp");
 		}
 		else{
-			System.out.println("login failed.......");
 			return new ActionForward("/index.jsp");
 		}
-		
 	}
 }
