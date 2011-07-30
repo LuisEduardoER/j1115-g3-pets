@@ -11,8 +11,7 @@
 						</a>
 					</div>
 					<div class="cart_right">
-						<a href="#"><img src="images/checkout.png" />
-						</a>
+						<a href="#"><div class="checkout"></div></a>
 					</div>
 				</div>
 			</div>

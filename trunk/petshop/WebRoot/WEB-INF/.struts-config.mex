@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FlowViewLayout Version="1.2">
+  <StrutsActivity path="/index.do" location="350,450" dimension="79,70" />
   <StrutsActivity path="/register.do" location="0,0" dimension="180,88" />
   <StrutsActivity path="/login.do" location="350,50" dimension="175,88" />
   <StrutsActivity path="/getUserMsgAction.do" location="650,50" dimension="304,84" />
   <StrutsActivity path="/updateUserPass.do" location="50,150" dimension="208,84" />
   <StrutsActivity path="/unfinishedOrders.do" location="350,250" dimension="304,84" />
   <StrutsActivity path="/modAdminPass.do" location="950,250" dimension="280,84" />
+  <StrutsActivity path="/modAdminPass.jsp" location="50,450" dimension="147,53" />
   <StrutsActivity path="/form/modAdminPass.jsp" location="50,350" dimension="172,48" />
-  <StrutsActivity path="/modAdminPass.jsp" />
   <StrutsTransition id="/modAdminPass.jsp,null,/modAdminPass.do,2" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="0,0" />
       <AbsolutePoint location="1090,292" />
-    </AutomaticBendpoints>
-  </StrutsTransition>
-  <StrutsTransition id="/form/modAdminPass.jsp,null,/modAdminPass.do,2" routingType="0">
-    <AutomaticBendpoints>
-      <AbsolutePoint location="222,374" />
-      <AbsolutePoint location="1090,374" />
-      <AbsolutePoint location="1090,334" />
     </AutomaticBendpoints>
   </StrutsTransition>
 </FlowViewLayout>

@@ -88,8 +88,11 @@
 	padding-left:1px;
 }
 .checkout{
-	padding-left:1px;
-	padding-top:1px;
+	width:75px;
+	height:23px;
+	display:block;
+	background-image:url(../images/checkout.png);
+	background-repeat:no-repeat;
 }
 .checkout_bg{
 	display:block;

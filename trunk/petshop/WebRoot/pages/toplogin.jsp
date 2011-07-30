@@ -1,12 +1,8 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 
-<link href="css/reset.css" rel="stylesheet" type="text/css" />
-<link href="css/style.css" rel="stylesheet" type="text/css" />
-<link href="css/front.css" media="screen, projection" rel="stylesheet"
-	type="text/css">
-<script type="text/javascript" src="js/jquery.js"></script>
-<script src="js/jquery.js" type="text/javascript"></script>
-<script src="js/jquery.tipsy.js" type="text/javascript"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/pages/js/jquery.js"></script>
+<script src="<%=request.getContextPath()%>/pages/js/jquery.js" type="text/javascript"></script>
+<script src="<%=request.getContextPath()%>/pages/js/jquery.tipsy.js" type="text/javascript"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		$(".signin").click(function(e) {
@@ -29,7 +25,7 @@
 <div class="top">
 	<div class="topcontent">
 		<font color="#FF6600">Welcome to the Pet Shop</font>
-		<a href="login" class="signin"><span>Login</span>
+		<a href="#" class="signin"><span>Login</span>
 		</a>|
 		<a href="#">Create Account</a>
 		<fieldset id="signin_menu">

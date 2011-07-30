@@ -9,13 +9,13 @@
 	<definition name="IndexViewUnLogin" template="/template/hometemplate.jsp">
 		<put name="topline" value="/pages/toplogin.jsp"></put>
 		<put name="topmenu" value="/pages/topmenu.jsp"></put>
-		<put name="topmenu" value="/pages/homecontent.jsp"></put>
+		<put name="homecontent" value="/pages/homecontent.jsp"></put>
 	</definition>
 	
 	<definition name="IndexViewAlreadyLogin" template="/template/hometemplate.jsp">
 		<put name="topline" value="/pages/topalreadylogin.jsp"></put>
 		<put name="topmenu" value="/pages/topmenu.jsp"></put>
-		<put name="topmenu" value="/pages/homecontent.jsp"></put>
+		<put name="homecontent" value="/pages/homecontent.jsp"></put>
 	</definition>
 	
 </tiles-definitions>
