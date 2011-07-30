@@ -34,6 +34,7 @@
 		<a href="#">Create Account</a>
 		<fieldset id="signin_menu">
 			<form method="post" id="signin" action="/login">
+				<p>
 				<label for="username">
 					Username
 				</label>
