@@ -1,6 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 
-<%@include file="/jsp/taglib/common.jsp"%>	
+<%@include file="/taglib/common.jsp"%>	
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>

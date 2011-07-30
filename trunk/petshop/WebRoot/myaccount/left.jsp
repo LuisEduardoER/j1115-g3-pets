@@ -1,5 +1,5 @@
 ﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%@include file="/jsp/taglib/common.jsp" %>
+<%@include file="/taglib/common.jsp" %>
 <html>
 <head>
 <title>Powered by NetGou</title>
