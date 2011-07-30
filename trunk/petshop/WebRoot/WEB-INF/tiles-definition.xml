@@ -5,6 +5,14 @@
        "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
 
 <tiles-definitions>
+
+	<definition name="IndexViewUnLogin" template="/template/hometemplate.jsp">
+		<put name="topline" value="/pages/"></put>
+	</definition>
+	
+	<definition name="IndexViewLogin" template="/template/hometemplate.jsp">
+		<put name="topline"></put>
+	</definition>
 	
 	<definition name="MyAccountView" template="/template.jsp">
 	</definition>
