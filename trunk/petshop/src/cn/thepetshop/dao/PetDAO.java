@@ -293,8 +293,8 @@ public class PetDAO {
 	 * @param category
 	 * @return
 	 */
-	public List listGoods(String category){
-		List<Goods> list=new ArrayList();
+	public List<Goods> listGoods(String category){
+		List<Goods> list=new ArrayList<Goods>();
 		Connection con=null;
 		Statement st=null;
 		ResultSet rs=null;
