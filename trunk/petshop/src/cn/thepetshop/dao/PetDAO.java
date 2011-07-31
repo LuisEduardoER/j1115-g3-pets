@@ -10,6 +10,7 @@ import java.util.*;
 import cn.thepetshop.form.User;
 import cn.thepetshop.object.Goods;
 import cn.thepetshop.object.Order;
+import cn.thepetshop.object.OrderShow;
 
 public class PetDAO {
 
