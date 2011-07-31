@@ -58,15 +58,15 @@ function showHide(objname)
 <table width="100%" border="0" align="center" cellPadding="0" cellSpacing="0">
   <tr height="25">
     <td style="border-bottom: #2FA1DB 1px solid;padding-left:5px;"><img src='images/newitem.gif' width='7' height='10' alt=''/></td>
-    <td style="border-bottom: #2FA1DB 1px solid"><html:link action= "/getUserMsgAction">查询信息</html:link></td>
+    <td style="border-bottom: #2FA1DB 1px solid"><html:link action= "/getUserMsg">查询信息</html:link></td>
   </tr>
   <tr height="25">
     <td style="border-bottom: #2FA1DB 1px solid;padding-left:5px;"><img src='images/newitem.gif' width='7' height='10' alt=''/></td>
-    <td style="border-bottom: #2FA1DB 1px solid"><html:link action= "/getUserMsgAction">修改密码</html:link></td>
+    <td style="border-bottom: #2FA1DB 1px solid"><html:link action= "/getUserMsg">修改密码</html:link></td>
   </tr>
   <tr height="25">
     <td style="border-bottom: #2FA1DB 1px solid;padding-left:5px;"><img src='images/newitem.gif' width='7' height='10' alt=''/></td>
-    <td style="border-bottom: #2FA1DB 1px solid"><html:link action= "/getUserMsgAction">余额查询</html:link></td>
+    <td style="border-bottom: #2FA1DB 1px solid"><html:link action= "/getUserMsg">余额查询</html:link></td>
   </tr>
 </table>
 </div>

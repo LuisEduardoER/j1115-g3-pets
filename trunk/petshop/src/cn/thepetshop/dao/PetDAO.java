@@ -195,7 +195,7 @@ public class PetDAO {
 	 * @param password
 	 * @return boolean
 	 */
-	public boolean updateUserPass(String username, String password) {
+	public boolean updateUserPass(String userid, String password) {
 		Connection con = null;
 		Statement st = null;
 		boolean b = false;
@@ -203,7 +203,7 @@ public class PetDAO {
 			con = getConnection();
 			st = con.createStatement();
 			String sql = "update p_users set u_pass='" + password
-					+ "' where u_name='" + username + "'";
+					+ "' where u_name='" + userid + "'";
 			System.out.println(sql);
 			int conn = st.executeUpdate(sql);
 			if (conn == 1)

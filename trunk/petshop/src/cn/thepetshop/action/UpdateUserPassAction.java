@@ -6,6 +6,8 @@ package cn.thepetshop.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -21,10 +23,13 @@ public class UpdateUserPassAction extends Action {
 			HttpServletRequest request, HttpServletResponse response) {
 		
 		UserForm userForm = (UserForm)form;
+		
 		String username = userForm.getUsername();
 		String password = userForm.getPassword();
+		HttpSession session = request.getSession();
+		String userid = (String)session.getAttribute("userid");
 		PetDAO petdao = new PetDAO();
-		boolean b = petdao.updateUserPass(username, password);
+		boolean b = petdao.updateUserPass(userid, password);
 		if(b){
 		return new ActionForward("/usermsg.jsp");
 		}
