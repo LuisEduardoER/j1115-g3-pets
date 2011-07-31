@@ -1,14 +1,13 @@
 package cn.thepetshop.object;
 
 public class OrderedGoods extends Goods{
-	private int count;//商品数量
-
-	public int getCount() {
-		return count;
+	private int quantity;//商品数量
+	
+	public int getQuantity() {
+		return quantity;
 	}
-
-	public void setCount(int count) {
-		this.count = count;
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 	
 }
