@@ -6,7 +6,7 @@ public class OrderedGoods extends Goods{
 	public int getNum() {
 		return num;
 	}
-	public void setQuantity(int quantity) {
+	public void setNum(int num) {
 		this.num = num;
 	}
 }
