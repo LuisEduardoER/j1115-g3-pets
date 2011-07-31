@@ -7,11 +7,11 @@
 			<div class="cart">
 				<div class="cartbg">
 					<div class="cart_left">
-						<a href="#"><span style="color: #333">5</span>&nbsp;<span>Item(s)</span>
+						<a href="#"><span id="goodscount" style="color: #333">5</span>&nbsp;<span>Item(s)</span>
 						</a>
 					</div>
 					<div class="cart_right">
-						<a href="#"><div class="checkout"></div></a>
+						<a href="#"><span class="checkout"></span></a>
 					</div>
 				</div>
 			</div>
