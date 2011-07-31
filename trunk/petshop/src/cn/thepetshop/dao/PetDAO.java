@@ -399,4 +399,39 @@ public class PetDAO {
 			free(con,st,null);
 		}
 	}
+
+	//根据用户编号获得所有订单
+	public List<OrderShow> getOrdersByUserId(int userId)
+	{
+	
+		List<OrderShow> list = new ArrayList<OrderShow>();
+		return list;
+	}
+	
+	//根据订单编号修改订单状态
+	public void updateOrderSatatus(int orderid,int tradeStatus)
+	{
+	
+	
+	}
+	//将评价分数加入到数据库
+	public void addEvalute(int orderid,int score )
+	{
+		
+	}
+	
+	//根据订单编号删除订单
+	public void deleteOreder(int orderid)
+	{
+		
+	}
+	//根据用户编号修改用户的余额  money=用户余额
+	public void updateusermoney(int userid,double money){
+		
+	}
+	//根据订单编号获得订单的总金额
+	public double getmoneybyid(String orderid){
+		 double money=0;
+		 return money;
+	}
 }
