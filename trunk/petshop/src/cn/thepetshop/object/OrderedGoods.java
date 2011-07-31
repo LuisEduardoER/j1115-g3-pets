@@ -9,5 +9,4 @@ public class OrderedGoods extends Goods{
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	
 }
