@@ -1,18 +1,18 @@
 package cn.thepetshop.object;
 
 public class Goods {
-	private int goodsId;//商品id
+	private int goodsid;//商品id
 	private int goodsCategory;//商品分类
 	private String goodsName;//商品名称
 	private double goodsPrice;//商品单价
 	private int goodsLeftNum;//商品剩余数目
 	private String goodsBrief;//商品简介
 	
-	public int getGoodsId() {
-		return goodsId;
+	public int getGoodsid() {
+		return goodsid;
 	}
-	public void setGoodsId(int goodsId) {
-		this.goodsId = goodsId;
+	public void setGoodsid(int goodsid) {
+		this.goodsid = goodsid;
 	}
 	public int getGoodsCategory() {
 		return goodsCategory;
