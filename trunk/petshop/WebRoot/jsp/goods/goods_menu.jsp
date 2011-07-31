@@ -20,10 +20,10 @@
 			</tr>
 			<tr>
 				<td align="center" id="t1">
-					狗<br>
-					狗の用品<br>
-					狗の食品<br>
-					狗の药品
+					<html:link href="">狗</html:link><br>
+					<html:link>狗の用品</html:link><br>
+					<html:link>狗の食品</html:link><br>
+					<html:link>狗の药品</html:link>
 				</td>
 			</tr>
 			<tr>
@@ -60,25 +60,25 @@
 				</td>
 			</tr>
 			<tr>
-				<th style="cursor: pointer;" onclick="javascript:changemenu(t5)">Small Pet's Shop</th>
+				<th style="cursor: pointer;" onclick="javascript:changemenu(t5)">Reptile's Shop</th>
 			</tr>
 			<tr>
 				<td align="center" id="t5">
-					小动物<br>
-					小动物の用品<br>
-					小动物の食品<br>
-					小动物の药品
-				</td>
-			</tr>
-			<tr>
-				<th style="cursor: pointer;" onclick="javascript:changemenu(t6)">Reptile's Shop</th>
-			</tr>
-			<tr>
-				<td align="center" id="t6">
 					爬行类<br>
 					爬行类の用品<br>
 					爬行类の食品<br>
 					爬行类の药品
+				</td>
+			</tr>
+			<tr>
+				<th style="cursor: pointer;" onclick="javascript:changemenu(t6)">Small Pet's Shop</th>
+			</tr>
+			<tr>
+				<td align="center" id="t6">
+					小动物<br>
+					小动物の用品<br>
+					小动物の食品<br>
+					小动物の药品
 				</td>
 			</tr>
 		</tbody>
