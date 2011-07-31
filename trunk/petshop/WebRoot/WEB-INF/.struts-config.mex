@@ -6,20 +6,66 @@
   <StrutsActivity path="/getUserMsgAction.do" location="650,50" dimension="304,84" />
   <StrutsActivity path="/updateUserPass.do" location="50,150" dimension="208,84" />
   <StrutsActivity path="/unfinishedOrders.do" location="350,250" dimension="304,84" />
+  <StrutsActivity path="/modAdminPass.do" location="950,250" dimension="280,84" />
+  <StrutsActivity path="/admin/modAdminPass.jsp" location="650,450" dimension="178,48" />
   <StrutsActivity path="/modAdminPass.jsp" location="50,450" dimension="147,53" />
   <StrutsActivity path="/form/modAdminPass.jsp" location="50,350" dimension="172,48" />
-  <StrutsActivity path="/modAdminPass.do" location="950,250" dimension="280,84" />
-  <StrutsActivity path="/admin/modAdminPass.jsp" />
+  <StrutsActivity path="/pay.do" />
+  <StrutsActivity path="/sure.do" />
+  <StrutsActivity path="/evalute.do" />
+  <StrutsActivity path="/delete.do" />
+  <StrutsActivity path="/history.do" />
+  <StrutsActivity path="/trading.do" />
+  <StrutsActivity path="/payFailed.jsp" />
+  <StrutsActivity path="/paySucceed.jsp" />
+  <StrutsActivity path="/orderShow.jsp" />
+  <StrutsActivity path="/newOrderShow.jsp" />
   <StrutsTransition id="/admin/modAdminPass.jsp,null,/modAdminPass.do,2" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="0,0" />
       <AbsolutePoint location="1090,292" />
     </AutomaticBendpoints>
   </StrutsTransition>
-  <StrutsTransition id="/modAdminPass.jsp,null,/modAdminPass.do,2" routingType="0">
+  <StrutsTransition id="/evalute.do,evalute,/trading.do,1" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="0,0" />
-      <AbsolutePoint location="1090,292" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pay.do,payfailed,/payFailed.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/history.do,show,/orderShow.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/delete.do,deleteSucceed,/trading.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pay.do,paySucceed,/paySucceed.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sure.do,sure,/trading.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/trading.do,show1,/newOrderShow.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
     </AutomaticBendpoints>
   </StrutsTransition>
 </FlowViewLayout>
