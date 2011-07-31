@@ -322,4 +322,81 @@ public class PetDAO {
 		return list;
 	}
 	
+	/**
+	 * 返回所有的父分类
+	 * @param category
+	 * @return
+	 */
+	public List getCategoryList(){
+		List list= new ArrayList();
+		Connection con=null;
+		Statement st=null;
+		ResultSet rs=null;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			String sql="select c_id,c_name from p_category where p_id = 0";
+			rs=st.executeQuery(sql);
+			while(rs.next()){
+				CategoryJavaBean cjb = new CategoryJavaBean();
+				cjb.setCid(rs.getInt(1));
+				cjb.setCname(rs.getString(2));
+				list.add(cjb);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}finally{
+			free(con,st,rs);
+		}
+		return list;
+	}
+	
+	/**
+	 * 根据cid来修改父分类的名称
+	 * @param category
+	 * @return
+	 */
+	public void modParentCategory(int cid,String cname){
+		Connection con=null;
+		Statement st=null;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			String sql="update p_category set c_name = '"+cname+"' where c_id="+cid;
+			System.out.println(sql);
+			st.executeUpdate(sql);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}finally{
+			free(con,st,null);
+		}
+	}
+	/**
+	 * 添加父分类的名称
+	 * @param category
+	 * @return
+	 */
+	public void addParentCategory(String cname){
+		Connection con=null;
+		Statement st=null;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			String sql="insert into p_category(p_id,c_name)values (0,'"+cname+"')";
+			System.out.println(sql);
+			st.executeUpdate(sql);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}finally{
+			free(con,st,null);
+		}
+	}
 }

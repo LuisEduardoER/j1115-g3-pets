@@ -6,6 +6,8 @@
 		<servlet-name>action</servlet-name>
 		<servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
 		
+
+  		
 		<init-param>
 			<param-name>config</param-name>
 			<param-value>/WEB-INF/struts-config.xml</param-value>
@@ -22,11 +24,44 @@
 		</init-param>
 		<load-on-startup>0</load-on-startup>
 	</servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetParentCategory</servlet-name>
+    <servlet-class>cn.thepetshop.servlet.GetParentCategory</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ModPCategoryServlet</servlet-name>
+    <servlet-class>cn.thepetshop.servlet.ModPCategoryServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddPCategoryServlet</servlet-name>
+    <servlet-class>cn.thepetshop.servlet.AddPCategoryServlet</servlet-class>
+  </servlet>
+
+
+
 	
 	<servlet-mapping>
 		<servlet-name>action</servlet-name>
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetParentCategory</servlet-name>
+    <url-pattern>/GetParentCategory</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ModPCategoryServlet</servlet-name>
+    <url-pattern>/ModPCategoryServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddPCategoryServlet</servlet-name>
+    <url-pattern>/AddPCategoryServlet</url-pattern>
+  </servlet-mapping>
 	
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
