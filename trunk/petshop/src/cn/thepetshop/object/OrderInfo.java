@@ -26,7 +26,7 @@ public class OrderInfo {
 		double sum = 0;
 		for(int i=0;i<goodsList.size();i++){
 			OrderedGoods og = goodsList.get(i);
-			sum += og.getGoodsPrice()*og.getQuantity();//商品数*商品单价
+			sum += og.getGoodsPrice()*og.getNum();//商品数*商品单价
 		}
 		return 0;
 	}
