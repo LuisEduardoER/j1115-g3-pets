@@ -23,7 +23,7 @@ function showmenu(strID){
     		<th align="left" style="cursor: pointer;" onclick="javascript:showmenu(lay0)">个人信息管理</th>
     	</tr>  	
     	<tr id="lay0" style="display:block;">
-    	<td><a href="modpass.html">修改密码</a></td>
+    	<td><a href="modAdminPass.jsp" target="show">修改密码</a></td>
     	</tr>
     	
     	<tr>

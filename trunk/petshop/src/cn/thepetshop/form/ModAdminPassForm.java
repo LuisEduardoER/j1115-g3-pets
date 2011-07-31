@@ -8,7 +8,7 @@ import org.apache.struts.action.ActionForm;
 
 /** 
  * MyEclipse Struts
- * Creation date: 07-30-2011
+ * Creation date: 07-31-2011
  * 
  * XDoclet definition:
  * @struts.form name="modAdminPassForm"
@@ -18,15 +18,50 @@ public class ModAdminPassForm extends ActionForm {
 	 * Generated fields
 	 */
 
+	/** newPass1 property */
+	private String newPass1;
+
+	/** newPass2 property */
+	private String newPass2;
+
 	/** oldPass property */
 	private String oldPass;
-
-	/** newPass property */
-	private String newPass;
 
 	/*
 	 * Generated Methods
 	 */
+
+	/** 
+	 * Returns the newPass1.
+	 * @return String
+	 */
+	public String getNewPass1() {
+		return newPass1;
+	}
+
+	/** 
+	 * Set the newPass1.
+	 * @param newPass1 The newPass1 to set
+	 */
+	public void setNewPass1(String newPass1) {
+		this.newPass1 = newPass1;
+	}
+
+	/** 
+	 * Returns the newPass2.
+	 * @return String
+	 */
+	public String getNewPass2() {
+		return newPass2;
+	}
+
+	/** 
+	 * Set the newPass2.
+	 * @param newPass2 The newPass2 to set
+	 */
+	public void setNewPass2(String newPass2) {
+		this.newPass2 = newPass2;
+	}
 
 	/** 
 	 * Returns the oldPass.
@@ -42,21 +77,5 @@ public class ModAdminPassForm extends ActionForm {
 	 */
 	public void setOldPass(String oldPass) {
 		this.oldPass = oldPass;
-	}
-
-	/** 
-	 * Returns the newPass.
-	 * @return String
-	 */
-	public String getNewPass() {
-		return newPass;
-	}
-
-	/** 
-	 * Set the newPass.
-	 * @param newPass The newPass to set
-	 */
-	public void setNewPass(String newPass) {
-		this.newPass = newPass;
 	}
 }

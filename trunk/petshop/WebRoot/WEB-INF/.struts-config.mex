@@ -6,9 +6,16 @@
   <StrutsActivity path="/getUserMsgAction.do" location="650,50" dimension="304,84" />
   <StrutsActivity path="/updateUserPass.do" location="50,150" dimension="208,84" />
   <StrutsActivity path="/unfinishedOrders.do" location="350,250" dimension="304,84" />
-  <StrutsActivity path="/modAdminPass.do" location="950,250" dimension="280,84" />
   <StrutsActivity path="/modAdminPass.jsp" location="50,450" dimension="147,53" />
   <StrutsActivity path="/form/modAdminPass.jsp" location="50,350" dimension="172,48" />
+  <StrutsActivity path="/modAdminPass.do" location="950,250" dimension="280,84" />
+  <StrutsActivity path="/admin/modAdminPass.jsp" />
+  <StrutsTransition id="/admin/modAdminPass.jsp,null,/modAdminPass.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="1090,292" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
   <StrutsTransition id="/modAdminPass.jsp,null,/modAdminPass.do,2" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="0,0" />

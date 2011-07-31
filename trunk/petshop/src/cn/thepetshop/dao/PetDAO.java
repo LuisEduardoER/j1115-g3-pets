@@ -273,6 +273,7 @@ public class PetDAO {
 			}
 			if(pass.equals(oldpass)){
 				sql="update p_users set u_pass='"+newpass+"' where u_name='Administrator'";
+				st.executeUpdate(sql);
 				str="密码修改成功";
 			}else{
 				str="原密码错误";

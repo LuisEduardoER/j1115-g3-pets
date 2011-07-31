@@ -5,7 +5,8 @@
 	<data-sources />
 	<form-beans>
 		<form-bean name="userForm" type="cn.thepetshop.form.UserForm" />
-		<form-bean name="modAdminPassForm" type="cn.thepetshop.form.ModAdminPassForm" />
+    <form-bean name="modAdminPassForm" type="cn.thepetshop.form.ModAdminPassForm" />
+	
 	</form-beans>
 
 	<global-exceptions />
@@ -30,11 +31,16 @@
 			validate="false">
 			<set-property property="cancellable" value="true" />
 		</action>
-		<action attribute="modAdminPassForm" input="/modAdminPass.jsp"
-			name="modAdminPassForm" path="/modAdminPass" scope="request"
-			type="cn.thepetshop.action.ModAdminPassAction">
-			<set-property property="cancellable" value="true" />
-		</action>
+    <action
+      attribute="modAdminPassForm"
+      input="/admin/modAdminPass.jsp"
+      name="modAdminPassForm"
+      path="/modAdminPass"
+      scope="request"
+      type="cn.thepetshop.action.ModAdminPassAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+	
 
 	</action-mappings>
 	<message-resources parameter="ApplicationResources" />
