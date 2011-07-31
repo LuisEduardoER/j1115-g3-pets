@@ -305,7 +305,7 @@ public class PetDAO {
 			rs=st.executeQuery(sql);
 			if(rs.next()){
 				Goods goods=new Goods();
-				goods.setGoodsId(rs.getInt(1));
+				goods.setGoodsid(rs.getInt(1));
 				goods.setGoodsName(rs.getString(2));
 				goods.setGoodsPrice(rs.getDouble(3));
 				list.add(goods);
