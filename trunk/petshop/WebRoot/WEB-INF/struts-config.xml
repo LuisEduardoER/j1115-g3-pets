@@ -84,9 +84,11 @@
       validate="false">
       <set-property property="cancellable" value="true" />
     </action>
-    <action path="/getParentCategory" type="cn.thepetshop.action.GetParentCategoryAction">
+    <action path="/getParentCategory" 
+    type="cn.thepetshop.action.GetParentCategoryAction">
       <set-property property="cancellable" value="true" />
     </action>
+   
 
 	</action-mappings>
 	<message-resources parameter="ApplicationResources" />
