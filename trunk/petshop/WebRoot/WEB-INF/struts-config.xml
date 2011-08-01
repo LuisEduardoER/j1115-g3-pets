@@ -106,6 +106,9 @@
 			type="cn.thepetshop.action.AddPCategoryAction">
 			<set-property property="cancellable" value="true" />
 		</action>
+		<action path="/addToCart" type="cn.thepetshop.action.AddToCartAction">
+			<set-property property="cancellable" value="true" />
+		</action>
 
 
 	</action-mappings>
