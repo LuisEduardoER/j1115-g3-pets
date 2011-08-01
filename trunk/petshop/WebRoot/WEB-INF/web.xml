@@ -21,42 +21,23 @@
 		</init-param>
 		<load-on-startup>0</load-on-startup>
 	</servlet>
-	<servlet>
-		<servlet-name>GetParentCategory</servlet-name>
-		<servlet-class>cn.thepetshop.servlet.GetParentCategory</servlet-class>
-	</servlet>
+	
 	<servlet>
 		<servlet-name>ModPCategoryServlet</servlet-name>
 		<servlet-class>cn.thepetshop.servlet.ModPCategoryServlet</servlet-class>
 	</servlet>
-	<servlet>
-		<servlet-name>AddPCategoryServlet</servlet-name>
-		<servlet-class>cn.thepetshop.servlet.AddPCategoryServlet</servlet-class>
-	</servlet>
+	
 	<servlet>
 		<servlet-name>ModifyAmountServlet</servlet-name>
 		<servlet-class>cn.thepetshop.servlet.ModifyAmountServlet</servlet-class>
 	</servlet>
-	<servlet>
-		<servlet-name>ChildrenServlet</servlet-name>
-		<servlet-class>cn.thepetshop.servlet.ChildrenServlet</servlet-class>
-	</servlet>
+	
   <servlet>
     <servlet-name>GetCartServlet</servlet-name>
     <servlet-class>cn.thepetshop.servlet.GetCartServlet</servlet-class>
   </servlet>
-  <servlet>
-    <description>This is the description of my J2EE component</description>
-    <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>DelCCategoryServlet</servlet-name>
-    <servlet-class>cn.thepetshop.servlet.DelCCategoryServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <description>This is the description of my J2EE component</description>
-    <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>AddCCategoryServlet</servlet-name>
-    <servlet-class>cn.thepetshop.servlet.AddCCategoryServlet</servlet-class>
-  </servlet>
+  
+  
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
