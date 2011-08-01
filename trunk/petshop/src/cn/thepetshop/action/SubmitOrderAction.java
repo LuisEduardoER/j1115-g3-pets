@@ -11,11 +11,21 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
+import cn.thepetshop.dao.PetDAO;
+import cn.thepetshop.form.OrderForm;
+import cn.thepetshop.object.OrderInfo;
+
 public class SubmitOrderAction extends Action {
 	
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
-		return null;
+		OrderForm of = (OrderForm)form;
+		PetDAO pd = new PetDAO();
+		Object obj = request.getSession().getAttribute("userid");
+		String userid = (String) obj;
+		OrderInfo oi = pd.createOrder(userid,of.getReceiver(),of.getAddress(),of.getPhone());
+		request.setAttribute("orderid", oi.getOrder().getOrderId());
+		request.setAttribute("orderMoney", oi.getSumMoney());
+		return new ActionForward();
 	}
 }

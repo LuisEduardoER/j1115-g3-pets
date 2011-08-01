@@ -769,6 +769,20 @@ public class PetDAO {
 		}
 	}
 
+	/**
+	 * 创建订单，并输出订单信息
+	 * @param userid 用户id
+	 * @param receiver 接收者
+	 * @param address 地址
+	 * @param phone 电话号码
+	 * @return 返回一个OrderInfo对象
+	 */
+	public OrderInfo createOrder(String userid, String receiver,
+			String address, String phone) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 
 

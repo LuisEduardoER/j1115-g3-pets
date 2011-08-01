@@ -4,6 +4,7 @@ import java.util.List;
 
 public class OrderInfo {
 	private Order order;//订单信息
+	private double sumMoney;//订单总金额
 	private List<OrderedGoods> goodsList;//商品列表
 	
 	public Order getOrder() {
@@ -18,16 +19,11 @@ public class OrderInfo {
 	public void setGoodsList(List<OrderedGoods> goodsList) {
 		this.goodsList = goodsList;
 	}
-	/**
-	 * 获取订单的总金额
-	 * @return 订单金额
-	 */
-	public double getSumMoney(){
-		double sum = 0;
-		for(int i=0;i<goodsList.size();i++){
-			OrderedGoods og = goodsList.get(i);
-			sum += og.getGoodsPrice()*og.getNum();//商品数*商品单价
-		}
-		return sum;
+	public double getSumMoney() {
+		return sumMoney;
 	}
+	public void setSumMoney(double sumMoney) {
+		this.sumMoney = sumMoney;
+	}
+	
 }
