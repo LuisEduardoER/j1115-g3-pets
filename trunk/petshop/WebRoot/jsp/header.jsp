@@ -13,7 +13,7 @@
   	<div align="right">
 		<html:form action="/login">
 				<html:text property="username" />
-				<html:password property="password" />
+				 <html:password property="password" />
 				<html:submit  value="Login"/><a href="zhuce.jsp">Regist</a>
 		</html:form>
 	</div>

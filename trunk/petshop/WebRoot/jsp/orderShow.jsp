@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@page import="cn.thepetshop.object.Order"%>
+<%@page import="cn.thepetshop.object.*"%>
 <%@page import="cn.thepetshop.object.OrderShow"%>
 <%@page import="java.util.List"%>
 <html>
@@ -9,7 +9,7 @@
 	</head>
 	<body>
 		<%
-			List<OrderShow> orderShows = (List<OrderShow>)request.getAttribute("list") ;
+			List<OrderInfo> orderinfo = (List<OrderInfo>)request.getAttribute("list") ;
 		%>
 		<table>
 			<tr>
@@ -24,26 +24,46 @@
 			</tr>
 			
 			
-			<%for(int i=0;i<orderShows.size();i++){ 
-				OrderShow os = orderShows.get(i);
-				if(os.getTradeStatus()==4){
+			<%for(int i=0;i<orderinfo.size();i++){ 
+				OrderInfo os = orderinfo.get(i);
+				Order od=os.getOrder();
+				if(od.getState()==4){
 			%>
-			
 			<tr>
-				<td><%=os.getOrderId() %></td>
-				<td><img src = ""><%=os.getProName() %></td>
-				<td><%=os.getPrice() %></td>
-				<td><%=os.getNumb() %></td>
+				<td><%=od.getOrderId() %></td>
+				<td>
+					<table>
+						<%List<OrderedGoods> orderedgoods=os.getGoodsList();
+							for(int j=0;j<orderedgoods.size();j++){ 
+								OrderedGoods goods=orderedgoods.get(i);%>	
+						<tr>
+							<img src = ""><%=goods.getGoodsName() %>
+						</tr>	
+					</table>
+				</td>
+				<td>
+					<table>
+						<tr>
+							<%=goods.getGoodsPrice() %>
+						</tr>
+					</table>
+				</td>
+				<td>
+					<table>
+						<tr>
+							<%=goods.getNum() %>
+						</tr>
+					</table>
+				</td>
+				<% }%>
 				<td><%=os.getSumMoney() %></td>
 				<td>交易成功已评价</td>
 				<td>无</td>
-				<td><%=os.getXiaDanDate() %></td>
+				<td><%=od.getTime() %></td>
 			</tr>
-			
-			<%}
+			<% }
 			}
 			%>
-			
 		</table>
 
 	</body>

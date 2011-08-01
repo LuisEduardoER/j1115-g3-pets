@@ -28,6 +28,6 @@ public class OrderInfo {
 			OrderedGoods og = goodsList.get(i);
 			sum += og.getGoodsPrice()*og.getNum();//商品数*商品单价
 		}
-		return 0;
+		return sum;
 	}
 }

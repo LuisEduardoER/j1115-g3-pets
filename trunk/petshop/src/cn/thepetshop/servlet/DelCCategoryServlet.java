@@ -9,21 +9,25 @@ import javax.servlet.http.HttpServletResponse;
 
 import cn.thepetshop.dao.PetDAO;
 
-public class AddPCategoryServlet extends HttpServlet {
+
+public class DelCCategoryServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		response.setContentType("text/html");
-		String addcname = request.getParameter("addCategory");
-	
-		if (addcname.equals("")||addcname==null ) {
-			request.getRequestDispatcher("GetParentCategory").forward(request, response);
-		}else {
-			PetDAO petDAO = new PetDAO();
-			petDAO.addParentCategory(addcname);
-			request.getRequestDispatcher("GetParentCategory").forward(request, response);
+		PetDAO petDAO = new PetDAO();
+		
+		String[] cjbno = request.getParameterValues("cjbnos");
+		String pid = request.getParameter("parno");
+		if (cjbno==null || cjbno.length<=0) {
+			request.getRequestDispatcher("ChildrenServlet?parentno="+pid).forward(request, response);
 		}
+		if(cjbno!=null && cjbno.length>0) {
+			petDAO.deleteChildrenCategory(cjbno);
+			request.getRequestDispatcher("ChildrenServlet?parentno="+pid).forward(request, response);
+		}
+
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)

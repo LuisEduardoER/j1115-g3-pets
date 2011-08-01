@@ -37,7 +37,7 @@ function showmenu(strID){
     		<th align="left" style="cursor: pointer;" onclick="javascript:showmenu(lay2)">商品分类管理</th>
     	</tr>
     	<tr id="lay2" style="display:block;">
-    	<td><a href="../GetParentCategory" target="show">父分类管理</a><br>子分类管理</td>
+    	<td><a href="../GetParentCategory" target="show">分类管理</a></td>
     	</tr>
   
     	

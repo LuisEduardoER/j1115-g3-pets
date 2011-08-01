@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FlowViewLayout Version="1.2">
+  <StrutsActivity path="/pay.do" location="950,450" dimension="226,84" />
+  <StrutsActivity path="/sure.do" location="650,550" dimension="232,84" />
+  <StrutsActivity path="/evalute.do" location="50,650" dimension="250,84" />
+  <StrutsActivity path="/delete.do" location="350,650" dimension="244,84" />
+  <StrutsActivity path="/history.do" location="950,650" dimension="262,84" />
+  <StrutsActivity path="/trading.do" location="50,850" dimension="280,84" />
   <StrutsActivity path="/index.do" location="350,450" dimension="79,70" />
   <StrutsActivity path="/register.do" location="0,0" dimension="180,88" />
   <StrutsActivity path="/login.do" location="350,50" dimension="175,88" />
-  <StrutsActivity path="/getUserMsgAction.do" location="650,50" dimension="304,84" />
+  <StrutsActivity path="/getUserMsg.do" location="650,850" dimension="268,84" />
   <StrutsActivity path="/updateUserPass.do" location="50,150" dimension="208,84" />
   <StrutsActivity path="/unfinishedOrders.do" location="350,250" dimension="304,84" />
   <StrutsActivity path="/modAdminPass.do" location="950,250" dimension="280,84" />
+  <StrutsActivity path="/getUserMoney.do" location="50,1150" dimension="280,84" />
+  <StrutsActivity path="/listGoods.do" location="650,1150" dimension="252,92" />
+  <StrutsActivity path="/submitOrder.do" location="50,1350" dimension="244,84" />
+  <StrutsActivity path="/payFailed.jsp" location="50,1050" dimension="124,48" />
+  <StrutsActivity path="/paySucceed.jsp" location="350,1050" dimension="130,48" />
+  <StrutsActivity path="/orderShow.jsp" location="650,1050" dimension="124,48" />
+  <StrutsActivity path="/newOrderShow.jsp" location="950,1050" dimension="142,48" />
   <StrutsActivity path="/admin/modAdminPass.jsp" location="650,450" dimension="178,48" />
   <StrutsActivity path="/modAdminPass.jsp" location="50,450" dimension="147,53" />
   <StrutsActivity path="/form/modAdminPass.jsp" location="50,350" dimension="172,48" />
-  <StrutsActivity path="/pay.do" />
-  <StrutsActivity path="/sure.do" />
-  <StrutsActivity path="/evalute.do" />
-  <StrutsActivity path="/delete.do" />
-  <StrutsActivity path="/history.do" />
-  <StrutsActivity path="/trading.do" />
-  <StrutsActivity path="/payFailed.jsp" />
-  <StrutsActivity path="/paySucceed.jsp" />
-  <StrutsActivity path="/orderShow.jsp" />
-  <StrutsActivity path="/newOrderShow.jsp" />
+  <StrutsActivity path="/getParentCategory.do" />
   <StrutsTransition id="/admin/modAdminPass.jsp,null,/modAdminPass.do,2" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="0,0" />

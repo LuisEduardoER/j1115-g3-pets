@@ -12,6 +12,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import cn.thepetshop.dao.PetDAO;
+import cn.thepetshop.object.OrderInfo;
 import cn.thepetshop.object.OrderShow;
 
 public class NewOrderShowAction extends Action {
@@ -23,7 +24,7 @@ public class NewOrderShowAction extends Action {
 
 		HttpSession session=request.getSession();
 		int userId = (Integer)session.getAttribute("userId");
-		List<OrderShow> list = new PetDAO().getOrdersByUserId(userId);
+		List<OrderInfo> list = new PetDAO().getOrderInfoByUserId(userId);
 		request.setAttribute("list", list);
 		
 		return mapping.findForward("show1");

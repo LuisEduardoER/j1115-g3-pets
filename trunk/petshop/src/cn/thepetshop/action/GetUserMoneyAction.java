@@ -14,32 +14,20 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import cn.thepetshop.dao.PetDAO;
+import cn.thepetshop.form.User;
 import cn.thepetshop.form.UserForm;
 
 
-public class UpdateUserPassAction extends Action {
+public class GetUserMoneyAction extends Action {
 
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-		
 		UserForm userForm = (UserForm)form;
-		
 		HttpSession session = request.getSession();
 		String userid = (String)session.getAttribute("userid");
-		String oldpass = request.getParameter("oldpass");
-		String newpass = request.getParameter("newpass");
-		
 		PetDAO petdao = new PetDAO();
-		boolean b = petdao.updateUserPass(userid, oldpass,newpass);
-		if(b){
-			//System.out.println("修改成功");
-		return new ActionForward("/getUserMsg.do");	
-		
-		
-		}
-		else{
-			//System.out.println("修改失败");
-			return new ActionForward("/jsp/updatepass.jsp");
-		}
+		User user = petdao.findUserById(userid);
+		request.setAttribute("user", user);
+		return new ActionForward("/jsp/money.jsp");
 	}
 }

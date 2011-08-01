@@ -6,8 +6,11 @@
 	</head>
 	<body>
 		<center>
-		<%String orderid = request.getParameter("orderid"); %>
+		<%String goodsid = request.getParameter("goodsid"); 
+		  String orderid = request.getParameter("orderid");
+		%>
 			<form action="evalut" method="post">
+				<input type="hidden" name = "goodsid" value=<%=goodsid %>/>
 				<input type="hidden" name = "orderid" value=<%=orderid %>/>
 				<input type="radio" name = "score" value = "1">1分
 				<input type="radio" name = "score" value = "2">2分

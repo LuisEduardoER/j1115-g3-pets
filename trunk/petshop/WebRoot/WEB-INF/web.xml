@@ -5,68 +5,118 @@
 	<servlet>
 		<servlet-name>action</servlet-name>
 		<servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
-		
-
-  		
 		<init-param>
 			<param-name>config</param-name>
 			<param-value>/WEB-INF/struts-config.xml</param-value>
 		</init-param>
-		
+
 		<init-param>
 			<param-name>debug</param-name>
 			<param-value>3</param-value>
 		</init-param>
-		
+
 		<init-param>
 			<param-name>detail</param-name>
 			<param-value>3</param-value>
 		</init-param>
 		<load-on-startup>0</load-on-startup>
 	</servlet>
+	<servlet>
+		<servlet-name>GetParentCategory</servlet-name>
+		<servlet-class>cn.thepetshop.servlet.GetParentCategory</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ModPCategoryServlet</servlet-name>
+		<servlet-class>cn.thepetshop.servlet.ModPCategoryServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AddPCategoryServlet</servlet-name>
+		<servlet-class>cn.thepetshop.servlet.AddPCategoryServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ModifyAmountServlet</servlet-name>
+		<servlet-class>cn.thepetshop.servlet.ModifyAmountServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ChildrenServlet</servlet-name>
+		<servlet-class>cn.thepetshop.servlet.ChildrenServlet</servlet-class>
+	</servlet>
   <servlet>
-    <description>This is the description of my J2EE component</description>
-    <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>GetParentCategory</servlet-name>
-    <servlet-class>cn.thepetshop.servlet.GetParentCategory</servlet-class>
+    <servlet-name>GetCartServlet</servlet-name>
+    <servlet-class>cn.thepetshop.servlet.GetCartServlet</servlet-class>
   </servlet>
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>ModPCategoryServlet</servlet-name>
-    <servlet-class>cn.thepetshop.servlet.ModPCategoryServlet</servlet-class>
+    <servlet-name>DelCCategoryServlet</servlet-name>
+    <servlet-class>cn.thepetshop.servlet.DelCCategoryServlet</servlet-class>
   </servlet>
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>AddPCategoryServlet</servlet-name>
-    <servlet-class>cn.thepetshop.servlet.AddPCategoryServlet</servlet-class>
+    <servlet-name>AddCCategoryServlet</servlet-name>
+    <servlet-class>cn.thepetshop.servlet.AddCCategoryServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UpdateChildrenServlet</servlet-name>
+    <servlet-class>cn.thepetshop.servlet.UpdateChildrenServlet</servlet-class>
   </servlet>
 
 
 
-	
+
+
+
+
+
+
 	<servlet-mapping>
 		<servlet-name>action</servlet-name>
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetParentCategory</servlet-name>
+		<url-pattern>/GetParentCategory</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ModPCategoryServlet</servlet-name>
+		<url-pattern>/ModPCategoryServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddPCategoryServlet</servlet-name>
+		<url-pattern>/AddPCategoryServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ModifyAmountServlet</servlet-name>
+		<url-pattern>/ModifyAmountServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ChildrenServlet</servlet-name>
+		<url-pattern>/ChildrenServlet</url-pattern>
+	</servlet-mapping>
   <servlet-mapping>
-    <servlet-name>GetParentCategory</servlet-name>
-    <url-pattern>/GetParentCategory</url-pattern>
+    <servlet-name>GetCartServlet</servlet-name>
+    <url-pattern>/GetCartServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>ModPCategoryServlet</servlet-name>
-    <url-pattern>/ModPCategoryServlet</url-pattern>
+    <servlet-name>DelCCategoryServlet</servlet-name>
+    <url-pattern>/DelCCategoryServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>AddPCategoryServlet</servlet-name>
-    <url-pattern>/AddPCategoryServlet</url-pattern>
+    <servlet-name>AddCCategoryServlet</servlet-name>
+    <url-pattern>/AddCCategoryServlet</url-pattern>
   </servlet-mapping>
-	
+  <servlet-mapping>
+    <servlet-name>UpdateChildrenServlet</servlet-name>
+    <url-pattern>/UpdateChildrenServlet</url-pattern>
+  </servlet-mapping>
+
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
-	
+
 	<filter>
 		<filter-name>SetCharacterEncoding</filter-name>
 		<filter-class>cn.thepetshop.filter.SetCharacterEncodingFilter</filter-class>
@@ -79,11 +129,11 @@
 			<param-value>true</param-value>
 		</init-param>
 	</filter>
-	
+
 	<filter-mapping>
 		<filter-name>SetCharacterEncoding</filter-name>
 		<servlet-name>action</servlet-name>
 	</filter-mapping>
-	
+
 </web-app>
 

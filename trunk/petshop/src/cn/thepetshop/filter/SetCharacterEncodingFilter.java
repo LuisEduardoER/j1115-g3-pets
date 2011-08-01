@@ -31,6 +31,8 @@ public class SetCharacterEncodingFilter implements Filter {
 
 		// Pass control on to the next filter
 		chain.doFilter(request, response);
+		
+		
 
 	}
 

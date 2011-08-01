@@ -35,14 +35,14 @@
 			<font size="3" color="red">
 			
 			</font>
-			<form action="UpdateUserPass"Action method="post">
+			<form action="/petshop/updateUserPass.do"  method="post">
 				<table border="1px;">
 					<tr>
 						<th>
 							原始密码
 						</th>
 						<td>
-							<input type="text" name="password" />
+							<input type="text" name="oldpass" />
 						</td>
 					</tr>
 					<tr>
@@ -50,7 +50,7 @@
 							新密码
 						</th>
 						<td>
-							<input type="text" name="newpassword1" />
+							<input type="text" name="newpass" />
 						</td>
 					</tr>
 					<tr>
@@ -58,7 +58,7 @@
 							确认密码
 						</th>
 						<td>
-							<input type="text" name="newpassword2" />
+							<input type="text" name="newpass1" />
 						</td>
 					</tr>
 					<tr>

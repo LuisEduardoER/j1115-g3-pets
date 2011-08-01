@@ -8,9 +8,11 @@ import java.sql.Statement;
 import java.util.*;
 
 import cn.thepetshop.form.User;
+import cn.thepetshop.object.Cart;
 import cn.thepetshop.object.Goods;
 import cn.thepetshop.object.Order;
-import cn.thepetshop.object.OrderShow;
+import cn.thepetshop.object.OrderInfo;
+import cn.thepetshop.object.OrderedGoods;
 
 public class PetDAO {
 
@@ -24,7 +26,7 @@ public class PetDAO {
 	private Connection getConnection() throws SQLException,
 			ClassNotFoundException {
 		Class.forName("oracle.jdbc.driver.OracleDriver");
-		String url = "driver:oracle:thin:@127.0.0.1:1521:orcl";
+		String url = "driver:oracle:thin:@172.16.53.56:1521:orcl";
 		return DriverManager.getConnection(url, "scott", "tiger");
 	}
 
@@ -195,23 +197,31 @@ public class PetDAO {
 	 * @param password
 	 * @return boolean
 	 */
-	public boolean updateUserPass(String userid, String password) {
+	public boolean updateUserPass(String userid, String oldpass,String newpass) {
 		Connection con = null;
 		Statement st = null;
+		ResultSet rs=null;
+		String str="";
 		boolean b = false;
 		try {
 			con = getConnection();
 			st = con.createStatement();
-			String sql = "update p_users set u_pass='" + password
-					+ "' where u_name='" + userid + "'";
-			System.out.println(sql);
-			int conn = st.executeUpdate(sql);
-			if (conn == 1)
-				b = true;
+			String sql = "select u_pass from p_users where u_id="+userid;
+			rs=st.executeQuery(sql);
+			if(rs.next()){
+				str=rs.getString(1);
+			}
+			if(str.equals(oldpass)){
+				sql="update p_users set u_pass='"+newpass+"' where u_id="+userid;
+				int i=st.executeUpdate(sql);
+				if(i==1){
+					b=true;
+				}
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			free(con, st, null);
+			free(con, st, rs);
 		}
 		return b;
 	}
@@ -302,7 +312,7 @@ public class PetDAO {
 		try {
 			con=getConnection();
 			st=con.createStatement();
-			String sql="select o_id,o_name,o_price from p_goods where c_id="+category;
+			String sql="select g_id,g_name,g_price from p_goods where c_id = "+category;
 			rs=st.executeQuery(sql);
 			if(rs.next()){
 				Goods goods=new Goods();
@@ -336,12 +346,13 @@ public class PetDAO {
 		try {
 			con=getConnection();
 			st=con.createStatement();
-			String sql="select c_id,c_name from p_category where p_id = 0";
+			String sql="select * from p_category where p_id = 0";
 			rs=st.executeQuery(sql);
 			while(rs.next()){
 				CategoryJavaBean cjb = new CategoryJavaBean();
 				cjb.setCid(rs.getInt(1));
-				cjb.setCname(rs.getString(2));
+				cjb.setPid(rs.getInt(2));
+				cjb.setCname(rs.getString(3));
 				list.add(cjb);
 			}
 		} catch (SQLException e) {
@@ -366,7 +377,6 @@ public class PetDAO {
 			con=getConnection();
 			st=con.createStatement();
 			String sql="update p_category set c_name = '"+cname+"' where c_id="+cid;
-			System.out.println(sql);
 			st.executeUpdate(sql);
 			
 		} catch (SQLException e) {
@@ -389,7 +399,342 @@ public class PetDAO {
 			con=getConnection();
 			st=con.createStatement();
 			String sql="insert into p_category(p_id,c_name)values (0,'"+cname+"')";
-			System.out.println(sql);
+			st.executeUpdate(sql);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}finally{
+			free(con,st,null);
+		}
+	}
+	/**
+	 * 根据订单id获取订单内含有的商品list
+	 * @param orderid
+	 * @return
+	 */
+	public List<OrderedGoods> getOrderedGoods(int orderid){
+		List<OrderedGoods> list=new ArrayList<OrderedGoods>();
+		Connection con=null;
+		Statement st=null;
+		ResultSet rs=null;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			String sql="select * from p_orders_info a,p_goods b where a.g_id=b.g_id and a.o_id="+orderid;
+			rs=st.executeQuery(sql);
+			while(rs.next()){
+				OrderedGoods og=new OrderedGoods();
+				og.setGoodsid(rs.getInt(2));
+				og.setNum(rs.getInt(3));
+				og.setGoodsPrice(rs.getDouble(4));
+				og.setGoodsName(rs.getString(7));
+				list.add(og);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			free(con,st,rs);
+		}
+		return list;
+	}	
+	
+	/**
+	 * 根据用户id获取用户所有订单信息
+	 * @param userid
+	 * @return
+	 */
+	public List<OrderInfo> getOrderInfoByUserId(int userid){
+		List<OrderInfo> list=new ArrayList<OrderInfo>();
+		Connection con=null;
+		Statement st=null;
+		ResultSet rs=null;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			String sql="select * from p_orders where u_id="+userid;;
+			rs=st.executeQuery(sql);
+			while(rs.next()){
+				Order o=new Order();
+				o.setOrderId(rs.getInt(1));
+				o.setTime(rs.getDate(3));
+				o.setReceiver(rs.getString(4));
+				o.setAddress(rs.getString(5));
+				o.setPhone(rs.getString(6));
+				o.setState(rs.getInt(7));
+				List<OrderedGoods> goods =new ArrayList<OrderedGoods>();
+				goods=getOrderedGoods(rs.getInt(1));
+				OrderInfo oi=new OrderInfo();
+				oi.setOrder(o);
+				oi.setGoodsList(goods);
+				list.add(oi);				
+			}			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			free(con,st,rs);
+		}
+		return list;
+	}
+	
+	/**
+	 * 根据订单编号修改订单状态
+	 * @param orderid
+	 * @param tradeStatus
+	 */
+	public void updateOrderSatatus(int orderid,int tradeStatus){
+		Connection con=null;
+		Statement st=null;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			String sql="update p_orders set o_state = "+tradeStatus+" where o_id = "+orderid;
+			st.executeUpdate(sql);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			free(con,st,null);
+		}
+	}
+	
+	/**
+	 * 将评价分数加入到数据库
+	 * @param orderid
+	 * @param score
+	 */
+	public void addEvalute(int goodid,int score ){
+		Connection con=null;
+		Statement st=null;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			String sql="update p_goods set g_score = ("+score+" + g_score)/g_sold";
+			st.executeQuery(sql);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * 根据订单编号删除订单
+	 * @param orderid
+	 */
+	public void deleteOreder(int orderid){
+		Connection con=null;
+		Statement st=null;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			String sql="delete from p_orders where o_id = "+orderid;
+			st.executeUpdate(sql);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			free(con,st,null);
+		}
+	}
+	
+	/**
+	 * 根据用户编号修改用户的余额  mo
+	 * @param userid
+	 * @param money
+	 */
+	public void updateusermoney(int userid,double money){
+		Connection con=null;
+		Statement st=null;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			String sql="";
+			st.executeUpdate(sql);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			free(con,st,null);
+		}
+	}
+	
+	/**
+	 * 根据传入的商品id和新的数量，
+	 * 从数据库的购物车表获取并更改数量
+	 * 
+	 * @param userid 用户id
+	 * @param goodsid 商品id
+	 * @param newnum 需要修改的数量
+	 * @return 如果修改成功返回 "changesuccess"
+	 * 如果修改时商品库存不足，则返回商品库存数量的String值
+	 * 如果修改时发现传入数量和购物车数量相同则返回"unchange"
+	 */
+	public String modifyAmount(String userid,String goodsid, String newnum) {
+		Connection con=null;
+		Statement st=null;
+		ResultSet rs=null;
+		int leftnum=0;
+		int buynum=0;
+		int	changenum=Integer.valueOf(newnum);
+		String str="";
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			String sql="select g_num from p_goods where g_id="+goodsid;
+			rs=st.executeQuery(sql);
+			if(rs.next()){
+				leftnum=rs.getInt(1);
+			}
+			sql="select i_num from p_cart where u_id="+userid+" and g_id="+goodsid;
+			rs=st.executeQuery(sql);
+			if(rs.next()){
+				buynum=rs.getInt(1);
+			}
+			if(changenum==buynum){
+				str="unchange";
+			}else if(changenum>leftnum){
+				str=String.valueOf(leftnum);
+			}else{
+				sql="update p_cart set i_num ="+changenum+"where g_id="+goodsid+"and u_id="+userid;
+				st.executeUpdate(sql);
+				str="changesuccess";
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			free(con,st,rs);
+		}
+		return str;
+	}
+
+	/**
+	 * 根据父分类cid获取子分类
+	 * @param category
+	 * @return
+	 */
+	public List getChildrenCategory(int cid){
+		List list= new ArrayList();
+		Connection con=null;
+		Statement st=null;
+		ResultSet rs = null;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			String sql="select * from p_category where p_id ="+cid;
+			rs = st.executeQuery(sql);
+			while (rs.next()) {
+				CategoryJavaBean ccjb = new CategoryJavaBean();
+				ccjb.setCid(rs.getInt(1));
+				ccjb.setPid(rs.getInt(2));
+				ccjb.setCname(rs.getString(3));
+				list.add(ccjb);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}finally{
+			free(con,st,rs);
+		}
+		return list;
+	}
+	
+	/**
+	 * 得到用户的购物车对象
+	 * @param userid 用户id
+	 * @return 返回用户的购物车
+	 */
+	public Cart getShoppingCart(String userid) {
+		Cart c = new Cart();
+		List<OrderedGoods> l=new ArrayList<OrderedGoods>();
+		Connection con=null;
+		Statement st=null;
+		ResultSet rs=null;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			String sql="select * from p_cart,p_goods where p_cart.g_id = p_goods.g_id and u_id = "+userid;
+			rs=st.executeQuery(sql);
+			while(rs.next()){				
+				OrderedGoods og=new OrderedGoods();
+				og.setGoodsid(rs.getInt(2));
+				og.setNum(rs.getInt(3));
+				og.setGoodsName(rs.getString(6));
+				og.setGoodsPrice(rs.getDouble(7));
+				og.setGoodsBrief(rs.getString(9));				
+				l.add(og);				
+			}
+			c.setGoodsList(l);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			free(con,st,rs);
+		}
+		return c;
+	}
+
+	/**
+	 * 删除子分类
+	 * @param cjbno
+	 */
+	public void deleteChildrenCategory(String[] cjbno) {
+		Connection con = null;
+		Statement st = null;
+		try {
+			con = getConnection();
+			st = con.createStatement();
+			for (int i = 0; i < cjbno.length; i++) {
+				String sql = "delete from p_category where c_id ="+cjbno[i];
+				st.addBatch(sql);
+			}
+			int[] is =st.executeBatch();
+		} catch (Exception e) {
+		}finally{
+			free(con, st, null);
+		}
+	}
+
+	/**
+	 * 添加子分类
+	 * @param pid 即属于哪个父分类
+	 * @param addcname 添加的子分类名称
+	 */
+	public void addChildrenCategory(int pid, String addcname) {
+		Connection con=null;
+		Statement st=null;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			String sql="insert into p_category(p_id,c_name)values ("+pid+",'"+addcname+"')";
 			st.executeUpdate(sql);
 			
 		} catch (SQLException e) {
@@ -401,38 +746,30 @@ public class PetDAO {
 		}
 	}
 
-	//根据用户编号获得所有订单
-	public List<OrderShow> getOrdersByUserId(int userId)
-	{
-	
-		List<OrderShow> list = new ArrayList<OrderShow>();
-		return list;
+	/**
+	 * 修改子分类
+	 * @param pno 即属于哪个父分类
+	 * @param newname 修改的子分类名称
+	 */
+	public void modChildrenCategory(int pno, String newname) {
+		Connection con=null;
+		Statement st=null;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			String sql="update p_category set c_name = '"+newname+"' where p_id="+pno;
+			st.executeUpdate(sql);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}finally{
+			free(con,st,null);
+		}
 	}
-	
-	//根据订单编号修改订单状态
-	public void updateOrderSatatus(int orderid,int tradeStatus)
-	{
-	
-	
-	}
-	//将评价分数加入到数据库
-	public void addEvalute(int orderid,int score )
-	{
-		
-	}
-	
-	//根据订单编号删除订单
-	public void deleteOreder(int orderid)
-	{
-		
-	}
-	//根据用户编号修改用户的余额  money=用户余额
-	public void updateusermoney(int userid,double money){
-		
-	}
-	//根据订单编号获得订单的总金额
-	public double getmoneybyid(String orderid){
-		 double money=0;
-		 return money;
-	}
+
+
+
+
 }

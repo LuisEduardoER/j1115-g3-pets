@@ -18,4 +18,9 @@
 		<put name="homecontent" value="/pages/homecontent.jsp"></put>
 	</definition>
 	
+	<definition name="GoodListView" template="/template/goodtemplate.jsp">
+		<put name="left" value="/jsp/goods/goods_menu.jsp"></put>
+		<put name="right" value="/jsp/goods/goods_list.jsp"></put>
+	</definition>
+	
 </tiles-definitions>

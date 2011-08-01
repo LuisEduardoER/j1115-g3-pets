@@ -18,9 +18,10 @@ public class EvaluteAction extends Action {
 			ServletRequest request, ServletResponse response) throws Exception {
 
 
+		int goodsid= Integer.parseInt(request.getParameter("goodsid"));
 		int orderid= Integer.parseInt(request.getParameter("orderid"));
 		int score = Integer.parseInt(request.getParameter("score"));
-		new PetDAO().addEvalute(orderid, score);
+		new PetDAO().addEvalute(goodsid, score);
 		new PetDAO().updateOrderSatatus(orderid,4);
 		return mapping.findForward("evalute");
 	}

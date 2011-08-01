@@ -5,38 +5,48 @@
 	<data-sources />
 	<form-beans>
 		<form-bean name="userForm" type="cn.thepetshop.form.UserForm" />
-    <form-bean name="modAdminPassForm" type="cn.thepetshop.form.ModAdminPassForm" />
-	
+		<form-bean name="modAdminPassForm" type="cn.thepetshop.form.ModAdminPassForm" />
+
+		<form-bean name="goodsForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="good" type="java.lang.String"></form-property>
+		</form-bean>
+    <form-bean name="orderForm" type="cn.thepetshop.form.OrderForm" />
 	</form-beans>
 
 	<global-exceptions />
 	<global-forwards />
 	<action-mappings>
-		<action path="/pay" type="cn.thepetshop.action.PayAction" validate="false">
+		<action path="/pay" type="cn.thepetshop.action.PayAction"
+			validate="false">
 			<forward name="paySucceed" path="/paySucceed.jsp"></forward>
 			<forward name="payfailed" path="/payFailed.jsp"></forward>
 		</action>
-		
-		<action path="/sure" type="cn.thepetshop.action.SureAction" validate="false">
+
+		<action path="/sure" type="cn.thepetshop.action.SureAction"
+			validate="false">
 			<forward name="sure" path="/trading.do"></forward>
 		</action>
-		
-		<action path="/evalute" type="cn.thepetshop.action.EvaluteAction" validate="false">
+
+		<action path="/evalute" type="cn.thepetshop.action.EvaluteAction"
+			validate="false">
 			<forward name="evalute" path="/trading.do"></forward>
 		</action>
-		
-		<action path="/delete" type="cn.thepetshop.action.DeleteAction" validate="false">
+
+		<action path="/delete" type="cn.thepetshop.action.DeleteAction"
+			validate="false">
 			<forward name="deleteSucceed" path="/trading.do"></forward>
 		</action>
-	
-		<action path="/history" type="cn.thepetshop.action.OrderShowAction" validate="false">
+
+		<action path="/history" type="cn.thepetshop.action.OrderShowAction"
+			validate="false">
 			<forward name="show" path="/orderShow.jsp"></forward>
 		</action>
-		
-		<action path="/trading" type="cn.thepetshop.action.NewOrderShowAction" validate="false">
+
+		<action path="/trading" type="cn.thepetshop.action.NewOrderShowAction"
+			validate="false">
 			<forward name="show1" path="/newOrderShow.jsp"></forward>
 		</action>
-		
+
 		<action path="/index" type="org.apache.struts.actions.ForwardAction"
 			parameter="IndexViewUnLogin"></action>
 
@@ -46,7 +56,7 @@
 		<action path="/login" type="cn.thepetshop.action.LoginAction"
 			name="userForm" validate="false">
 		</action>
-		<action path="/getUserMsgAction" type="cn.thepetshop.action.GetUserMsgAction"
+		<action path="/getUserMsg" type="cn.thepetshop.action.GetUserMsgAction"
 			name="userForm" validate="false">
 		</action>
 		<action path="/updateUserPass" type="cn.thepetshop.action.UpdateUserPassAction"
@@ -56,16 +66,27 @@
 			validate="false">
 			<set-property property="cancellable" value="true" />
 		</action>
+		<action attribute="modAdminPassForm" input="/admin/modAdminPass.jsp"
+			name="modAdminPassForm" path="/modAdminPass" scope="request"
+			type="cn.thepetshop.action.ModAdminPassAction">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action path="/getUserMoney" type="cn.thepetshop.action.GetUserMoneyAction">
+		</action>
+		<action path="/listGoods" type="cn.thepetshop.action.ListGoodsAction"
+			name="goodsForm" validate="false">
+			<set-property property="cancellable" value="true" />
+		</action>
     <action
-      attribute="modAdminPassForm"
-      input="/admin/modAdminPass.jsp"
-      name="modAdminPassForm"
-      path="/modAdminPass"
-      scope="request"
-      type="cn.thepetshop.action.ModAdminPassAction">
+      path="/submitOrder"
+      type="cn.thepetshop.action.SubmitOrderAction"
+      name="orderForm"
+      validate="false">
       <set-property property="cancellable" value="true" />
     </action>
-	
+    <action path="/getParentCategory" type="cn.thepetshop.action.GetParentCategoryAction">
+      <set-property property="cancellable" value="true" />
+    </action>
 
 	</action-mappings>
 	<message-resources parameter="ApplicationResources" />

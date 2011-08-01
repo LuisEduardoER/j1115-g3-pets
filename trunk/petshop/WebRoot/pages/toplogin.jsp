@@ -29,7 +29,7 @@
 		</a>|
 		<a href="#">Create Account</a>
 		<fieldset id="signin_menu">
-			<form method="post" id="signin" action="/login">
+			<form method="post" id="signin" action="/login.do">
 				<p>
 				<label for="username">
 					Username

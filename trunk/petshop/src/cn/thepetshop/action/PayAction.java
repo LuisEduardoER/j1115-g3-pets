@@ -13,6 +13,8 @@ import org.apache.struts.action.ActionMapping;
 
 import cn.thepetshop.dao.PetDAO;
 import cn.thepetshop.form.User;
+import cn.thepetshop.object.Order;
+import cn.thepetshop.object.OrderInfo;
 import cn.thepetshop.object.OrderShow;
 
 public class PayAction extends Action {
@@ -21,12 +23,20 @@ public class PayAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
-
+			double sum=0;
 			HttpSession session=request.getSession();
 			int userId = (Integer)session.getAttribute("userId");
 		
 			String orderid=request.getParameter("orderid");
-			double sum=new PetDAO().getmoneybyid(orderid);
+			List<OrderInfo> list = new PetDAO().getOrderInfoByUserId(userId);
+			for(int i=0;i<list.size();i++){
+				OrderInfo order=list.get(1);
+				Order od=order.getOrder();
+				if(od.getOrderId()==Integer.parseInt(orderid)){
+					sum=order.getSumMoney();
+					break;
+				}
+			}
 			User user=new PetDAO().findUserById(Integer.toString(userId));
 			int usermoney=Integer.parseInt(user.getMoney());
 			if(usermoney>=sum){

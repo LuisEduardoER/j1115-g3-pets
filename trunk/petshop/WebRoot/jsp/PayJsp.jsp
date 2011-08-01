@@ -9,27 +9,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     
     <title>My JSP 'PayJsp.jsp' starting page</title>
-
-	<script type="text/javascript">
-		function check(){
-			for(var i=1;i<4;i++){
-				var test = document.getElementById("pay"+i);
-			if(test.checked){
-					if(test.value==1){
-							return false;
-					}
-					if(test.value==3){
-						alert("¸¶¿î³É¹¦£¡");
-						return true;
-					}
-					if(test.value==2){
-						
-					}
-				
-				}
-			}	
-		}
-	</script>
   </head>
   
   <body>
