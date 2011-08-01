@@ -11,9 +11,9 @@
 			<form-property name="good" type="java.lang.String"></form-property>
 		</form-bean>
 		<form-bean name="orderForm" type="cn.thepetshop.form.OrderForm" />
-    <form-bean name="orderForm" type="cn.thepetshop.form.OrderForm" />
-    <form-bean name="addPCategoryForm" type="cn.thepetshop.form.AddPCategoryForm" />
-    <form-bean name="modPCategoryForm" type="cn.thepetshop.form.ModPCategoryForm" />
+		<form-bean name="orderForm" type="cn.thepetshop.form.OrderForm" />
+		<form-bean name="addPCategoryForm" type="cn.thepetshop.form.AddPCategoryForm" />
+		<form-bean name="modPCategoryForm" type="cn.thepetshop.form.ModPCategoryForm" />
 	</form-beans>
 
 	<global-exceptions />
@@ -91,29 +91,22 @@
 			<set-property property="cancellable" value="true" />
 		</action>
 
-    <action
-      path="/submitOrder"
-      type="cn.thepetshop.action.SubmitOrderAction"
-      name="orderForm"
-      validate="false">
-      <set-property property="cancellable" value="true" />
-    </action>
-    <action path="/getParentCategory" 
-    type="cn.thepetshop.action.GetParentCategoryAction">
-      <set-property property="cancellable" value="true" />
-    </action>
-    <action path="/modPCategory"
-    name="modPCategoryForm"
-    type="cn.thepetshop.action.ModPCategoryAction">
-     <set-property property="cancellable" value="true" />
-    </action>
-    <action path="/addPCategory" 
-    name="addPCategoryForm"
-    attribute="addPCategoryForm"
-    type="cn.thepetshop.action.AddPCategoryAction">
-      <set-property property="cancellable" value="true" />
-    </action>
-   
+		<action path="/submitOrder" type="cn.thepetshop.action.SubmitOrderAction"
+			name="orderForm" validate="false">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action path="/getParentCategory" type="cn.thepetshop.action.GetParentCategoryAction">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action path="/modPCategory" name="modPCategoryForm"
+			type="cn.thepetshop.action.ModPCategoryAction">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action path="/addPCategory" name="addPCategoryForm" attribute="addPCategoryForm"
+			type="cn.thepetshop.action.AddPCategoryAction">
+			<set-property property="cancellable" value="true" />
+		</action>
+
 
 	</action-mappings>
 	<message-resources parameter="ApplicationResources" />
