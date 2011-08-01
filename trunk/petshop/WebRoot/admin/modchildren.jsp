@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ include file="../taglib/common.jsp" %>
 
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -8,19 +9,20 @@
 	
   </head>
   
-  <body>
+  <body onload="">
+  	<html:form action="/updateChildren">
     <%
     	String cno = request.getParameter("cno");
     	String pno = request.getParameter("pno");
-    	out.println("父编号<input type='text' name='cno' value="+cno+">");
-    	out.println("<br>");
-    	out.println("子编号<input type='text' name='pno' value="+pno+">");
-    	out.println("<br>");
-    	out.println("<input type='text' name='newname'/><br>");
-    	out.println("<br>");
-    	out.println("<input type='button' value='修改'>");
+    	request.setAttribute("cno",cno);
+    	request.setAttribute("pno",pno);
+    	
      %>
-     
-     
+  	 父编号<html:text property="cno" value="${cno}"></html:text><br>
+  	 子编号<html:text property="pno" value="${pno}"></html:text><br>
+     名称<html:text property="newname" styleId="newname" value=""></html:text><br>
+     <html:submit value="修改"></html:submit>
+ 
+    </html:form> 
   </body>
 </html>

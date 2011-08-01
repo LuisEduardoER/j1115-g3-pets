@@ -18,6 +18,7 @@
     <form-bean name="goodsIdForm" type="org.apache.struts.action.DynaActionForm">
 		<form-property name="goodsid" type="java.lang.String"></form-property>
 	</form-bean>
+    <form-bean name="updateChildrenForm" type="cn.thepetshop.form.UpdateChildrenForm" />
 	</form-beans>
 
 	<global-exceptions />
@@ -129,6 +130,14 @@
 		<action path="/addToCart" name="goodsIdForm" type="cn.thepetshop.action.AddToCartAction">
 			<set-property property="cancellable" value="true" />
 		</action>
+    <action
+      attribute="updateChildrenForm"
+      name="updateChildrenForm"
+      path="/updateChildren"
+      scope="request"
+      type="cn.thepetshop.action.UpdateChildrenAction">
+      <set-property property="cancellable" value="true" />
+    </action>
 
 	</action-mappings>
 	<message-resources parameter="ApplicationResources" />

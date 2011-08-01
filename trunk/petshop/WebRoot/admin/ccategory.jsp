@@ -53,13 +53,9 @@
 		    			<td>${cjb.cname }</td>
 		    			<td width="100"><input type="checkbox" name='cjbnos' value='${cjb.cid }' >删除时勾选</td>
 		    			<td>
-		    		
-		    			<input type="text" id="newname" name="newname">
-		    			<!-- 
-		    			<a href="UpdateChildrenServlet?pno=${cjb.cid }&cno=${cjb.pid}">修改</a>
-		    			 -->
-		    			<a href="admin/modchildren.jsp?pno=${cjb.cid }&cno=${cjb.pid}">修改</a>
-		    			 
+
+		    			
+		    			 <a href="admin/modchildren.jsp?pno=${cjb.cid }&cno=${cjb.pid}">修改</a>
 		    			</td>
 		    			
 

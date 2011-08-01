@@ -757,7 +757,7 @@ public class PetDAO {
 		try {
 			con=getConnection();
 			st=con.createStatement();
-			String sql="update p_category set c_name = '"+newname+"' where p_id="+pno;
+			String sql="update p_category set c_name = '"+newname+"' where c_id="+pno;
 			st.executeUpdate(sql);
 			
 		} catch (SQLException e) {
