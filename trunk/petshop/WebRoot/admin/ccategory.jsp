@@ -54,7 +54,6 @@
 		    			<td width="100"><input type="checkbox" name='cjbnos' value='${cjb.cid }' >删除时勾选</td>
 		    			<td>
 
-		    			
 		    			 <a href="admin/modchildren.jsp?pno=${cjb.cid }&cno=${cjb.pid}">修改</a>
 		    			</td>
 		    			
