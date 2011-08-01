@@ -17,6 +17,8 @@ public class ModPCategoryServlet extends HttpServlet {
 		response.setContentType("text/html");
 		String cid = request.getParameter("cjbnos");
 		String newcname = request.getParameter("newCategory");
+		System.out.println(cid);
+		System.out.println(newcname);
 		if (cid==null||cid.equals("")||newcname==null||newcname.equals("")) {
 				request.getRequestDispatcher("/getParentCategory.do").forward(request, response);
 		}else {
