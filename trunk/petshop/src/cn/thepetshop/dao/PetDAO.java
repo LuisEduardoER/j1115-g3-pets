@@ -26,7 +26,7 @@ public class PetDAO {
 	private Connection getConnection() throws SQLException,
 			ClassNotFoundException {
 		Class.forName("oracle.jdbc.driver.OracleDriver");
-		String url = "driver:oracle:thin:@172.16.53.56:1521:orcl";
+		String url = "driver:oracle:thin:@127.0.0.1:1521:orcl";
 		return DriverManager.getConnection(url, "scott", "tiger");
 	}
 

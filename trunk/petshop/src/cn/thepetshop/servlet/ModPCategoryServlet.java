@@ -18,14 +18,14 @@ public class ModPCategoryServlet extends HttpServlet {
 		String cid = request.getParameter("cjbnos");
 		String newcname = request.getParameter("newCategory");
 		if (cid==null||cid.equals("")||newcname==null||newcname.equals("")) {
-				request.getRequestDispatcher("GetParentCategory").forward(request, response);
+				request.getRequestDispatcher("/getParentCategory.do").forward(request, response);
 		}else {
 			System.out.println(cid);
 			System.out.println(newcname);
 			int cidnum = Integer.parseInt(cid);
 			PetDAO pDao = new PetDAO();
 			pDao.modParentCategory(cidnum, newcname);
-			request.getRequestDispatcher("GetParentCategory").forward(request, response);
+			request.getRequestDispatcher("/getParentCategory.do").forward(request, response);
 		}
 		
 	}

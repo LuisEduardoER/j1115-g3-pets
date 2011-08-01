@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-
+<%@ include file="../taglib/common.jsp" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -37,7 +37,12 @@ function showmenu(strID){
     		<th align="left" style="cursor: pointer;" onclick="javascript:showmenu(lay2)">商品分类管理</th>
     	</tr>
     	<tr id="lay2" style="display:block;">
+    	<td><html:link action="/getParentCategory" target="show">分类管理</html:link></td>
+    	<!-- 
+    	
+    	
     	<td><a href="../GetParentCategory" target="show">分类管理</a></td>
+    	 -->
     	</tr>
   
     	

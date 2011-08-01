@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ include file="../taglib/common.jsp" %>
 <%@page import="cn.thepetshop.dao.CategoryJavaBean"%>
 
 
@@ -16,7 +17,8 @@
   </head>
   
   <body>
-  <form action="ModPCategoryServlet" method="post" >
+
+  <html:form action="modPCategory.do" >
     	<table border="1" width="80%" style="border-collapse: collapse;">
     		<tr>
     			<th>编号</th>
@@ -45,9 +47,11 @@
     		
     	</table>
     	  
-    	父分类名称:<input type="text" id="newCategory" name="newCategory">
-    	 <input type="submit"" value="修改选中的分类" />
-    	</form>
+    	父分类名称:
+    	<html:text property="newCategory" styleId="newCategory" value=""></html:text>
+    	<html:submit value="修改选中的分类"></html:submit>
+    
+    	</html:form>
     	<form action="AddPCategoryServlet" method="post">
     	 添加父分类:<input type="text" id="addCategory" name="addCategory">
     	 		  <input type="submit" value="添加分类">

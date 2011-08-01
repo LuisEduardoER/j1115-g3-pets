@@ -88,6 +88,10 @@
     type="cn.thepetshop.action.GetParentCategoryAction">
       <set-property property="cancellable" value="true" />
     </action>
+    <action path="/modPCategory"
+    type="cn.thepetshop.action.ModPCategoryAction">
+     <set-property property="cancellable" value="true" />
+    </action>
    
 
 	</action-mappings>

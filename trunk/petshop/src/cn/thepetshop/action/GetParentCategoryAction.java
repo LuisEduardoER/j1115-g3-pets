@@ -23,7 +23,6 @@ public class GetParentCategoryAction extends Action {
 		PetDAO pdao = new PetDAO();
 		List list = pdao.getCategoryList();
 		request.setAttribute("parentList", list);
-		//request.getRequestDispatcher("/admin/pcategory.jsp").forward(request, response);
 		return new ActionForward("/admin/pcategory.jsp");
 	}
 }
