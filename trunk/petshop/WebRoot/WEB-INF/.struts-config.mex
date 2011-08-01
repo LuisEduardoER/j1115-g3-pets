@@ -18,6 +18,7 @@
   <StrutsActivity path="/submitOrder.do" location="50,1350" dimension="244,84" />
   <StrutsActivity path="/getParentCategory.do" location="350,1350" dimension="311,104" />
   <StrutsActivity path="/modPCategory.do" location="1250,450" dimension="289,104" />
+  <StrutsActivity path="/addPCategory.do" location="1250,850" dimension="285,104" />
   <StrutsActivity path="/payFailed.jsp" location="50,1050" dimension="124,48" />
   <StrutsActivity path="/paySucceed.jsp" location="350,1050" dimension="130,48" />
   <StrutsActivity path="/orderShow.jsp" location="650,1050" dimension="124,48" />
@@ -25,7 +26,7 @@
   <StrutsActivity path="/admin/modAdminPass.jsp" location="650,450" dimension="178,48" />
   <StrutsActivity path="/modAdminPass.jsp" location="50,450" dimension="147,53" />
   <StrutsActivity path="/form/modAdminPass.jsp" location="50,350" dimension="172,48" />
-  <StrutsActivity path="/addPCategory.do" />
+  <StrutsActivity path="/addToCart.do" location="1250,1050" dimension="264,104" />
   <StrutsTransition id="/admin/modAdminPass.jsp,null,/modAdminPass.do,2" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="0,0" />
