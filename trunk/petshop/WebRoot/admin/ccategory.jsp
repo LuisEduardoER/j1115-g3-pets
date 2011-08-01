@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ include file="../taglib/common.jsp" %>
 <%@page import="cn.thepetshop.dao.CategoryJavaBean"%>
 
 
@@ -30,7 +31,8 @@
   </head>
   
   <body>
-	<form action="DelCCategoryServlet" name="delForm" method="post" onsubmit="return del()">
+  <html:form action="/delCCategory" method="post" onsubmit="del()" >
+	
     	<table border="1" width="80%" style="border-collapse: collapse;">
     		<tr>
     			<th>父编号</th>
@@ -69,13 +71,14 @@
     	 			%>	
     		
     	</table>
-    	<input type="hidden" name="parno" value='${cjb.pid}'/>
-    	<input type="submit" value="删除选中的分类"/>
-    	</form>
-    	<form action="AddCCategoryServlet?pno=${cjb.pid}" method="post">
-    	 添加子分类:<input type="text" id="addCCategory" name="addCCategory">
-    	 		  <input type="submit" value="添加分类">
-    	</form>
-    	
+    	<html:hidden property="parno" value="${cjb.pid}"/>
+    	<html:submit value="删除选中的分类"></html:submit>
+    	</html:form>
+
+		<html:form action="/addCCategory.do?pno=${cjb.pid}" method="post">
+    	 添加子分类:
+    	 <html:text property="addCCategory" styleId="addCCategory" value=""></html:text>
+    	 <html:submit value="添加分类"></html:submit>		
+    	</html:form>
 </body>
 </html>

@@ -17,7 +17,7 @@
   </head>
   
   <body>
-  <html:form action="/modPCategoryForm" method="post">
+  <form action="ModPCategoryServlet" method="post">
 
     	<table border="1" width="80%" style="border-collapse: collapse;">
     		<tr>
@@ -37,8 +37,9 @@
 		    			<td>${cjb.cid}</td>
 		    			<td>${cjb.cname }</td>
 		    			<td width="120">
-		    			<html:radio property="cjbnos" value="${cjb.cid }">修改时选中</html:radio></td>
-		    			<td><a  href="ChildrenServlet?parentno=${cjb.cid }">显示子分类</a></td>
+		    			<input type="radio" name="cjbnos" value="${cjb.cid }">修改时选中
+		    			</td>
+		    			<td><a  href="children.do?parentno=${cjb.cid }">显示子分类</a></td>
 		    		</tr>
     	
                    <%		
@@ -52,7 +53,7 @@
     	<html:text property="newCategory" styleId="newCategory" value=""></html:text>
     	<html:submit value="修改选中的分类"></html:submit>
     
-    	</html:form>
+    </form>
     	<html:form action="/addPCategory" method="post">
     	 添加父分类:
     	 <html:text property="addCategory" styleId="addCategory" value=""></html:text>
