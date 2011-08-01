@@ -57,38 +57,23 @@
 		<servlet-name>action</servlet-name>
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>GetParentCategory</servlet-name>
-		<url-pattern>/GetParentCategory</url-pattern>
-	</servlet-mapping>
+	
 	<servlet-mapping>
 		<servlet-name>ModPCategoryServlet</servlet-name>
 		<url-pattern>/ModPCategoryServlet</url-pattern>
 	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>AddPCategoryServlet</servlet-name>
-		<url-pattern>/AddPCategoryServlet</url-pattern>
-	</servlet-mapping>
+	
 	<servlet-mapping>
 		<servlet-name>ModifyAmountServlet</servlet-name>
 		<url-pattern>/ModifyAmountServlet</url-pattern>
 	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>ChildrenServlet</servlet-name>
-		<url-pattern>/ChildrenServlet</url-pattern>
-	</servlet-mapping>
+	
   <servlet-mapping>
     <servlet-name>GetCartServlet</servlet-name>
     <url-pattern>/GetCartServlet</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>DelCCategoryServlet</servlet-name>
-    <url-pattern>/DelCCategoryServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>AddCCategoryServlet</servlet-name>
-    <url-pattern>/AddCCategoryServlet</url-pattern>
-  </servlet-mapping>
+  
+  
   <servlet-mapping>
     <servlet-name>UpdateChildrenServlet</servlet-name>
     <url-pattern>/UpdateChildrenServlet</url-pattern>
