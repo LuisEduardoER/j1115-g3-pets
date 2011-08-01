@@ -16,9 +16,6 @@ public class ModPCategoryForm extends ActionForm {
 
 	private String newCategory;
 
-	
-
-	
 	public String getCjbnos() {
 		return cjbnos;
 	}
