@@ -122,4 +122,4 @@
 	%>
 </table>
 <br />
-<div align="center"><input type="button" value="提交订单" onclick="location.href='/shoppingcart/orderinfo.jsp'"/></div>
+<div align="center"><input type="button" value="确认" onclick="location.href='/shoppingcart/orderinfo.jsp'"/></div>
