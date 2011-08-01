@@ -24,7 +24,8 @@
   <StrutsActivity path="/admin/modAdminPass.jsp" location="650,450" dimension="178,48" />
   <StrutsActivity path="/modAdminPass.jsp" location="50,450" dimension="147,53" />
   <StrutsActivity path="/form/modAdminPass.jsp" location="50,350" dimension="172,48" />
-  <StrutsActivity path="/modPCategory.do" />
+  <StrutsActivity path="/modPCategory.do" location="650,1250" dimension="289,104" />
+  <StrutsActivity path="/addPCategory.do" location="1250,1250" dimension="285,104" />
   <StrutsTransition id="/admin/modAdminPass.jsp,null,/modAdminPass.do,2" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="739,450" />

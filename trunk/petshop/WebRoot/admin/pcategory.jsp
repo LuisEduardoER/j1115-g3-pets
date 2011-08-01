@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
 <%@ include file="../taglib/common.jsp" %>
 <%@page import="cn.thepetshop.dao.CategoryJavaBean"%>
 
@@ -17,8 +17,8 @@
   </head>
   
   <body>
+  <html:form action="/modPCategoryForm" method="post">
 
-  <html:form action="modPCategory.do" >
     	<table border="1" width="80%" style="border-collapse: collapse;">
     		<tr>
     			<th>编号</th>
@@ -36,7 +36,8 @@
 					 
 		    			<td>${cjb.cid}</td>
 		    			<td>${cjb.cname }</td>
-		    			<td width="120"><input type='radio' name='cjbnos' value='${cjb.cid }' >修改时选中</td>
+		    			<td width="120">
+		    			<html:radio property="cjbnos" value="${cjb.cid }">修改时选中</html:radio></td>
 		    			<td><a  href="ChildrenServlet?parentno=${cjb.cid }">显示子分类</a></td>
 		    		</tr>
     	
@@ -52,9 +53,11 @@
     	<html:submit value="修改选中的分类"></html:submit>
     
     	</html:form>
-    	<form action="AddPCategoryServlet" method="post">
-    	 添加父分类:<input type="text" id="addCategory" name="addCategory">
-    	 		  <input type="submit" value="添加分类">
-    	</form>
+    	<html:form action="/addPCategory" method="post">
+    	 添加父分类:
+    	 <html:text property="addCategory" styleId="addCategory" value=""></html:text>
+    	 <html:submit value="添加分类"></html:submit>
+    	 	
+    	</html:form>
   </body>
 </html>
