@@ -33,6 +33,7 @@
 	</form-bean>
     <form-bean name="updateChildrenForm" type="cn.thepetshop.form.UpdateChildrenForm" />
     <form-bean name="addNewGoodsForm" type="cn.thepetshop.form.AddNewGoodsForm" />
+    <form-bean name="modGoodsInfoForm" type="cn.thepetshop.form.ModGoodsInfoForm" />
 	</form-beans>
 
 	<global-exceptions />
@@ -206,6 +207,14 @@
       <set-property property="cancellable" value="true" />
     </action>
     <action path="/getGoodsInfo" type="cn.thepetshop.action.GetGoodsInfoAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action
+      attribute="modGoodsInfoForm"
+      name="modGoodsInfoForm"
+      path="/modGoodsInfo"
+      scope="request"
+      type="cn.thepetshop.action.ModGoodsInfoAction">
       <set-property property="cancellable" value="true" />
     </action>
 

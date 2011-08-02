@@ -38,7 +38,8 @@
   <StrutsActivity path="/orderShow.jsp" location="999,645" dimension="124,48" />
   <StrutsActivity path="/newOrderShow.jsp" location="386,368" dimension="142,48" />
   <StrutsActivity path="/admin/modAdminPass.jsp" location="656,461" dimension="178,48" />
-  <StrutsActivity path="/getGoodsInfo.do" />
+  <StrutsActivity path="/getGoodsInfo.do" location="1550,950" dimension="283,104" />
+  <StrutsActivity path="/modGoodsInfo.do" />
   <StrutsTransition id="/admin/modAdminPass.jsp,null,/modAdminPass.do,2" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="745,509" />
