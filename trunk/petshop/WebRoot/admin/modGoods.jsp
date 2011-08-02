@@ -10,7 +10,7 @@
   
   <body>
   <html:form action="/modGoodsInfo">
-   
+  <html:hidden property="gid" value="${onegoodslist.gid }"/>
     商品名称<html:text property="gname" value="${onegoodslist.gname }"></html:text><br>
     商品价格<html:text property="gprice" value="${onegoodslist.gprice }"></html:text><br>
     剩余数量<html:text property="gnum" value="${onegoodslist.gnum }"></html:text><br>

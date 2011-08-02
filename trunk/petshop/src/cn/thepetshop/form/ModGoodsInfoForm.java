@@ -13,6 +13,17 @@ public class ModGoodsInfoForm extends ActionForm {
 	private String gbrief;
 	private Integer gnum;
 	private Double gprice;
+	private Integer gid;
+
+	public Integer getGid() {
+		return gid;
+	}
+
+
+	public void setGid(Integer gid) {
+		this.gid = gid;
+	}
+
 
 	public String getGname() {
 		return gname;

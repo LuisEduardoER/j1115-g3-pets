@@ -23,10 +23,12 @@ public class ModGoodsInfoAction extends Action {
 		
 		double gprice = modGoodsInfoForm.getGprice();
 		int gnum = modGoodsInfoForm.getGnum();
+		int gid = modGoodsInfoForm.getGid();
 		String gname = modGoodsInfoForm.getGname();
 		String gbrief = modGoodsInfoForm.getGbrief();
+		
 		PetDAO petDAO = new PetDAO();
-		petDAO.modGoodsInfo(gname,gnum,gprice,gbrief);
-		return new ActionForward("/getGoodsInfo.do");
+		petDAO.modGoodsInfo(gid,gname,gnum,gprice,gbrief);
+		return new ActionForward("/showAllGoods.do");
 	}
 }

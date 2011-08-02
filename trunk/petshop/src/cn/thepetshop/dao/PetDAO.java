@@ -26,7 +26,7 @@ public class PetDAO {
 	private Connection getConnection() throws SQLException,
 			ClassNotFoundException {
 		Class.forName("oracle.jdbc.driver.OracleDriver");
-		String url = "driver:oracle:thin:@172.16.53.193:1521:orcl";
+		String url = "driver:oracle:thin:@127.0.0.1:1521:orcl";
 		return DriverManager.getConnection(url, "scott", "tiger");
 	}
 
@@ -1069,15 +1069,14 @@ public class PetDAO {
 		return gag;
 	}
 
-	public void modGoodsInfo(String gname, int gnum, double gprice,
+	public void modGoodsInfo(int gid,String gname, int gnum, double gprice,
 			String gbrief) {
 		Connection con=null;
 		Statement st=null;
 		try {
 			con=getConnection();
 			st=con.createStatement();
-			String sql="update p_goods set g_name = '"+gname+"',g_num="+gnum+",gprice="+gprice+",gbrief='"+gbrief+"'"; 
-			System.out.println(sql);
+			String sql="update p_goods set g_name = '"+gname+"',g_num="+gnum+",g_price="+gprice+",g_brief='"+gbrief+"' where g_id="+gid; 
 			st.executeUpdate(sql);
 			
 		} catch (SQLException e) {
