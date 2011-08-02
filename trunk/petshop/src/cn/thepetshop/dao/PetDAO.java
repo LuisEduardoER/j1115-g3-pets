@@ -5,8 +5,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 import cn.thepetshop.object.Cart;
@@ -367,6 +365,7 @@ public class PetDAO {
 	 * @param category
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	public List getCategoryList(){
 		List list= new ArrayList();
 		Connection con=null;
@@ -666,6 +665,7 @@ public class PetDAO {
 	 * @param category
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	public List getChildrenCategory(int cid){
 		List list= new ArrayList();
 		Connection con=null;
@@ -829,6 +829,8 @@ public class PetDAO {
 					"values("+userid+",sysdate,'"+receiver+"','"+address+"','"+phone+"',"+pay+")";
 			System.out.println("sql: "+sql);
 			st.executeUpdate(sql);
+			updateGoodsLeftNum(cart.getGoodsList());
+			clearCart(userid);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
@@ -838,12 +840,55 @@ public class PetDAO {
 		}
 		return oi;
 	}
+	
+	/**
+	 * 根据订单内商品购买个数更新商品剩余个数
+	 */
+	public void updateGoodsLeftNum(List list){
+		Connection con=null;
+		Statement st=null;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			for(int i=0;i<list.size();i++){
+				OrderedGoods og=(OrderedGoods) list.get(i);
+				String sql="update p_goods set g_num = g_num - "+og.getNum()+" where g_id="+og.getGoodsid();
+				st.executeUpdate(sql);
+			}			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			free(con,st,null);
+		}
+	}
+	
+	public void clearCart(String userid){
+		Connection con=null;
+		Statement st=null;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			String sql="delete p_cart where u_id="+userid;
+			st.executeUpdate(sql);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	/**
 	 * 获取所有商品信息的列表
 	 * @param 
 	 * @return list 所有商品对象的列表
 	 */
+	@SuppressWarnings("unchecked")
 	public List getAllGoodsList(int start,int end) {
 		List list = new ArrayList();
 		Connection con=null;
@@ -911,6 +956,7 @@ public class PetDAO {
 	 * @param cid
 	 * @return 相应子分类
 	 */
+	@SuppressWarnings("unchecked")
 	public List getCNameInOneCid(int cid) {
 		Connection con=null;
 		Statement st=null;
