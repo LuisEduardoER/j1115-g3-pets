@@ -1033,5 +1033,60 @@ public class PetDAO {
 		return count;
 	}
 
+	/**
+	 * 根据G_ID获取商品信息的列表
+	 * @param 
+	 * @return list 商品信息的列表
+	 */
+	public GetAllGoods getGoodsListByGid(int gid) {
+		GetAllGoods gag = new GetAllGoods();
+		Connection con=null;
+		Statement st=null;
+		ResultSet rs = null;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			String sql="select * from p_goods where g_id="+gid;
+			rs = st.executeQuery(sql);
+			if (rs.next()) {
+				
+				gag.setGid(rs.getInt(1));
+				gag.setCid(rs.getInt(2));
+				gag.setGname(rs.getString(3));
+				gag.setGprice(rs.getDouble(4));
+				gag.setGnum(rs.getInt(5));
+				gag.setGbrief(rs.getString(6));
+				gag.setGscore(rs.getFloat(7));
+				gag.setGsold(rs.getInt(8));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}finally{
+			free(con,st,rs);
+		}
+		return gag;
+	}
+
+	public void modGoodsInfo(String gname, int gnum, double gprice,
+			String gbrief) {
+		Connection con=null;
+		Statement st=null;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			String sql="update p_goods set g_name = '"+gname+"',g_num="+gnum+",gprice="+gprice+",gbrief='"+gbrief+"'"; 
+			System.out.println(sql);
+			st.executeUpdate(sql);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}finally{
+			free(con,st,null);
+		}
+	}
 
 }

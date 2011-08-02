@@ -205,6 +205,9 @@
     <action path="/selectGood" type="cn.thepetshop.action.SelectGoodAction">
       <set-property property="cancellable" value="true" />
     </action>
+    <action path="/getGoodsInfo" type="cn.thepetshop.action.GetGoodsInfoAction">
+      <set-property property="cancellable" value="true" />
+    </action>
 
 	</action-mappings>
 	<message-resources parameter="ApplicationResources" />
