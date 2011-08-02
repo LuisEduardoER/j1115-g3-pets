@@ -12,7 +12,7 @@
 		}
 		function del(){
 			var b = false;
-			var chks = document.delGoodsInfoForm.empnos;
+			var chks = document.delForm.goods;
 			for(i=0;i<chks.length;i++){
 				if(chks[i].checked)
 					b = true;
@@ -26,12 +26,14 @@
 			}else{
 				alert("请选择要删除的选项");
 				return false;
-			}		
+			}
+			}
 	</script>
   </head>
   
   <body>
-  <html:form  action="/delGoodsInfo" method="post" onsubmit="return del()">
+
+  <form action="/delGoodsInfo" method="post" name="delForm" onsubmit="return del()">
     <table border="1" width="80%" style="border-collapse: collapse;">
     		<tr>
     			<th>选择</th>
@@ -72,6 +74,6 @@
     </table>
     <html:button property="addGoods" value="新增" onclick="go()"></html:button>
     <html:submit value="删除"></html:submit>
-    </html:form>
+ </form>
   </body>
 </html>
