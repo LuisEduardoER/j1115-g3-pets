@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-
+<%@ include file="/taglib/common.jsp" %>
 <script type="text/javascript" src="<%=request.getContextPath()%>/pages/js/jquery.js"></script>
 <script src="<%=request.getContextPath()%>/pages/js/jquery.js" type="text/javascript"></script>
 <script src="<%=request.getContextPath()%>/pages/js/jquery.tipsy.js" type="text/javascript"></script>
@@ -24,37 +24,44 @@
 
 <div class="top">
 	<div class="topcontent">
-		<font color="#FF6600">Welcome to the Pet Shop</font>
-		<a href="" class="signin"><span>Login</span>
-		</a>|
-		<a href="<%=request.getContextPath() %>/jsp/zhuce.jsp">Create Account</a>
-		<fieldset id="signin_menu">
-			<form method="post" id="signin" action="/petshop/login.do">
-				<p>
-				<label for="username">
-					Username
-				</label>
-				<input id="username" name="username" value="" title="username"
-					tabindex="4" type="text">
-				</p>
-				<p>
-					<label for="password">
-						Password
+		<logic:notPresent scope="session" name="username" >
+			<font color="#FF6600">Welcome to the Pet Shop</font>
+			<a href="" class="signin"><span>Login</span>
+			</a>|
+			<a href="<%=request.getContextPath() %>/jsp/zhuce.jsp">Create Account</a>
+			<fieldset id="signin_menu">
+				<form method="post" id="signin" action="/petshop/login.do">
+					<p>
+					<label for="username">
+						Username
 					</label>
-					<input id="password" name="password" value="" title="password"
-						tabindex="5" type="password">
-				</p>
-				<p class="remember">
-					<input id="signin_submit" value="Sign in" tabindex="6"
-						type="submit">
-					<input id="remember" name="remember" tabindex="7"
-						type="checkbox" />
-					<label for="remember">
-						Remember me
-					</label>
-				</p>
-			</form>
-		</fieldset>
+					<input id="username" name="username" value="" title="username"
+						tabindex="4" type="text">
+					</p>
+					<p>
+						<label for="password">
+							Password
+						</label>
+						<input id="password" name="password" value="" title="password"
+							tabindex="5" type="password">
+					</p>
+					<p class="remember">
+						<input id="signin_submit" value="Sign in" tabindex="6"
+							type="submit">
+						<input id="remember" name="remember" tabindex="7"
+							type="checkbox" />
+						<label for="remember">
+							Remember me
+						</label>
+					</p>
+				</form>
+			</fieldset>
+		</logic:notPresent>
+		<logic:present scope="session" name="username" >
+			<font color="#FF6600">Welcome to the Pet Shop</font>
+			<a href="login" class="signin">MyAccount</a>|
+			<a href="#">Log off</a>
+		</logic:present>
 	</div>
 	<!--topcontent end-->
 </div>
