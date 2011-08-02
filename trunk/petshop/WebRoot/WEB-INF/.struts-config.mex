@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/pay.do" location="164,461" dimension="226,84" />
+  <StrutsActivity path="/sure.do" location="0,0" dimension="232,84" />
+  <StrutsActivity path="/evalute.do" location="332,0" dimension="250,84" />
+  <StrutsActivity path="/delete.do" location="682,0" dimension="244,84" />
+  <StrutsActivity path="/history.do" location="930,461" dimension="262,84" />
+  <StrutsActivity path="/trading.do" location="317,184" dimension="280,84" />
+  <StrutsActivity path="/index.do" location="0,867" dimension="280,84" />
+  <StrutsActivity path="/register.do" location="596,1254" dimension="244,84" />
+  <StrutsActivity path="/login.do" location="885,1254" dimension="238,84" />
+  <StrutsActivity path="/getUserMsg.do" location="319,1125" dimension="268,84" />
+  <StrutsActivity path="/updateUserPass.do" location="704,738" dimension="292,84" />
+  <StrutsActivity path="/unfinishedOrders.do" location="355,738" dimension="304,84" />
+  <StrutsActivity path="/modAdminPass.do" location="605,609" dimension="280,84" />
+  <StrutsActivity path="/getUserMoney.do" location="325,867" dimension="280,84" />
+  <StrutsActivity path="/listGoods.do" location="632,1125" dimension="262,84" />
+  <StrutsActivity path="/submitOrder.do" location="0,1125" dimension="274,84" />
+  <StrutsActivity path="/getParentCategory.do" location="0,738" dimension="310,84" />
+  <StrutsActivity path="/modPCategory.do" location="650,867" dimension="280,84" />
+  <StrutsActivity path="/addPCategory.do" location="975,867" dimension="280,84" />
+  <StrutsActivity path="/children.do" location="0,1254" dimension="256,84" />
+  <StrutsActivity path="/addCCategory.do" location="0,996" dimension="280,84" />
+  <StrutsActivity path="/delCCategory.do" location="325,996" dimension="280,84" />
+  <StrutsActivity path="/addToCart.do" location="939,1125" dimension="262,84" />
+  <StrutsActivity path="/updateChildren.do" location="1041,738" dimension="292,84" />
+  <StrutsActivity path="/modifyAmount.do" location="650,996" dimension="280,84" />
+  <StrutsActivity path="/getCart.do" location="301,1254" dimension="250,84" />
+  <StrutsActivity path="/showAllGoods.do" location="975,996" dimension="280,84" />
+  <StrutsActivity path="/inputCustomerInfo.do" location="1250,1350" dimension="310,84" />
+  <StrutsActivity path="/goodsPage.do" location="1250,1350" dimension="262,84" />
+  <StrutsActivity path="/checkReg.do" location="50,1450" dimension="256,84" />
+  <StrutsActivity path="/addNewGoods.do" location="1250,550" dimension="274,84" />
+  <StrutsActivity path="/payFailed.jsp" location="0,645" dimension="124,48" />
+  <StrutsActivity path="/inputCustomerInfo.do" location="1250,1350" dimension="310,84" />
+  <StrutsActivity path="/goodsPage.do" location="1250,1350" dimension="262,84" />
+  <StrutsActivity path="/checkReg.do" location="50,1450" dimension="256,84" />
+  <StrutsActivity path="/addNewGoods.do" location="1250,550" dimension="281,92" />
+  <StrutsActivity path="/payFailed.jsp" location="0,645" dimension="124,48" />
+  <StrutsActivity path="/PayJsp.jsp" location="224,645" dimension="106,48" />
+  <StrutsActivity path="/paySucceed.jsp" location="430,645" dimension="130,48" />
+  <StrutsActivity path="/orderShow.jsp" location="999,645" dimension="124,48" />
+  <StrutsActivity path="/newOrderShow.jsp" location="386,368" dimension="142,48" />
+  <StrutsActivity path="/admin/modAdminPass.jsp" location="656,461" dimension="178,48" />
+  <StrutsActivity path="/selectGood.do" />
+  <StrutsTransition id="/admin/modAdminPass.jsp,null,/modAdminPass.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="745,509" />
+      <AbsolutePoint location="745,609" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/evalute.do,evalute,/trading.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="457,84" />
+      <AbsolutePoint location="457,184" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pay.do,payfailed,/payFailed.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="201,545" />
+      <AbsolutePoint location="201,595" />
+      <AbsolutePoint location="62,595" />
+      <AbsolutePoint location="62,645" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pay.do,payjsp,/PayJsp.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="277,545" />
+      <AbsolutePoint location="277,645" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/history.do,show,/orderShow.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1061,545" />
+      <AbsolutePoint location="1061,645" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/delete.do,deleteSucceed,/trading.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="804,84" />
+      <AbsolutePoint location="804,134" />
+      <AbsolutePoint location="550,134" />
+      <AbsolutePoint location="550,184" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/pay.do,paySucceed,/paySucceed.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="352,545" />
+      <AbsolutePoint location="352,595" />
+      <AbsolutePoint location="495,595" />
+      <AbsolutePoint location="495,645" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sure.do,sure,/trading.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="116,84" />
+      <AbsolutePoint location="116,134" />
+      <AbsolutePoint location="363,134" />
+      <AbsolutePoint location="363,184" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/trading.do,show1,/newOrderShow.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="457,268" />
+      <AbsolutePoint location="457,368" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+
