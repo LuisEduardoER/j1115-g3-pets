@@ -27,7 +27,7 @@
     			<th>操作</th>
     		</tr>
 			<logic:present name="allgoodslist" scope="request">
-				<logic:iterate id="goodslist" name="allgoodslist">
+				<logic:iterate id="goodslist" name="allgoodslist" indexId="i">
 				<tr>
 					<td><bean:write name="goodslist" property="gid" /></td>
 					<td><bean:write name="goodslist" property="cid" /></td>
@@ -37,7 +37,7 @@
 					<td><bean:write name="goodslist" property="gsold" /></td>
 					<td><bean:write name="goodslist" property="gscore" /></td>
 					<td><bean:write name="goodslist" property="gbrief" /></td>
-					<td><a href="modGoods.jsp?${allgoodslist.gid}">修改</a></td>
+					<td><a href="getGoodsInfo.do?gid=${allgoodslist[i].gid }">修改</a></td>
 				</tr>
 				</logic:iterate>
 			</logic:present>
