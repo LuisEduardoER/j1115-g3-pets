@@ -10,12 +10,31 @@
 		function go(){
 			location.href="admin/addnewGoods.jsp"
 		}
+		function del(){
+			var b = false;
+			var chks = document.delGoodsInfoForm.empnos;
+			for(i=0;i<chks.length;i++){
+				if(chks[i].checked)
+					b = true;
+			}
+			if(b){
+				if(confirm("您是否要删除")){
+					return true;
+				}else{
+					return false;
+				}
+			}else{
+				alert("请选择要删除的选项");
+				return false;
+			}		
 	</script>
   </head>
   
   <body>
+  <html:form  action="/delGoodsInfo" method="post" onsubmit="return del()">
     <table border="1" width="80%" style="border-collapse: collapse;">
     		<tr>
+    			<th>选择</th>
     			<th>商品编码</th>
     			<th>分类编码</th>
     			<th>商品名称</th>
@@ -29,6 +48,7 @@
 			<logic:present name="allgoodslist" scope="request">
 				<logic:iterate id="goodslist" name="allgoodslist" indexId="i">
 				<tr>
+					<td><input type='checkbox' name='goods' value='${allgoodslist[i].gid }' ></td>
 					<td><bean:write name="goodslist" property="gid" /></td>
 					<td><bean:write name="goodslist" property="cid" /></td>
 					<td><bean:write name="goodslist" property="gname" /></td>
@@ -51,5 +71,7 @@
 			</tr>
     </table>
     <html:button property="addGoods" value="新增" onclick="go()"></html:button>
+    <html:submit value="删除"></html:submit>
+    </html:form>
   </body>
 </html>

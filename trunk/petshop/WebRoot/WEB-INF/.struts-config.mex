@@ -32,14 +32,15 @@
   <StrutsActivity path="/checkReg.do" location="50,1450" dimension="256,84" />
   <StrutsActivity path="/addNewGoods.do" location="1250,550" dimension="281,92" />
   <StrutsActivity path="/selectGood.do" location="1550,750" dimension="268,104" />
+  <StrutsActivity path="/getGoodsInfo.do" location="1550,950" dimension="283,104" />
+  <StrutsActivity path="/modGoodsInfo.do" location="1550,1150" dimension="291,104" />
   <StrutsActivity path="/payFailed.jsp" location="0,645" dimension="124,48" />
   <StrutsActivity path="/PayJsp.jsp" location="224,645" dimension="106,48" />
   <StrutsActivity path="/paySucceed.jsp" location="430,645" dimension="130,48" />
   <StrutsActivity path="/orderShow.jsp" location="999,645" dimension="124,48" />
   <StrutsActivity path="/newOrderShow.jsp" location="386,368" dimension="142,48" />
   <StrutsActivity path="/admin/modAdminPass.jsp" location="656,461" dimension="178,48" />
-  <StrutsActivity path="/getGoodsInfo.do" location="1550,950" dimension="283,104" />
-  <StrutsActivity path="/modGoodsInfo.do" />
+  <StrutsActivity path="/delGoodsInfo.do" />
   <StrutsTransition id="/admin/modAdminPass.jsp,null,/modAdminPass.do,2" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="745,509" />

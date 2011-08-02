@@ -217,6 +217,9 @@
       type="cn.thepetshop.action.ModGoodsInfoAction">
       <set-property property="cancellable" value="true" />
     </action>
+    <action path="/delGoodsInfo" type="cn.thepetshop.action.DelGoodsInfoAction">
+      <set-property property="cancellable" value="true" />
+    </action>
 
 	</action-mappings>
 	<message-resources parameter="ApplicationResources" />
