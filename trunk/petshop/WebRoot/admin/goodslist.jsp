@@ -8,7 +8,7 @@
     <title>商品信息</title>
 	<script type="text/javascript">
 		function go(){
-			location.href="admin/addnewGoods.jsp"
+			location.href="/petshop/getPCategoryMap.do"
 		}
 		function del(){
 			var b = false;
@@ -33,7 +33,7 @@
   
   <body>
 
-  <form action="/delGoodsInfo" method="post" name="delForm" onsubmit="return del()">
+  <form action="/petshop/delGoodsInfo.do" method="post" name="delForm" onsubmit="return del()">
     <table border="1" width="80%" style="border-collapse: collapse;">
     		<tr>
     			<th>选择</th>

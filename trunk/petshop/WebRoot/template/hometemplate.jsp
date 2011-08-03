@@ -8,12 +8,22 @@
 	<link href="<%=request.getContextPath()%>/pages/css/style.css" rel="stylesheet" type="text/css" />
 	<link href="<%=request.getContextPath()%>/pages/css/front.css" media="screen, projection" rel="stylesheet"
 type="text/css" />
+<style type="text/css">
+.wrap{
+	margin-left:auto;
+	margin-right:auto;
+	width:980px;
+}
+</style>
 		
 </head>
 <body>
 	<tiles:insert attribute="topline" />
 	<tiles:insert attribute="topmenu" />
-	<tiles:insert attribute="homecontent" />
+	<div class="wrap">
+		<tiles:insert attribute="searchbar" />
+		<tiles:insert attribute="homecontent" />
+	</div>
 	<jsp:include page="/jsp/footer.jsp" />
 </body>
 </html>

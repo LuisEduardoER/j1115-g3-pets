@@ -9,12 +9,30 @@ import org.apache.struts.action.ActionForm;
 
 public class AddNewGoodsForm extends ActionForm {
 	
+	private Integer cid;
 	private String gname;
 	private String pid;
 	private String gbrief;
 	private Integer gnum;
 	private Double gprice;
+	private Integer sub;
 
+	public Integer getSub() {
+		return sub;
+	}
+
+	public void setSub(Integer sub) {
+		this.sub = sub;
+	}
+
+	public Integer getCid() {
+		return cid;
+	}
+
+	public void setCid(Integer cid) {
+		this.cid = cid;
+	}
+	
 	public String getGname() {
 		return gname;
 	}

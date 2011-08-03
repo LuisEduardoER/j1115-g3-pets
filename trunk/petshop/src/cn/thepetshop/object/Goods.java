@@ -7,7 +7,14 @@ public class Goods {
 	private double goodsPrice;//商品单价
 	private int goodsLeftNum;//商品剩余数目
 	private String goodsBrief;//商品简介
+	private String score;//商品评分
 	
+	public String getScore() {
+		return score;
+	}
+	public void setScore(String score) {
+		this.score = score;
+	}
 	public int getGoodsid() {
 		return goodsid;
 	}

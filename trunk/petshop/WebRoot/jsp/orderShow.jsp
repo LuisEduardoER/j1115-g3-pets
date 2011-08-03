@@ -14,57 +14,32 @@
 		<table>
 			<tr>
 				<td>订单编号</td>
-				<td>商品图片名称</td>
-				<td>单价</td>
-				<td>数量</td>
-				<td>总价</td>
+				<td>收货人</td>
+				<td>收货地址</td>
+				<td>收货人电话</td>
+				<td>订单总价</td>
 				<td>订单状态</td>
 				<td>操作</td>
-				<td>交易时间</td>
+				<td>下单时间</td>
 			</tr>
-			
-			
-			<%for(int i=0;i<orderinfo.size();i++){ 
-				OrderInfo os = orderinfo.get(i);
-				Order od=os.getOrder();
-				if(od.getState()==4){
-			%>
+			<%
+				for(int i=0;i<orderinfo.size();i++){
+					OrderInfo os=orderinfo.get(i);
+					Order order=os.getOrder();
+					if(order.getState()==4){%>
 			<tr>
-				<td><%=od.getOrderId() %></td>
-				<td>
-					<table>
-						<%List<OrderedGoods> orderedgoods=os.getGoodsList();
-							for(int j=0;j<orderedgoods.size();j++){ 
-								OrderedGoods goods=orderedgoods.get(i);%>	
-						<tr>
-							<img src = ""><%=goods.getGoodsName() %>
-						</tr>	
-					</table>
-				</td>
-				<td>
-					<table>
-						<tr>
-							<%=goods.getGoodsPrice() %>
-						</tr>
-					</table>
-				</td>
-				<td>
-					<table>
-						<tr>
-							<%=goods.getNum() %>
-						</tr>
-					</table>
-				</td>
-				<% }%>
+				<td><a href="goods.do?orderid=<%=order.getOrderId() %>"><%=order.getOrderId() %></a></td>
+				<td><%=order.getReceiver() %></td>
+				<td><%=order.getAddress() %></td>
+				<td><%=order.getPhone() %></td>
 				<td><%=os.getSumMoney() %></td>
 				<td>交易成功已评价</td>
 				<td>无</td>
-				<td><%=od.getTime() %></td>
+				<td><%=order.getTime() %></td>
 			</tr>
-			<% }
-			}
-			%>
+				<%	}				
+				}
+			 %>
 		</table>
-
 	</body>
 </html>

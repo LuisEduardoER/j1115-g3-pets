@@ -4,7 +4,6 @@
  */
 package cn.thepetshop.action;
 
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,22 +21,15 @@ public class AddNewGoodsAction extends Action {
 			HttpServletRequest request, HttpServletResponse response) {
 		AddNewGoodsForm addNewGoodsForm = (AddNewGoodsForm) form;
 		
-		String pid = addNewGoodsForm.getPid();
+		
 		String gname = addNewGoodsForm.getGname();
 		double gprice = addNewGoodsForm.getGprice();
 		int gnum = addNewGoodsForm.getGnum();
 		String gbrief = addNewGoodsForm.getGbrief();
-		System.out.println(pid);
-		System.out.println(gname);
-		System.out.println(gprice);
-		System.out.println(gnum);
-		System.out.println(gbrief);
-		//int cid = Integer.parseInt(pid);
-		int cid=7; //暂时设为7，待做了级联菜单后修改
+		int cid = addNewGoodsForm.getSub();
+
 		PetDAO petDAO = new PetDAO();
-		//List list = petDAO.getCNameInOneCid(cid);
 		petDAO.addNewGoods(cid,gname,gprice,gnum,gbrief);
-		
 		return new ActionForward("/showAllGoods.do");
 	}
 }

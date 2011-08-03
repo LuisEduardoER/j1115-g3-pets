@@ -23,6 +23,7 @@ public class ListGoodsAction extends Action {
 		DynaActionForm gf = (DynaActionForm) form;
 		PetDAO pd = new PetDAO();
 		String category = (String) gf.get("category");
+		int page = 1;
 		int start=1;
 		int end=start+PAGEROW-1;
 		//System.out.println(str);
@@ -30,6 +31,7 @@ public class ListGoodsAction extends Action {
 		//System.out.println(goodsList);
 		request.setAttribute("goodsList", goodsList);
 		request.setAttribute("category", category);
-		return new ActionForward("GoodListView");
+		request.setAttribute("page", page);
+		return new ActionForward("GoodsListView");
 	}
 }

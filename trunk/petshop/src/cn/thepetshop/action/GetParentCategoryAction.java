@@ -28,7 +28,7 @@ public class GetParentCategoryAction extends Action {
 		request.setAttribute("parentList", list);
 		
 //		HttpSession session =request.getSession();
-//		session.setAttribute("parentListSession", list);
+//		session.setAttribute("parentList", list);
 		return new ActionForward("/admin/pcategory.jsp");
 	}
 }

@@ -27,7 +27,6 @@ public class ShowAllGoodsAction extends Action {
 		PetDAO pd = new PetDAO();
 		int page = 1;
 		String nowpage = (String) gf.get("nowPage");
-		System.out.println(nowpage);
 		if (nowpage != null && !"".equals(nowpage)) {
 			page = Integer.parseInt(nowpage);
 		}

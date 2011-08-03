@@ -5,32 +5,35 @@
 <html>
   <head>
     <title>添加新商品</title>
+	
+	<script src="/petshop/admin/js/selectgoods.js"></script>
   </head>
   
   <body>
   	<html:form action="/addNewGoods" method="post">
+  	<div>
+    <div class="selectdiv">
+    	<h4>父分类</h4>
+            <logic:present name="pcategorymap">
+            
+            <html:select  property="cid"  styleId="category_main" onchange="changeoption(this)">
+            	<option value="-1">--选择--</option>
+            	<logic:iterate id="kv" name="pcategorymap" >
+            	<option value="${kv.key}" id="test" >${kv.value}</option>
+            	</logic:iterate>
+            </html:select>
+            </logic:present>
+          
+    </div>
+    
+    <div class="selectdiv">
+    	<h4>子分类</h4>
+        <select id="category_sub" size="1" name="sub">
+        </select>
+    </div>
+</div>
+  	
    	<table>
-   		<tr>
-   			<th colspan=2 align="center">添加商品</th>
-   		</tr>
-   		<tr>  		
-   			<td>父分类</td>
-   		<td>
-   		<select name="cid" >
-   			
-   		<%
-   			for(int i=0;i<10;i++){
-   				out.println("<option value='"+i+"'>"+i+"</option>");
-   			}
-   		 %>
-   		
-   			</select>
-		子分类
-   		<html:select property="pid" value="">
-   		<html:option value="1"></html:option>
-   		</html:select>
-		</td>
-   	</tr>
    	<tr>
    		<td>商品名称</td>
    		<td>

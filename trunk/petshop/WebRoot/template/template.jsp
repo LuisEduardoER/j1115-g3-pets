@@ -8,22 +8,10 @@
 			href="<%=request.getContextPath()%>/jsp/css/style.css" />
 	</head>
 	<body>
-		<div class="wrap">
-			<div class="top">
-				<tiles:insert attribute="top" />
-				<tiles:insert attribute="topmenu" />
-			</div>
-			<div class="middle">
-				<div class="left">
-					<tiles:insert attribute="left" />
-				</div>
-				<div class="content">
-					<tiles:insert attribute="content" />
-				</div>
-			</div>
-			<div class="footer">
-				<jsp:include page="/jsp/footer.jsp" />
-			</div>
-		</div>
+		<tiles:insert attribute="topline" />
+		<tiles:insert attribute="topmenu" />
+		<tiles:insert attribute="searchbar" />
+		<tiles:insert attribute="content" />
+		<jsp:include page="/jsp/footer.jsp" />
 	</body>
 </html>

@@ -11,12 +11,23 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
+import cn.thepetshop.dao.PetDAO;
+
 
 public class DelGoodsInfoAction extends Action {
 	
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-		System.out.println("sdfkdfjdfibortig");
-		return null;
+		PetDAO petDAO = new PetDAO();
+		String[] goods = request.getParameterValues("goods");
+		if (goods==null || goods.length<=0) {
+			return new ActionForward("/showAllGoods.do");
+		}
+		if(goods!=null && goods.length>0) {
+			petDAO.deleteGoodsInfo(goods);
+			return new ActionForward("/showAllGoods.do");
+		}else {
+			return new ActionForward("/showAllGoods.do");
+		}
 	}
 }

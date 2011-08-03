@@ -13,75 +13,48 @@
 		<table>
 			<tr>
 				<td>订单编号</td>
-				<td>商品图片名称</td>
-				<td>单价</td>
-				<td>数量</td>
-				<td>总价</td>
+				<td>收货人</td>
+				<td>收货地址</td>
+				<td>收货人电话</td>
+				<td>订单总价</td>
 				<td>订单状态</td>
 				<td>操作</td>
-				<td>交易时间</td>
+				<td>下单时间</td>
 			</tr>
 			<%for(int i=0;i<orderinfo.size();i++){ 
 				OrderInfo os = orderinfo.get(i);
 				Order od=os.getOrder();
 			%>
-			
-				<tr>
-					<td><%=od.getOrderId() %></td>
-					<td>
-					<table>
-						<%List<OrderedGoods> orderedgoods=os.getGoodsList();
-							for(int j=0;j<orderedgoods.size();j++){ 
-								OrderedGoods goods=orderedgoods.get(i);
-								int goodsid=goods.getGoodsid();
-								request.setAttribute("goodsid",goodsid);
-								%>	
-						<tr>
-							<img src = ""><%=goods.getGoodsName() %>
-						</tr>	
-					</table>
-				</td>
-				<td>
-					<table>
-						<tr>
-							<%=goods.getGoodsPrice() %>
-						</tr>
-					</table>
-				</td>
-				<td>
-					<table>
-						<tr>
-							<%=goods.getNum() %>
-						</tr>
-					</table>
-				</td>
-				<% }%>
+			<tr>
+				<td><a href="goods.do?orderid=<%=od.getOrderId() %>"><%=od.getOrderId() %></a></td>
+				<td><%=od.getReceiver() %></td>
+				<td><%=od.getAddress() %></td>
+				<td><%=od.getPhone() %></td>
 				<td><%=os.getSumMoney() %></td>
-					<%if(od.getState()==0) {%>
+				<%if(od.getState()==0){ %>
 					<td>未付款未发货</td>
-					<td><A href="PayJsp.jsp?orderid=<%=od.getOrderId() %>">付款</A></td>
-					<%}%>
-					<%if(od.getState()==1) {%>
+					<td><a href="PayJsp.jsp?orderid=<%=od.getOrderId() %>">付款</a></td>
+				<%} %>
+				<%if(od.getState()==1) {%>
 					<td>已付款未发货</td>
 					<td>等待发货</td>
-					<%}%>
-					<%if(od.getState()==2) {%>
+				<%}%>
+				<%if(od.getState()==2) {%>
 					<td>已付款已发货</td>
 					<td><A href="sure.do?orderid=<%=od.getOrderId() %>">确认收货</A></td>
-					<%}%>
-					<%if(od.getState()==3) {%>
+				<%}%>
+				<%if(od.getState()==3) {%>
 					<td>已确认收货</td>
-					<td><A href="evalute.jsp?orderid=<%=od.getOrderId()%>">评价</A></td>
-					<%}%>
-					<%if(od.getState()==5) {%>
+					<td><A href="pingJia.do?orderid=<%=od.getOrderId()%>">评价</A></td>
+				<%}%>
+				<%if(od.getState()==5) {%>
 					<td>未付款未发货</td>
 					<td><A href="delete.do?orderid=<%=od.getOrderId() %>">取消订单</A></td>
-					<%}%>
-					<td><%=od.getTime() %></td>
+				<%}%>
+				<td><%=od.getTime() %></td>
 			</tr>
-			
-			<%}
-			%>
+			<%} %>
+	
 			
 		</table>
 	</body>

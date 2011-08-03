@@ -120,6 +120,7 @@
 						request.setAttribute("c15", "25");
 					%>
 					<html:link action="listGoods" paramId="category" paramName="c15">鱼の食品</html:link>
+					<br>
 					<%
 						request.setAttribute("c16", "26");
 					%>

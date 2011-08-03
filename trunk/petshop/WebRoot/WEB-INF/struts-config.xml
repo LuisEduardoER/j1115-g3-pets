@@ -14,6 +14,16 @@
 			<form-property name="category" type="java.lang.String"></form-property>
 		</form-bean>
 		
+		<form-bean name="goodsDetailsForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="goodsid" type="java.lang.String"></form-property>
+		</form-bean>
+		
+		<form-bean name="findForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="searchkey" type="java.lang.String"></form-property>
+			<form-property name="searchcategory" type="java.lang.String"></form-property>
+			<form-property name="nowPage" type="java.lang.String"></form-property>
+		</form-bean>
+		
 		<form-bean name="pageForm" type="org.apache.struts.action.DynaActionForm">
 		<form-property name="category" type="java.lang.String"></form-property>
 			<form-property name="nowPage" type="java.lang.String"></form-property>
@@ -34,6 +44,11 @@
     <form-bean name="updateChildrenForm" type="cn.thepetshop.form.UpdateChildrenForm" />
     <form-bean name="addNewGoodsForm" type="cn.thepetshop.form.AddNewGoodsForm" />
     <form-bean name="modGoodsInfoForm" type="cn.thepetshop.form.ModGoodsInfoForm" />
+    
+    <form-bean name="payForm" type="org.apache.struts.action.DynaActionForm">
+    <form-property name="paytype" type="java.lang.String" /> 
+    </form-bean>
+    
 	</form-beans>
 
 	<global-exceptions />
@@ -72,13 +87,14 @@
 		</action>
 
 		<action path="/index" type="org.apache.struts.actions.ForwardAction"
-			parameter="IndexViewUnLogin"></action>
+			parameter="IndexView"></action>
 
-		<action path="/register" type="cn.thepetshop.action.RegistAction"
+		<action path="/regist" type="cn.thepetshop.action.RegistAction"
 			name="userForm" validate="false">
 		</action>
 		<action path="/login" type="cn.thepetshop.action.LoginAction"
-			name="userForm" validate="false">
+		    validate="false"
+			name="userForm" >
 		</action>
 		<action path="/getUserMsg" type="cn.thepetshop.action.GetUserMsgAction"
 			name="userForm" validate="false">
@@ -220,7 +236,45 @@
     <action path="/delGoodsInfo" type="cn.thepetshop.action.DelGoodsInfoAction">
       <set-property property="cancellable" value="true" />
     </action>
-
+ <action
+      path="/findGoods"
+      type="cn.thepetshop.action.FindGoodsAction"
+      name="findForm"
+      validate="false">
+      <set-property property="cancellable" value="true" />
+    </action>    
+  
+    <action path="/goods" type="cn.thepetshop.action.GoodsAction">
+      <forward name="goodslist" path="/goodslist.jsp"></forward>
+    </action>
+    <action path="/getPCategoryMap" type="cn.thepetshop.action.GetPCategoryMapAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action path="/logoff" type="cn.thepetshop.action.LogoffAction">
+    </action>
+    <action path="/checkLogin" type="cn.thepetshop.action.CheckLoginAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action path="/getCCategoryByParent" type="cn.thepetshop.action.GetCCategoryByParentAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action path="/modOrder" type="cn.thepetshop.action.ModOrderAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action path="/showAllOrder" type="cn.thepetshop.action.ShowAllOrderAction" name="showForm">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action
+      path="/goodsDetails"
+      type="cn.thepetshop.action.GoodsDetailsAction"
+      name="goodsDetailsForm"
+      validate="false">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action path="/delOrderList" type="cn.thepetshop.action.DelOrderListAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+    
 	</action-mappings>
 	<message-resources parameter="ApplicationResources" />
 
@@ -229,5 +283,11 @@
 		<set-property property="definitions-parser-validate"
 			value="true" />
 	</plug-in>
+	
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml" />
+  </plug-in>
+  
 
 </struts-config>

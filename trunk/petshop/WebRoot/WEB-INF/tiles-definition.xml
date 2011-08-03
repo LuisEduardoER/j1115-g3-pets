@@ -9,12 +9,23 @@
 	<definition name="IndexView" template="/template/hometemplate.jsp">
 		<put name="topline" value="/pages/toplogin.jsp"></put>
 		<put name="topmenu" value="/pages/topmenu.jsp"></put>
+		<put name="searchbar" value="/search/search.jsp"></put>
 		<put name="homecontent" value="/pages/homecontent.jsp"></put>
 	</definition>
 	
-	<definition name="GoodListView" template="/template/goodtemplate.jsp">
+	<definition name="GoodsListView" template="/template/goodtemplate.jsp">
 		<put name="left" value="/jsp/goods/goods_menu.jsp"></put>
 		<put name="right" value="/jsp/goods/goods_list.jsp"></put>
+	</definition>
+	
+	<definition name="FindGoodsView" template="/template/goodtemplate.jsp">
+		<put name="left" value="/jsp/goods/goods_menu.jsp"></put>
+		<put name="right" value="/jsp/goods/find_goods_list.jsp"></put>
+	</definition>
+	
+	<definition name="GoodsDetailsView" template="/template/goodtemplate.jsp">
+		<put name="left" value="/jsp/goods/goods_menu.jsp"></put>
+		<put name="right" value="/jsp/goods/goods_details.jsp"></put>
 	</definition>
 	
 </tiles-definitions>

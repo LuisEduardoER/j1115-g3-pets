@@ -31,7 +31,8 @@ public class LoginFilter implements Filter {
 		boolean b = false;
 		
 		String regex = "";//对于一些普通的页面则直接给予放行，这里给出不过滤的类型
-		if(request.getServletPath().matches(regex)){//正则判断页面是否需要过滤
+//		if(request.getServletPath().matches(regex)){//正则判断页面是否需要过滤
+		if(true){//正则判断页面是否需要过滤
 			b = true;
 		}
 		

@@ -7,6 +7,8 @@ import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.ActionMessage;
+import org.apache.struts.action.ActionMessages;
 
 import cn.thepetshop.dao.PetDAO;
 import cn.thepetshop.form.UserForm;
@@ -30,17 +32,11 @@ public class RegistAction extends Action {
 			PetDAO petdao = new PetDAO();
 			boolean b = petdao.register(username,password);
 			if(b){
-				//说明注册成功，并提示是否要登录
-				System.out.println("rigist  succeed........");
-				return new ActionForward("/index.jsp");
-			}else{
-				//弹出错误提示
-				System.out.println("rigist...fail.....");
-				return new ActionForward("/index.jsp");
+				return new ActionForward("/jsp/login.jsp");
 			}
-			
-			
-			
+			else{
+				return null;
+			}
 		}
 
 }

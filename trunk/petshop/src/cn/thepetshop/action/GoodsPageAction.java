@@ -39,7 +39,7 @@ public class GoodsPageAction extends Action {
 		if (page > pageCount) {
 			page = pageCount;
 		}
-
+		int firstPage=1;
 		int start = (page - 1) * PAGEROW + 1;
 		int end = start + PAGEROW - 1;
 		List<Goods> goodsList = pd.listGoods(category, start, end);
@@ -47,6 +47,7 @@ public class GoodsPageAction extends Action {
 		request.setAttribute("category", category);
 		request.setAttribute("page", page);
 		request.setAttribute("endPage", pageCount);
-		return new ActionForward("GoodListView");
+		request.setAttribute("firstPage", firstPage);
+		return new ActionForward("GoodsListView");
 	}
 }

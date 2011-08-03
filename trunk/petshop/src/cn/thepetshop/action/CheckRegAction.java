@@ -31,9 +31,10 @@ public class CheckRegAction extends Action {
 		boolean b = petdao.checkUser(username);
 		if(b){
 			out.print("true");
-		}else{
-			out.print("false");
 		}
+		else{
+			out.print("false");
+			}
 		return null;
 	}
 }

@@ -1,0 +1,25 @@
+.selectdiv{
+	float:left;
+	width:240px;
+}
+.selectdiv select{
+	width:200px;
+}
+.additem{
+	width:200px;
+	float:none;
+}
+.inputbtn{
+	float:left;
+	width:74px;
+	margin:0;
+	padding:0;
+	height:24px;
+}
+.inputtext{
+	float:left;
+	width:118px;
+	height:18px;
+	margin-top:auto;
+	margin-bottom:auto;
+}

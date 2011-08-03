@@ -9,6 +9,7 @@ import java.util.*;
 
 import cn.thepetshop.object.Cart;
 import cn.thepetshop.object.Goods;
+import cn.thepetshop.object.Menu;
 import cn.thepetshop.object.Order;
 import cn.thepetshop.object.OrderInfo;
 import cn.thepetshop.object.OrderedGoods;
@@ -26,7 +27,7 @@ public class PetDAO {
 	private Connection getConnection() throws SQLException,
 			ClassNotFoundException {
 		Class.forName("oracle.jdbc.driver.OracleDriver");
-		String url = "driver:oracle:thin:@127.0.0.1:1521:orcl";
+		String url = "driver:oracle:thin:@172.16.53.193:1521:orcl";
 		return DriverManager.getConnection(url, "scott", "tiger");
 	}
 
@@ -594,7 +595,7 @@ public class PetDAO {
 		try {
 			con=getConnection();
 			st=con.createStatement();
-			String sql="";
+			String sql="update p_users set u_money = "+money+" where u_id ="+userid;
 			st.executeUpdate(sql);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -830,6 +831,7 @@ public class PetDAO {
 			System.out.println("sql: "+sql);
 			st.executeUpdate(sql);
 			updateGoodsLeftNum(cart.getGoodsList());
+			addSoldNum(cart.getGoodsList());
 			clearCart(userid);
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -843,6 +845,7 @@ public class PetDAO {
 	
 	/**
 	 * 根据订单内商品购买个数更新商品剩余个数
+	 * @param list
 	 */
 	public void updateGoodsLeftNum(List list){
 		Connection con=null;
@@ -866,6 +869,36 @@ public class PetDAO {
 		}
 	}
 	
+	/**
+	 * 根据订单内商品购买个数更新商品卖出个数
+	 * @param list
+	 */
+	public void  addSoldNum(List list){
+		Connection con=null;
+		Statement st=null;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			for(int i=0;i<list.size();i++){
+				OrderedGoods og=(OrderedGoods) list.get(i);
+				String sql="update p_goods set g_sold = g_sold + "+og.getNum()+" where g_id="+og.getGoodsid();
+				st.executeUpdate(sql);
+			}			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			free(con,st,null);
+		}
+	}
+	
+	/**
+	 * 根据用户id清空用户购物车
+	 * @param userid
+	 */
 	public void clearCart(String userid){
 		Connection con=null;
 		Statement st=null;
@@ -1005,7 +1038,7 @@ public class PetDAO {
 	}
 
 	/**
-	 * 
+	 * 获得所有商品总个数
 	 * @return
 	 */
 	public int getCount() {
@@ -1069,6 +1102,15 @@ public class PetDAO {
 		return gag;
 	}
 
+	/**
+	 
+	 * 修改商品信息
+	 * @param gid 商品id
+	 * @param gname 商品名称
+	 * @param gnum 商品剩余数量
+	 * @param gprice 商品价格
+	 * @param gbrief 商品描述
+	 */
 	public void modGoodsInfo(int gid,String gname, int gnum, double gprice,
 			String gbrief) {
 		Connection con=null;
@@ -1088,4 +1130,260 @@ public class PetDAO {
 		}
 	}
 
+		/**
+	 * 根据用户提供是搜索关键词搜索名字内有该关键词的商品
+	 * @param findname
+	 * @param category
+	 * @param start
+	 * @param end
+	 * @return
+	 */
+	public List<Goods> findGoods(String findname,String category,int start,int end) {
+		List<Goods> list=new ArrayList<Goods>();
+		Connection con=null;
+		Statement st=null;
+		ResultSet rs=null;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			String sql="";
+			if(category.equals("0")){
+				sql="select g_id,g_name,g_price from(select g.*, rownum rn from p_goods g where g_name like '%"+findname+"%') where rn>="+start+" and rn<="+end;
+			}else{
+				sql="select g_id,g_name,g_price from(select g.*, rownum rn from p_goods g,p_category c where g.c_id=c.c_id and p_id="+category+" and g_name like '%"+findname+"%') where rn>="+start+" and rn<="+end;
+			}
+			rs=st.executeQuery(sql);
+			//System.out.println("sql:"+sql);
+			while(rs.next()){
+				Goods goods=new Goods();
+				goods.setGoodsid(rs.getInt(1));
+				goods.setGoodsName(rs.getString(2));
+				goods.setGoodsPrice(rs.getDouble(3));
+				list.add(goods);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			free(con,st,rs);
+		}
+		return list;
+	}
+	
+	/**
+	 * 得到用户查询的商品总数
+	 * @param category
+	 * @param findname
+	 * @return
+	 */
+	public int getCountOfFindGoods(String category,String findname){
+		int count =0;
+		Connection con=null;
+		Statement st=null;
+		ResultSet rs=null;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			String sql="";
+			if(category.equals("0")){
+				sql="select count(*) from (select g.*, rownum rn from p_goods g where g_name like '%"+findname+"%')";
+			}else{
+				sql="select count(*) from (select * from p_goods g,p_category c where g.c_id=c.c_id and p_id="+category+" and g_name like '%"+findname+"%')";
+			}
+			//System.out.println(sql);
+			rs=st.executeQuery(sql);
+			if(rs.next()){
+				count=rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			free(con,st,rs);
+		}
+		return count;
+	}
+
+	/**
+	 * 删除商品信息
+	 * @param goods
+	 */
+	public void deleteGoodsInfo(String[] goods) {
+		Connection con = null;
+		Statement st = null;
+		try {
+			con = getConnection();
+			st = con.createStatement();
+			for (int i = 0; i < goods.length; i++) {
+				String sql = "delete from p_goods where g_id ="+goods[i];
+				st.addBatch(sql);
+			}
+			int[] is =st.executeBatch();
+		} catch (Exception e) {
+		}finally{
+			free(con, st, null);
+		}
+	}
+
+	/**
+	 * 获取所有父分类的map对象
+	 * @return 分类的对象，键：c_id 值：c_name
+	 */
+	public Map getPCategoryMap() {
+		Connection con = null;
+		Statement st = null;
+		ResultSet rs = null;
+		Map map = new HashMap();
+		int cid;
+		String cname;
+		try {
+			con = getConnection();
+			st = con.createStatement();
+			String sql = "select c_id,c_name from p_category where p_id=0";
+			rs = st.executeQuery(sql);
+			while (rs.next()) {
+				cid= rs.getInt(1);
+				cname = rs.getString(2);
+				map.put(cid, cname);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		return map;
+	}
+	
+	/**
+	 * 查找所有分类
+	 * @return
+	 */
+	public List<Menu> getMenuList(){
+		List<Menu> list=new ArrayList<Menu>();
+		Connection con=null;
+		Statement st=null;
+		ResultSet rs=null;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			String sql="select * from p_category where p_id=0";
+			rs=st.executeQuery(sql);
+			while(rs.next()){
+				Menu menu=new Menu();
+				menu.setfMenuName(rs.getString(3));
+				String[] cname=getCMenuName(rs.getString(1));
+				menu.setsMenuName(cname);
+			System.out.println(cname);
+				list.add(menu);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	/**
+	 * 查找某特定父类下的子类
+	 * @param p_id
+	 * @return
+	 */
+	public String[] getCMenuName(String p_id){
+		String[] str=null;
+		Connection con=null;
+		Statement st=null;
+		ResultSet rs=null;
+		int i=0;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			String sql="select * from p_category where p_id="+p_id;
+			rs=st.executeQuery(sql);
+			while(rs.next()){
+				str[i++]=rs.getString(3);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			free(con,st,rs);
+		}
+		return str;
+	}
+	
+	/**
+	 * 获取所有订单的列表
+	 * @param 
+	 * @return list 所有订单对象的列表
+	 */
+	@SuppressWarnings("unchecked")
+	public List getAllOrderList(int start,int end) {
+		List list = new ArrayList();
+		Connection con=null;
+		Statement st=null;
+		ResultSet rs = null;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			String sql="select * from (select g.*, rownum rn from p_orders g) where rn>="+start+" and rn<="+end;
+			rs = st.executeQuery(sql);
+			while (rs.next()) {
+				GetAllOrder gao = new GetAllOrder();
+				gao.setOid(rs.getInt(1));
+				gao.setUid(rs.getInt(2));
+				gao.setOtime(rs.getDate(3));
+				gao.setOreceiver(rs.getString(4));
+				gao.setOaddress(rs.getString(5));
+				gao.setOphone(rs.getString(6));
+				gao.setOtype(rs.getInt(7));
+				gao.setOstate(rs.getInt(8));
+				list.add(gao);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}finally{
+			free(con,st,rs);
+		}
+		return list;
+	}
+	
+	
+	
+	/**
+	 * 删除订单信息
+	 * @param orders
+	 */
+	public void deleteOrderList(String[] orders) {
+		Connection con = null;
+		Statement st = null;
+		try {
+			con = getConnection();
+			st = con.createStatement();
+			for (int i = 0; i < orders.length; i++) {
+				String sql = "delete from p_orders where o_id ="+orders[i];
+				st.addBatch(sql);
+			}
+			int[] is =st.executeBatch();
+		} catch (Exception e) {
+		}finally{
+			free(con, st, null);
+		}
+	}
+
 }
+
+
