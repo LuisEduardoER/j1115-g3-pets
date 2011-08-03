@@ -15,17 +15,15 @@
     <div class="selectdiv">
     	<h4>父分类</h4>
             <logic:present name="pcategorymap">
-            
             <html:select  property="cid"  styleId="category_main" onchange="changeoption(this)">
             	<option value="-1">--选择--</option>
             	<logic:iterate id="kv" name="pcategorymap" >
-            	<option value="${kv.key}" id="test" >${kv.value}</option>
+            		<option value="${kv.key}" id="test" >${kv.value}</option>
             	</logic:iterate>
             </html:select>
             </logic:present>
           
     </div>
-    
     <div class="selectdiv">
     	<h4>子分类</h4>
         <select id="category_sub" size="1" name="sub">
@@ -51,6 +49,12 @@
    		<td>商品数量:</td>
    		<td>
    			<html:text property="gnum" value=""></html:text>
+   		</td>
+   	</tr>
+   	<tr>
+   		<td>商品图片:</td>
+   		<td>
+   			<html:file property="goodspic" value=""></html:file>
    		</td>
    	</tr>
    		<tr>

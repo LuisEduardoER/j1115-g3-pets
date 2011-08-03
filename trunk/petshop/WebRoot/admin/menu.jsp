@@ -50,7 +50,7 @@ function showmenu(strID){
     		<th align="left" style="cursor: pointer;" onclick="javascript:showmenu(lay3)">商品订单管理</th>
     	</tr>
     	<tr id="lay3" style="display:block;">
-    	<td><html:link action="/showAllOrder" target="show">订单管理</html:link><br>发货管理<br></td>
+    	<td><html:link action="/showAllOrder" target="show">订单管理</html:link></td>
     	</tr>
 
     </table>
