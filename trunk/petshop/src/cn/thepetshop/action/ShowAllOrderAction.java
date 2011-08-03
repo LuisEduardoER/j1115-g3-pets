@@ -42,6 +42,9 @@ public class ShowAllOrderAction extends Action {
 		int start = (page - 1) * PAGEROW + 1;
 		int end = start + PAGEROW - 1;
 		
+		if (request.isRequestedSessionIdValid()) {
+			request.removeAttribute("allorderlist");
+		}
 		List list = pd.getAllOrderList(start,end);
 		request.setAttribute("allorderlist", list);
 		request.setAttribute("page", page);
