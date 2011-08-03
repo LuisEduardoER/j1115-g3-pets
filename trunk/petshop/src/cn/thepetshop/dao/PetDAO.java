@@ -1383,6 +1383,66 @@ public class PetDAO {
 			free(con, st, null);
 		}
 	}
+	
+	/**
+	 * 将商品添加至购物车
+	 * @param userid
+	 * @param goodsid
+	 */
+	public void addGoodsToCart(String userid,String goodsid){
+		Connection con=null;
+		Statement st=null;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			String sql="";
+			if(checkGoodsInCart(userid,goodsid)){
+				sql="update p_cart set i_num = i_num + 1 where u_id = "+userid+" and g_id = "+goodsid;
+			}else{
+				sql="insert into p_cart values("+userid+","+goodsid+",1)";
+			}
+			st.executeUpdate(sql);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			free(con,st,null);
+		}
+	}
+	
+	/**
+	 * 判断一个商品是否在某用户的购物车中
+	 * @param userid
+	 * @param goodsid
+	 * @return
+	 */
+	public boolean checkGoodsInCart(String userid,String goodsid){
+		Connection con=null;
+		Statement st=null;
+		ResultSet rs=null;
+		boolean b=false;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			String sql="select * from p_cart where u_id="+userid+" and g_id="+goodsid;
+			rs=st.executeQuery(sql);
+			if(rs.next()){
+				b=true;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			free(con,st,rs);
+		}
+		return b;
+	}
 
 }
 
