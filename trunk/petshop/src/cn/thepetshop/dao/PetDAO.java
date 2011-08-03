@@ -1444,6 +1444,28 @@ public class PetDAO {
 		return b;
 	}
 
+	/**
+	 * 根据oid更改订单状态
+	 * @param oid
+	 */
+	public void modOrderStateByOid(String oid) {
+		Connection con=null;
+		Statement st=null;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			String sql="update p_orders set o_state=2 where o_id="+oid;
+			System.out.println(sql);
+			st.executeUpdate(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}finally{
+			free(con,st,null);
+		}
+	}
+
 }
 
 

@@ -55,10 +55,15 @@
 					<td><bean:write name="orderlist" property="otype" /></td>
 					<td>
 					<logic:equal value="0" name="orderlist" property="ostate">未发货</logic:equal>
-					<logic:equal value="1" name="orderlist" property="ostate">已付款</logic:equal>
-					<logic:equal value="2" name="orderlist" property="ostate">已确认收货</logic:equal>
+					<logic:equal value="1" name="orderlist" property="ostate">已付款未发货</logic:equal>
+					<logic:equal value="2" name="orderlist" property="ostate">已发货</logic:equal>
+					<logic:equal value="3" name="orderlist" property="ostate">已确认收货</logic:equal>
+					<logic:equal value="4" name="orderlist" property="ostate">已评价</logic:equal>
+					<logic:equal value="5" name="orderlist" property="ostate">已取消</logic:equal>
 					</td>
-					<td><a href="modOrder.do?oid=${allorderlist[i].oid }">修改</a></td>
+					<td>
+						<html:link href="modOrder.do?oid=${allorderlist[i].oid }">发货</html:link>
+					</td>
 				</tr>
 				</logic:iterate>
 			</logic:present>

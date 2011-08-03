@@ -11,12 +11,17 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
+import cn.thepetshop.dao.PetDAO;
+
 
 public class ModOrderAction extends Action {
 	
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		
-		return null;
+		String oid = request.getParameter("oid");
+		PetDAO petDAO = new PetDAO();
+		petDAO.modOrderStateByOid(oid);
+		return new ActionForward("/showAllOrder.do");
 	}
 }
