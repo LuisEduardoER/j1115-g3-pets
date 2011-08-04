@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans>
+		<form-bean name="userForm" type="cn.thepetshop.form.UserForm" />
+		<form-bean name="modAdminPassForm" type="cn.thepetshop.form.ModAdminPassForm" />
+		<form-bean name="modifyAmountForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="newnum" type="java.lang.String"></form-property>
+			<form-property name="goodsid" type="java.lang.String"></form-property>
+		</form-bean>
+		<form-bean name="goodsForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="category" type="java.lang.String"></form-property>
+		</form-bean>
+		<form-bean name="goodsIdForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="goodsamount" type="java.lang.String"></form-property>
+			<form-property name="goodsid" type="java.lang.String"></form-property>
+		</form-bean>
+		<form-bean name="goodsDetailsForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="goodsid" type="java.lang.String"></form-property>
+		</form-bean>
+
+		<form-bean name="findForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="searchkey" type="java.lang.String"></form-property>
+			<form-property name="searchcategory" type="java.lang.String"></form-property>
+			<form-property name="nowPage" type="java.lang.String"></form-property>
+		</form-bean>
+
+		<form-bean name="pageForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="category" type="java.lang.String"></form-property>
+			<form-property name="nowPage" type="java.lang.String"></form-property>
+		</form-bean>
+
+		<form-bean name="showForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="nowPage" type="java.lang.String"></form-property>
+		</form-bean>
+
+		<form-bean name="orderForm" type="cn.thepetshop.form.OrderForm" />
+		<form-bean name="addPCategoryForm" type="cn.thepetshop.form.AddPCategoryForm" />
+		<form-bean name="modPCategoryForm" type="cn.thepetshop.form.ModPCategoryForm" />
+		<form-bean name="addCCategoryForm" type="cn.thepetshop.form.AddCCategoryForm" />
+		<form-bean name="delCCategoryForm" type="cn.thepetshop.form.DelCCategoryForm" />
+		<form-bean name="updateChildrenForm" type="cn.thepetshop.form.UpdateChildrenForm" />
+		<form-bean name="addNewGoodsForm" type="cn.thepetshop.form.AddNewGoodsForm" />
+		<form-bean name="modGoodsInfoForm" type="cn.thepetshop.form.ModGoodsInfoForm" />
+
+		<form-bean name="payForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="paytype" type="java.lang.String" />
+			<form-property name="orderid" type="java.lang.String" />
+		</form-bean>
+
+			<form-bean name="showOrderForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="nPage" type="java.lang.String"></form-property>
+		</form-bean>
+		
+    <form-bean name="orderForm" type="cn.thepetshop.form.OrderForm" />
+    <form-bean name="addPCategoryForm" type="cn.thepetshop.form.AddPCategoryForm" />
+    <form-bean name="modPCategoryForm" type="cn.thepetshop.form.ModPCategoryForm" />
+    <form-bean name="addCCategoryForm" type="cn.thepetshop.form.AddCCategoryForm" />
+    <form-bean name="delCCategoryForm" type="cn.thepetshop.form.DelCCategoryForm" />
+    <form-bean name="updateChildrenForm" type="cn.thepetshop.form.UpdateChildrenForm" />
+    <form-bean name="addNewGoodsForm" type="cn.thepetshop.form.AddNewGoodsForm" />
+    <form-bean name="modGoodsInfoForm" type="cn.thepetshop.form.ModGoodsInfoForm" />
+    
+    <form-bean name="payForm" type="org.apache.struts.action.DynaActionForm">
+    <form-property name="paytype" type="java.lang.String" /> 
+    <form-property name="orderid" type="java.lang.String" /> 
+    </form-bean>
+    
+	</form-beans>
+
+	<global-exceptions />
+	<global-forwards />
+	<action-mappings>
+		<action path="/pay" type="cn.thepetshop.action.PayAction" name="payForm"
+			validate="false">
+			<forward name="paySucceed" path="/jsp/paySucceed.jsp"></forward>
+			<forward name="payfailed" path="/jsp/payFailed.jsp"></forward>
+			<forward name="payjsp" path="/jsp/PayJsp.jsp"></forward>
+		</action>
+
+		<action path="/sure" type="cn.thepetshop.action.SureAction"
+			validate="false">
+			<forward name="sure" path="/trading.do"></forward>
+		</action>
+
+		<action path="/delete" type="cn.thepetshop.action.DeleteAction"
+			validate="false">
+			<forward name="deleteSucceed" path="/trading.do"></forward>
+		</action>
+
+		<action path="/history" type="cn.thepetshop.action.OrderShowAction"
+			validate="false">
+			<forward name="show" path="/jsp/orderShow.jsp"></forward>
+		</action>
+
+		<action path="/trading" type="cn.thepetshop.action.NewOrderShowAction"
+			validate="false">
+			<forward name="show1" path="/jsp/newOrderShow.jsp"></forward>
+		</action>
+
+		<action path="/index" type="org.apache.struts.actions.ForwardAction"
+			parameter="IndexView"></action>
+
+		<action path="/regist" type="cn.thepetshop.action.RegistAction"
+			name="userForm" validate="false">
+		</action>
+		<action path="/login" type="cn.thepetshop.action.LoginAction"
+			validate="false" name="userForm">
+		</action>
+		<action path="/getUserMsg" type="cn.thepetshop.action.GetUserMsgAction"
+			name="userForm" validate="false">
+		</action>
+		<action path="/updateUserPass" type="cn.thepetshop.action.UpdateUserPassAction"
+			name="userForm" validate="false">
+		</action>
+		<action path="/unfinishedOrders" type="cn.thepetshop.action.UnfinishedOrdersAction"
+			validate="false">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action attribute="modAdminPassForm" input="/admin/modAdminPass.jsp"
+			name="modAdminPassForm" path="/modAdminPass" scope="request"
+			type="cn.thepetshop.action.ModAdminPassAction">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action path="/getUserMoney" type="cn.thepetshop.action.GetUserMoneyAction">
+		</action>
+		<action path="/listGoods" type="cn.thepetshop.action.ListGoodsAction"
+			name="goodsForm" validate="false">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action path="/submitOrder" type="cn.thepetshop.action.SubmitOrderAction"
+			name="orderForm" validate="false">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action path="/getParentCategory" type="cn.thepetshop.action.GetParentCategoryAction">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action path="/modPCategory" name="modPCategoryForm"
+			type="cn.thepetshop.action.ModPCategoryAction">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action path="/addPCategory" name="addPCategoryForm" attribute="addPCategoryForm"
+			type="cn.thepetshop.action.AddPCategoryAction">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action path="/children" type="cn.thepetshop.action.ChildrenAction">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action attribute="addCCategoryForm" name="addCCategoryForm"
+			path="/addCCategory" scope="request" type="cn.thepetshop.action.AddCCategoryAction">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action attribute="delCCategoryForm" name="delCCategoryForm"
+			path="/delCCategory" scope="request" type="cn.thepetshop.action.DelCCategoryAction">
+			<set-property property="cancellable" value="true" />
+		</action>
+
+		<action path="/addToCart" name="goodsIdForm"
+			type="cn.thepetshop.action.AddToCartAction">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action attribute="updateChildrenForm" name="updateChildrenForm"
+			path="/updateChildren" scope="request"
+			type="cn.thepetshop.action.UpdateChildrenAction">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action path="/modifyAmount" type="cn.thepetshop.action.ModifyAmountAction"
+			name="modifyAmountForm" validate="false">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action path="/getCart" type="cn.thepetshop.action.GetCartAction"
+			name="modifyAmountForm" validate="false">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action path="/showAllGoods" type="cn.thepetshop.action.ShowAllGoodsAction">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action path="/inputCustomerInfo" type="cn.thepetshop.action.InputCustomerInfoAction">
+		</action>
+		<action path="/getCart" type="cn.thepetshop.action.GetCartAction"
+			validate="false">
+			<set-property property="cancellable" value="true" />
+
+		</action>
+		<action path="/showAllGoods" type="cn.thepetshop.action.ShowAllGoodsAction"
+			name="showForm">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action path="/goodsPage" type="cn.thepetshop.action.GoodsPageAction"
+			name="pageForm" validate="false">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action path="/checkReg" type="cn.thepetshop.action.CheckRegAction">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action attribute="addNewGoodsForm" name="addNewGoodsForm"
+			path="/addNewGoods" scope="request" type="cn.thepetshop.action.AddNewGoodsAction">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action path="/selectGood" type="cn.thepetshop.action.SelectGoodAction">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action path="/getGoodsInfo" type="cn.thepetshop.action.GetGoodsInfoAction">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action attribute="modGoodsInfoForm" name="modGoodsInfoForm"
+			path="/modGoodsInfo" scope="request" type="cn.thepetshop.action.ModGoodsInfoAction">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action path="/delGoodsInfo" type="cn.thepetshop.action.DelGoodsInfoAction">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action path="/findGoods" type="cn.thepetshop.action.FindGoodsAction"
+			name="findForm" validate="false">
+			<set-property property="cancellable" value="true" />
+		</action>
+
+		<action path="/goods" type="cn.thepetshop.action.GoodsAction">
+			<forward name="goodslist" path="/jsp/goodslist.jsp"></forward>
+		</action>
+		<action path="/getPCategoryMap" type="cn.thepetshop.action.GetPCategoryMapAction">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action path="/logoff" type="cn.thepetshop.action.LogoffAction">
+		</action>
+		<action path="/checkLogin" type="cn.thepetshop.action.CheckLoginAction">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action path="/getCCategoryByParent" type="cn.thepetshop.action.GetCCategoryByParentAction">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action path="/modOrder" type="cn.thepetshop.action.ModOrderAction">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action path="/showAllOrder" type="cn.thepetshop.action.ShowAllOrderAction"
+			name="showForm">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action path="/goodsDetails" type="cn.thepetshop.action.GoodsDetailsAction"
+			name="goodsDetailsForm" validate="false">
+			<set-property property="cancellable" value="true" />
+		</action>
+		<action path="/delOrderList" type="cn.thepetshop.action.DelOrderListAction">
+			<set-property property="cancellable" value="true" />
+		</action>
+
+		<action path="/pingJia" type="cn.thepetshop.action.ProShowAction">
+			<forward name="pingJia" path="/jsp/proPingJia.jsp"></forward>
+		</action>
+
+		<action path="/scort" type="cn.thepetshop.action.AddScoreAction">
+			<forward name="suceess" path="/trading.do"></forward>
+		</action>
+
+    <action path="/showAllGoods" type="cn.thepetshop.action.ShowAllGoodsAction" name="showForm">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action
+      path="/goodsPage"
+      type="cn.thepetshop.action.GoodsPageAction"
+      name="pageForm"
+      validate="false">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action path="/checkReg" type="cn.thepetshop.action.CheckRegAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action
+      attribute="addNewGoodsForm"
+      name="addNewGoodsForm"
+      path="/addNewGoods"
+      scope="request"
+      type="cn.thepetshop.action.AddNewGoodsAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action path="/selectGood" type="cn.thepetshop.action.SelectGoodAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action path="/getGoodsInfo" type="cn.thepetshop.action.GetGoodsInfoAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action
+      attribute="modGoodsInfoForm"
+      name="modGoodsInfoForm"
+      path="/modGoodsInfo"
+      scope="request"
+      type="cn.thepetshop.action.ModGoodsInfoAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action path="/delGoodsInfo" type="cn.thepetshop.action.DelGoodsInfoAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+ <action
+      path="/findGoods"
+      type="cn.thepetshop.action.FindGoodsAction"
+      name="findForm"
+      validate="false">
+      <set-property property="cancellable" value="true" />
+    </action>    
+  
+    <action path="/goods" type="cn.thepetshop.action.GoodsAction">
+      <forward name="goodslist" path="/jsp/goodslist.jsp"></forward>
+    </action>
+    <action path="/getPCategoryMap" type="cn.thepetshop.action.GetPCategoryMapAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action path="/logoff" type="cn.thepetshop.action.LogoffAction">
+    </action>
+    <action path="/checkLogin" type="cn.thepetshop.action.CheckLoginAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action path="/getCCategoryByParent" type="cn.thepetshop.action.GetCCategoryByParentAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action path="/modOrder" type="cn.thepetshop.action.ModOrderAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action path="/showAllOrder" type="cn.thepetshop.action.ShowAllOrderAction" name="showOrderForm">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action
+      path="/goodsDetails"
+      type="cn.thepetshop.action.GoodsDetailsAction"
+      name="goodsDetailsForm"
+      validate="false">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action path="/delOrderList" type="cn.thepetshop.action.DelOrderListAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+    
+    <action path="/pingJia" type="cn.thepetshop.action.ProShowAction">
+       <forward name="pingJia" path="/jsp/proPingJia.jsp"></forward>
+    </action>
+    
+    <action path="/scort" type="cn.thepetshop.action.AddScoreAction">
+       <forward name="suceess" path="/trading.do"></forward>
+    </action>
+    <action path="/adminIndex" type="cn.thepetshop.action.AdminIndexAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action path="/modAdminPassView" type="cn.thepetshop.action.ModAdminPassViewAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+   
+   
+    
+	</action-mappings>
+	<message-resources parameter="ApplicationResources" />
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/tiles-definition.xml" />
+		<set-property property="definitions-parser-validate"
+			value="true" />
+	</plug-in>
+
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml" />
+	</plug-in>
+
+
+</struts-config>

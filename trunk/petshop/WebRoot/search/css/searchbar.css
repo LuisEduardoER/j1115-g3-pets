@@ -1,0 +1,68 @@
+
+.topsearch{
+	width:980px;
+	height:60px;
+	background-color:#9fbe3f;
+}
+.searchbox{
+	padding-top:5px;
+	width:980px;
+	height:50px;
+}
+.search{
+	margin-top:6px;
+	width:450px;
+	height:40px;
+}
+.searchinput{
+	border: 1px solid #8FAB3A;
+	margin-top:4px;
+	float:left;
+	font-family:Arial, Helvetica, sans-serif;
+	padding-left:2px;
+	width:312px;
+	height:26px;
+	background-color:#FFF;
+	color:#666;
+}
+.searchinput input{
+	border: 0 none;
+	border-color:#9fbe3f;
+    height: 16px;
+    padding: 4px 0;
+    width: 186px;
+	border:0px;
+	color:#666;
+}
+.searchinput select {
+	font-family:Arial, Helvetica, sans-serif;
+	border-width: 0;
+    height: 26px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+	outline:none;
+	border:0;
+	color:#666;
+	width:112px;
+}
+.searchinput select option{
+	font-family:Arial, Helvetica, sans-serif;
+	outline:none;
+	color:#666;
+}
+.searchbtn{
+	float:left;
+	width:120px;
+	height:39px;
+}
+.gobtn{
+	margin-left:5px;
+	display:inline-block;
+	height: 39px;
+    width: 82px;
+	background: url("../images/petImages.gif") no-repeat scroll 0 0 transparent;
+	cursor:pointer;
+}
+.gobtn:hover{
+	background-position:0 -40px;
+}
