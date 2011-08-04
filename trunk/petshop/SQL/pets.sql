@@ -1,7 +1,0 @@
---
--- 所有的sql语句写入时，后面要写注释，
--- 例：
--- create table user(
---  username varchar2(20) --用户名
--- );
---
