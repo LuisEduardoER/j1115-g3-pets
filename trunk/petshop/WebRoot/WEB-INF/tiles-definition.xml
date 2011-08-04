@@ -10,7 +10,8 @@
 		<put name="topline" value="/pages/toplogin.jsp"></put>
 		<put name="topmenu" value="/pages/topmenu.jsp"></put>
 		<put name="searchbar" value="/search/search.jsp"></put>
-		<put name="homecontent" value="/pages/homecontent.jsp"></put>
+		<put name="leftmenu" value="/pages/leftmenu.jsp"></put>
+		<put name="goodscontent" value="/pages/goodscontent.jsp"></put>
 	</definition>
 	
 	<definition name="GoodsListView" template="/template/goodtemplate.jsp">

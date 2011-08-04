@@ -21,11 +21,11 @@ type="text/css" />
 }
 .template_left{
 	float:left;
-	width:220px;
+	width:200px;
 }
 .template_right{
 	float:left;
-	width:760px;
+	width:780px;
 }
 .template_footer{
 	clear:both;
@@ -44,10 +44,10 @@ type="text/css" />
 	</div>
 	<div class="template_content">
 		<div class="template_left">
-			<span>left menu</span>
+			<tiles:insert attribute="leftmenu" />
 		</div>
 		<div class="template_right">
-			<tiles:insert attribute="homecontent" />
+			<tiles:insert attribute="goodscontent" />
 		</div>
 	</div>
 	<div class="template_footer">
