@@ -5,11 +5,15 @@ hr{
 }
 .mycontent{
 	width:780px;
+	height:auto;
 }
 .category_topimage{
 	margin-left:auto;
 	margin-right:auto;
 	width:778px;
+}
+.mygoodscontent{
+	padding-left:7px;
 }
 .mygoodscontent hr{
 	clear:both;
@@ -19,16 +23,16 @@ hr{
 	border-right:#CCC 2px solid;
 	float:left;
 	width:180px;
-	padding-left:5px;
-	padding-right:5px;
+	padding-left:6px;
+	padding-right:4px;
 	height:260px;
 }
 .goodsshowbox_noborder{
 	margin:10px 0;
 	float:left;
 	width:180px;
-	padding-left:5px;
-	padding-right:5px;
+	padding-left:6px;
+	padding-right:4px;
 	height:260px;
 }
 .con_goodsimage{

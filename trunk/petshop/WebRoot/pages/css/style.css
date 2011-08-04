@@ -92,7 +92,11 @@
 	height:23px;
 	display:block;
 	background-image:url(../images/checkout.png);
+	background-position:0 0;
 	background-repeat:no-repeat;
+}
+.checkout:hover{
+	background-position:0 -23px;
 }
 .checkout_bg{
 	display:block;
