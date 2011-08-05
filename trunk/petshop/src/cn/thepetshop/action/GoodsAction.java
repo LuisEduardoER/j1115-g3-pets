@@ -24,9 +24,9 @@ public class GoodsAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		int orderid=Integer.parseInt(request.getParameter("orderid"));
-		//HttpSession session=request.getSession();
-		//int userId = (Integer)session.getAttribute("userid");
-		int userId=2;
+		HttpSession session=request.getSession();
+		int userId = (Integer)session.getAttribute("userid");
+//		int userId=2;
 		List<OrderInfo> list = new PetDAO().getOrderInfoByUserId(userId);
 		for(int i=0;i<list.size();i++){
 			OrderInfo orderinfo=list.get(i);

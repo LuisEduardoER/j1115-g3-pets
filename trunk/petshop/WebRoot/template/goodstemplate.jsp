@@ -25,7 +25,7 @@ type="text/css" />
 
 .template_left {
 	float: left;
-	width: 220px;
+	width: 200px;
 }
 
 .template_right {
