@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="userForm" type="com.java.form.UserForm" />
+    <form-bean name="bookForm" type="com.java.form.BookForm" />
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+    <action
+      path="/index"
+      type="com.java.action.IndexAction"
+      validate="false">
+    </action>
+    
+    <action
+      path="/logon"
+      type="com.java.action.LogonAction"
+      name="userForm"
+      validate="false">
+    </action>
+	
+    <action
+      path="/showBookForm" 
+      type="com.java.action.ShowBookFormAction">
+    </action>
+    
+    <action
+      path="/addBook"
+      name="bookForm"
+      type="com.java.action.AddBookAction"
+      validate="false">
+    </action>
+    
+    <action
+      path="/logoff"
+      type="com.java.action.LogoffAction">
+    </action>
+    
+    <action
+      path="/listBook"
+      type="com.java.action.ListBookAction"
+      validate="false">
+      <set-property property="cancellable" value="true" />
+    </action>
+    
+    <action path="/logoff" type="com.java.action.LogoffAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+
+  </action-mappings>
+
+  <message-resources parameter="ApplicationResources" />
+  
+  <plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/tiles-definition.xml" />
+		<set-property property="definitions-parser-validate"
+			value="true" />
+  </plug-in>
+</struts-config>
+
