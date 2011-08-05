@@ -67,7 +67,7 @@
 				<%
 					}else{
 				%>
-					<a href="<%=request.getContextPath()%>/adminIndex.do">MyAdmin</a>|
+					<html:link action="/adminIndex">MyAdmin</html:link>|
 				<%
 				}
 				%>
