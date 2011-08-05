@@ -54,6 +54,7 @@
 			var tempid = "msg"+marg;
 			var di = document.getElementById(tempid);
 			if ("changesuccess" == text) {
+				document.getElementById("prenum"+marg).innerHTML = document.getElementById(marg).value;
 				di.innerHTML = "修改成功";
 				recount();
 			}else if("unchange" == text){
