@@ -30,7 +30,7 @@ public class PayAction extends Action {
 			DynaActionForm payform=(DynaActionForm)form;
 			String value=(String)payform.get("paytype");
 			String orderid=(String)payform.get("orderid");
-			System.out.println(value);
+//			System.out.println(value);
 			//HttpSession session=request.getSession();
 			//int userId = (Integer)session.getAttribute("userid");
 			int userId=2;

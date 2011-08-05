@@ -23,8 +23,8 @@ public class ModPCategoryAction extends Action {
 			return new ActionForward("/getParentCategory.do");
 			
 		}else {
-			System.out.println(cid);
-			System.out.println(newcname);
+//			System.out.println(cid);
+//			System.out.println(newcname);
 			int cidnum = Integer.parseInt(cid);
 			PetDAO pDao = new PetDAO();
 			pDao.modParentCategory(cidnum, newcname);

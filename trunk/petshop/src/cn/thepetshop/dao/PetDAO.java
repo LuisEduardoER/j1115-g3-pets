@@ -81,7 +81,7 @@ public class PetDAO {
 			rs = st.executeQuery(sql);
 			if (rs.next()) {
 				userid = rs.getString(1);
-				System.out.println(userid);
+//				System.out.println(userid);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -186,7 +186,7 @@ public class PetDAO {
 				user.setPassword(rs.getString(3));
 				user.setIdentity(rs.getString(4));
 				user.setMoney(rs.getString(5));
-				System.out.println(user.getId());
+//				System.out.println(user.getId());
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -599,7 +599,7 @@ public class PetDAO {
 			con=getConnection();
 			st=con.createStatement();
 			String sql="update p_goods set g_score = "+score+" , g_sold = "+num+" where g_id = "+goodid;
-			System.out.println(sql);
+//			System.out.println(sql);
 			st.executeQuery(sql);
 			
 		} catch (SQLException e) {
@@ -1122,7 +1122,7 @@ public class PetDAO {
 				i=rs.getInt(1);
 			}
 			sql="insert into p_goods (g_id,c_id,g_name,g_price,g_num,g_brief) values ("+i+","+cid+",'"+gname+"',"+gprice+","+gnum+",'"+gbrief+"')";
-			System.out.println(sql);
+//			System.out.println(sql);
 			st.executeUpdate(sql);
 			
 		} catch (SQLException e) {
