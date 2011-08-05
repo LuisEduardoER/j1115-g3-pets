@@ -108,8 +108,12 @@
 						<logic:equal value="5" name="orderlist" property="ostate">已取消</logic:equal>
 					</td>
 					<td>
-						<input type="button" id="${allorderlist[i].oid }"
-							onclick="hqs_delivery(${allorderlist[i].oid })" value="发货" />
+						<logic:lessThan value="2" name="orderlist" property="ostate">
+							<input type="button" id="${allorderlist[i].oid }" onclick="hqs_delivery(${allorderlist[i].oid })" value="发货" />
+						</logic:lessThan>
+						<logic:greaterEqual value="2" name="orderlist" property="ostate">
+							<input type="button" disabled="disabled" value="发货" />
+						</logic:greaterEqual>
 					</td>
 				</tr>
 			</logic:iterate>
