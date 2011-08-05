@@ -12,7 +12,7 @@
 			<% int goodsindex=0;%>
 			<logic:iterate id="goods" name="goodsList" >
 				
-			<% 
+			<%
 				goodsindex++;
 				if(goodsindex%4 != 0){
 				%>
