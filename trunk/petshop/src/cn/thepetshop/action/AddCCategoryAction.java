@@ -24,7 +24,7 @@ public class AddCCategoryAction extends Action {
 	
 		AddCCategoryForm addCCategoryForm = (AddCCategoryForm) form;
 		String addcname = addCCategoryForm.getAddCCategory();
-		System.out.println(addcname);
+//		System.out.println("AddCCategoryAction"+addcname);
 		String pidString = request.getParameter("pno");
 		int pid = Integer.parseInt(pidString);
 		if (addcname.equals("")||addcname==null || pidString.equals("") || pidString==null) {
