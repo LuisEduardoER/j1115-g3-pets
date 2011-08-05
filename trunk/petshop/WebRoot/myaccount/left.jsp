@@ -37,10 +37,10 @@
     		<div class="p_category"><span class="p_category_sapn">订单管理</span></div>
             <div class="sub_category">
             	<span class="sub_category_span">
-					<a href="/trading.do" target="_top">订单ING</a>
+					<a href="../petshop/trading.do" target="_top">订单ING</a>
 				</span>
 				<span class="sub_category_span">
-					<a href="../history.do" target="_top">历史订单</a>
+					<a href="../petshop/history.do" target="_top">历史订单</a>
 				</span>
                 
             </div>
