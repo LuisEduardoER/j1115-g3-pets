@@ -162,7 +162,7 @@
 -->
 </style>
 <hr />
-<div class="webposition">订单&gt;&gt;确认商品<span style="color:#ccc">&gt;&gt;确认商品&gt;&gt;付款</span></div>
+<div class="webposition">订单&gt;&gt;确认商品<span style="color:#ccc">&gt;&gt;填写个人信息&gt;&gt;付款</span></div>
 <div class="carttablediv">
 <table width=100% class="carttable" border="0" id="carttable">
 	<tr>

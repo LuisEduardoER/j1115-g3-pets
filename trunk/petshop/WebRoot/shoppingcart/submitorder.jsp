@@ -48,7 +48,7 @@
 <div class="mySubmitOrder">
 	<html:form action="/submitOrder" method="post">
 		收货信息：
-		<table>
+		<table width="100%">
 			<tr>
 				<td width="80px">收件人</td>
 				<td width="520px">
@@ -77,7 +77,7 @@
 		</table>
 		<br />
 			订单信息：
-		<table border="1">
+		<table border="1" width=100%>
 			<tr>
 				<th><center>商品号</center></th>
 				<th><center>名称</center></th>
@@ -94,12 +94,13 @@
 					</tr>
 				</logic:iterate>
 				<tr>
-					<td colspan="2">总金额</td>
-					<td colspan="2"><bean:write name="summoney" /></td>
+					<td colspan="2"><span style="padding-right:15px;">总金额</span></td>
+					<td colspan="2"><center style="color:#ff6633;padding-left:15px;"><bean:write name="summoney" /></center></td>
 				</tr>
 			</logic:present>
 		</table>
-		<html:submit value="确认信息" onclick="return orderformcheck()"></html:submit>
+		<br />
+		<center><html:submit value="确认信息" onclick="return orderformcheck()"></html:submit></center>
 	</html:form>
 </div>
 <script type="text/javascript">
