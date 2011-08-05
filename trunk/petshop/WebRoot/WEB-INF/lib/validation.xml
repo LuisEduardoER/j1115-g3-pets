@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE form-validation PUBLIC "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1.3//EN" "http://jakarta.apache.org/commons/dtds/validator_1_1_3.dtd">
+
+<form-validation>
+	<formset>
+		<form name="userForm">
+			<field property="username" depends="required">
+				<arg0 key="user.username"/>
+			</field>	
+			<field property="password" depends="required" >
+				<arg0 key="user.password" />
+			</field>
+			
+		</form>
+	
+	<!-- 
+		<form name="bookForm">
+			<field property="id" depends="required">
+				<arg0 key="book.id" />
+			</field>
+			<field property="name" depends="required">
+				<arg0 key="book.name" />
+			</field>
+			<field property="publishDate" depends="required,date">
+				<arg0 key="book.publishDate" />
+				<var>
+					<var-name>datePattern</var-name>
+					<var-value>yyyy-MM-dd</var-value>
+				</var>
+			</field>
+			<field property="price" depends="required,mask">
+				<arg0 key="book.price" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[1-9][0-9]{0,4}\.[0-9]{2}$</var-value>
+				</var>
+			</field>
+		</form>
+	 -->
+	</formset>
+</form-validation>

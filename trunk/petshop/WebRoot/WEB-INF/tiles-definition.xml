@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+	
+	<definition name="IndexView" template="/template/hometemplate.jsp">
+		<put name="topline" value="/pages/toplogin.jsp"></put>
+		<put name="topmenu" value="/pages/topmenu.jsp"></put>
+		<put name="searchbar" value="/search/search.jsp"></put>
+		<put name="leftmenu" value="/pages/leftmenu.jsp"></put>
+		<put name="goodscontent" value="/pages/goodscontent.jsp"></put>
+	</definition>
+	
+	<definition name="GoodsListView" template="/template/goodstemplate.jsp">
+	<put name="topline" value="/pages/toplogin.jsp"></put>
+		<put name="topmenu" value="/pages/topmenu.jsp"></put>
+		<put name="searchbar" value="/search/search.jsp"></put>
+		<put name="left" value="/pages/leftmenu.jsp"></put>
+		<put name="right" value="/goods/goodscontent.jsp"></put>
+	</definition>
+	
+	<definition name="FindGoodsView" template="/template/goodstemplate.jsp">
+	<put name="topline" value="/pages/toplogin.jsp"></put>
+		<put name="topmenu" value="/pages/topmenu.jsp"></put>
+		<put name="searchbar" value="/search/search.jsp"></put>
+		<put name="left" value="/jsp/goods/goods_menu.jsp"></put>
+		<put name="right" value="/jsp/goods/find_goods_list.jsp"></put>
+	</definition>
+	
+	<definition name="GoodsDetailsView" template="/template/goodstemplate.jsp">
+	<put name="topline" value="/pages/toplogin.jsp"></put>
+		<put name="topmenu" value="/pages/topmenu.jsp"></put>
+		<put name="searchbar" value="/search/search.jsp"></put>
+		<put name="left" value="/jsp/goods/goods_menu.jsp"></put>
+		<put name="right" value="/jsp/goods/goods_details.jsp"></put>
+	</definition>
+	
+	<definition name="AdminIndexView" template="/admin/template/hometemplate.jsp">
+		<put name="topline" value="/pages/toplogin.jsp"></put>
+		<put name="topmenu" value="/pages/topmenu.jsp"></put>
+		<put name="leftmenu" value="/admin/leftmenu.jsp"></put>
+		<put name="homecontent" value="/admin/welcome.jsp"></put>
+		<put name="footer" value="/pages/footer.jsp"></put>
+	</definition>
+	
+	<definition name="AdminGoodsListView" template="/admin/template/hometemplate.jsp">
+		<put name="topline" value="/pages/toplogin.jsp"></put>
+		<put name="topmenu" value="/pages/topmenu.jsp"></put>
+		<put name="leftmenu" value="/admin/leftmenu.jsp"></put>
+		<put name="homecontent" value="/admin/goodslist.jsp"></put>
+		<put name="footer" value="/pages/footer.jsp"></put>
+	</definition>
+	
+	<definition name="AdminParentCategoryListView" template="/admin/template/hometemplate.jsp">
+		<put name="topline" value="/pages/toplogin.jsp"></put>
+		<put name="topmenu" value="/pages/topmenu.jsp"></put>
+		<put name="leftmenu" value="/admin/leftmenu.jsp"></put>
+		<put name="homecontent" value="/admin/pcategory.jsp"></put>
+		<put name="footer" value="/pages/footer.jsp"></put>
+	</definition>
+	
+	<definition name="AdminOrderListView" template="/admin/template/hometemplate.jsp">
+		<put name="topline" value="/pages/toplogin.jsp"></put>
+		<put name="topmenu" value="/pages/topmenu.jsp"></put>
+		<put name="leftmenu" value="/admin/leftmenu.jsp"></put>
+		<put name="homecontent" value="/admin/orderlist.jsp"></put>
+		<put name="footer" value="/pages/footer.jsp"></put>
+	</definition>
+	
+	<definition name="AdminCCategoryView" template="/admin/template/hometemplate.jsp">
+		<put name="topline" value="/pages/toplogin.jsp"></put>
+		<put name="topmenu" value="/pages/topmenu.jsp"></put>
+		<put name="leftmenu" value="/admin/leftmenu.jsp"></put>
+		<put name="homecontent" value="/admin/ccategory.jsp"></put>
+		<put name="footer" value="/pages/footer.jsp"></put>
+	</definition>
+	
+	<definition name="ModAdminPassView" template="/admin/template/hometemplate.jsp">
+		<put name="topline" value="/pages/toplogin.jsp"></put>
+		<put name="topmenu" value="/pages/topmenu.jsp"></put>
+		<put name="leftmenu" value="/admin/leftmenu.jsp"></put>
+		<put name="homecontent" value="/admin/modAdminPass.jsp"></put>
+		<put name="footer" value="/pages/footer.jsp"></put>
+	</definition>
+	
+	<definition name="AdminAddNewGoodsView" template="/admin/template/hometemplate.jsp">
+		<put name="topline" value="/pages/toplogin.jsp"></put>
+		<put name="topmenu" value="/pages/topmenu.jsp"></put>
+		<put name="leftmenu" value="/admin/leftmenu.jsp"></put>
+		<put name="homecontent" value="/admin/addnewGoods.jsp"></put>
+		<put name="footer" value="/pages/footer.jsp"></put>
+	</definition>
+	
+	<definition name="MyCartView" template="/admin/template/hometemplate.jsp">
+		<put name="topline" value="/pages/toplogin.jsp"></put>
+		<put name="topmenu" value="/pages/topmenu.jsp"></put>
+		<put name="leftmenu" value="/pages/leftmenu.jsp"></put>
+		<put name="homecontent" value="/shoppingcart/mycart.jsp"></put>
+		<put name="footer" value="/pages/footer.jsp"></put>
+	</definition>
+	
+	<definition name="SubmitOrderView" template="/admin/template/hometemplate.jsp">
+		<put name="topline" value="/pages/toplogin.jsp"></put>
+		<put name="topmenu" value="/pages/topmenu.jsp"></put>
+		<put name="leftmenu" value="/pages/leftmenu.jsp"></put>
+		<put name="homecontent" value="/shoppingcart/submitorder.jsp"></put>
+		<put name="footer" value="/pages/footer.jsp"></put>
+	</definition>
+</tiles-definitions>
