@@ -38,6 +38,8 @@
 .webposition2{
 	padding-top:20px;
 	color:#333;
+	font-size:12px;
+	font-weight:900;
 }
 -->
 </style>
@@ -77,18 +79,18 @@
 			订单信息：
 		<table border="1">
 			<tr>
-				<th>商品号</th>
-				<th>名称</th>
-				<th width="60px">单价</th>
-				<th width="20px">数量</th>
+				<th><center>商品号</center></th>
+				<th><center>名称</center></th>
+				<th width="60px"><center>单价</center></th>
+				<th width="40px"><center>数量</center></th>
 			</tr>
 			<logic:present name="orderedGoodsList">
 				<logic:iterate id="orderedGoods" name="orderedGoodsList">
 					<tr>
-						<td><bean:write name="orderedGoods" property="goodsid" /></td>
+						<td><center><bean:write name="orderedGoods" property="goodsid" /></center></td>
 						<td><bean:write name="orderedGoods" property="goodsName" /></td>
-						<td><bean:write name="orderedGoods" property="goodsPrice" /></td>
-						<td><bean:write name="orderedGoods" property="num" /></td>
+						<td><center><bean:write name="orderedGoods" property="goodsPrice" /></center></td>
+						<td><center><bean:write name="orderedGoods" property="num" /></center></td>
 					</tr>
 				</logic:iterate>
 				<tr>

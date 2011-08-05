@@ -156,6 +156,8 @@
 .webposition{
 	padding-top:20px;
 	color:#333;
+	font-size:12px;
+	font-weight:900;
 }
 -->
 </style>
@@ -164,7 +166,7 @@
 <div class="carttablediv">
 <table width=100% class="carttable" border="0" id="carttable">
 	<tr>
-		<th>商品号</th><th>名称</th><th>单价</th><th width="200">数量</th><th>操作</th>
+		<th>商品号</th><th>名称</th><th>单价</th><th width="40px">数量</th><th>操作</th>
 	</tr>
 	<%
 		Object obj = request.getAttribute("cart");
