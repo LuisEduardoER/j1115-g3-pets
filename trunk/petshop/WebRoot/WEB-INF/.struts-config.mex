@@ -13,7 +13,6 @@
   <StrutsActivity path="/unfinishedOrders.do" location="710,738" dimension="304,84" />
   <StrutsActivity path="/modAdminPass.do" location="0,609" dimension="280,84" />
   <StrutsActivity path="/getUserMoney.do" location="999,867" dimension="280,84" />
-  <StrutsActivity path="/listGoods.do" location="626,1383" dimension="262,84" />
   <StrutsActivity path="/submitOrder.do" location="325,1254" dimension="274,84" />
   <StrutsActivity path="/getParentCategory.do" location="0,738" dimension="310,84" />
   <StrutsActivity path="/modPCategory.do" location="1324,867" dimension="280,84" />
@@ -25,24 +24,15 @@
   <StrutsActivity path="/updateChildren.do" location="337,867" dimension="292,84" />
   <StrutsActivity path="/modifyAmount.do" location="975,996" dimension="280,84" />
   <StrutsActivity path="/getCart.do" location="1210,1512" dimension="250,84" />
-  <StrutsActivity path="/showAllGoods.do" location="1300,996" dimension="280,84" />
   <StrutsActivity path="/inputCustomerInfo.do" location="355,738" dimension="310,84" />
-  <StrutsActivity path="/goodsPage.do" location="1240,1383" dimension="262,84" />
   <StrutsActivity path="/checkReg.do" location="608,1512" dimension="256,84" />
-  <StrutsActivity path="/addNewGoods.do" location="644,1254" dimension="274,84" />
   <StrutsActivity path="/selectGood.do" location="1276,1254" dimension="268,84" />
-  <StrutsActivity path="/getGoodsInfo.do" location="0,1125" dimension="280,84" />
-  <StrutsActivity path="/modGoodsInfo.do" location="325,1125" dimension="280,84" />
-  <StrutsActivity path="/delGoodsInfo.do" location="650,1125" dimension="280,84" />
-  <StrutsActivity path="/findGoods.do" location="0,1512" dimension="262,84" />
-  <StrutsActivity path="/goods.do" location="927,461" dimension="238,84" />
   <StrutsActivity path="/getPCategoryMap.do" location="1408,738" dimension="298,84" />
   <StrutsActivity path="/logoff.do" location="289,1641" dimension="244,84" />
   <StrutsActivity path="/checkLogin.do" location="0,1383" dimension="268,84" />
   <StrutsActivity path="/getCCategoryByParent.do" location="1210,461" dimension="328,84" />
   <StrutsActivity path="/modOrder.do" location="909,1512" dimension="256,84" />
   <StrutsActivity path="/showAllOrder.do" location="975,1125" dimension="280,84" />
-  <StrutsActivity path="/goodsDetails.do" location="1300,1125" dimension="280,84" />
   <StrutsActivity path="/delOrderList.do" location="0,1254" dimension="280,84" />
   <StrutsActivity path="/pingJia.do" location="632,461" dimension="250,84" />
   <StrutsActivity path="/scort.do" location="676,0" dimension="256,84" />
@@ -55,11 +45,22 @@
   <StrutsActivity path="/jsp/payFailed.jsp" location="977,184" dimension="148,48" />
   <StrutsActivity path="/jsp/PayJsp.jsp" location="1225,184" dimension="130,48" />
   <StrutsActivity path="/jsp/paySucceed.jsp" location="1455,184" dimension="154,48" />
-  <StrutsActivity path="/jsp/newOrderShow.jsp" location="371,368" dimension="166,48" />
   <StrutsActivity path="/admin/modAdminPass.jsp" location="51,461" dimension="178,48" />
   <StrutsActivity path="/jsp/goodslist.jsp" location="972,645" dimension="148,48" />
   <StrutsActivity path="/jsp/proPingJia.jsp" location="680,645" dimension="154,48" />
+  <StrutsActivity path="/jsp/newOrderShow.jsp" location="371,368" dimension="166,48" />
   <StrutsActivity path="/jsp/orderShow.jsp" location="382,645" dimension="148,48" />
+  <StrutsActivity path="/list.do" location="1550,1050" dimension="220,104" />
+  <StrutsActivity path="/showAll.do" location="650,1150" dimension="246,104" />
+  <StrutsActivity path="/Page.do" location="650,1350" dimension="230,104" />
+  <StrutsActivity path="/addNew.do" location="1550,1450" dimension="251,104" />
+  <StrutsActivity path="/getInfo.do" location="950,1650" dimension="244,104" />
+  <StrutsActivity path="/modInfo.do" location="1250,1650" dimension="252,104" />
+  <StrutsActivity path="/delInfo.do" location="1850,1650" dimension="243,104" />
+  <StrutsActivity path="/find.do" location="50,1850" dimension="225,104" />
+  <StrutsActivity path="/.do" location="350,1850" dimension="201,104" />
+  <StrutsActivity path="/Details.do" location="650,1850" dimension="240,104" />
+  <StrutsActivity path="/jsp/list.jsp" location="950,1850" dimension="95,53" />
   <StrutsTransition id="/admin/modAdminPass.jsp,null,/modAdminPass.do,2" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="140,509" />
@@ -79,16 +80,18 @@
       <AbsolutePoint location="1051,184" />
     </AutomaticBendpoints>
   </StrutsTransition>
-  <StrutsTransition id="/trading.do,show1,/jsp/newOrderShow.jsp,1" routingType="0">
-    <AutomaticBendpoints>
-      <AbsolutePoint location="454,268" />
-      <AbsolutePoint location="454,368" />
-    </AutomaticBendpoints>
-  </StrutsTransition>
   <StrutsTransition id="/delete.do,deleteSucceed,/trading.do,1" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="454,84" />
       <AbsolutePoint location="454,184" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/.do,list,/jsp/list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="450,1850" />
+      <AbsolutePoint location="450,1799" />
+      <AbsolutePoint location="997,1799" />
+      <AbsolutePoint location="997,1850" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/pay.do,paySucceed,/jsp/paySucceed.jsp,1" routingType="0">
@@ -113,9 +116,8 @@
   <StrutsTransition id="/scort.do,suceess,/trading.do,1" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="804,84" />
-      <AbsolutePoint location="804,134" />
-      <AbsolutePoint location="547,134" />
-      <AbsolutePoint location="547,184" />
+      <AbsolutePoint location="804,217" />
+      <AbsolutePoint location="594,217" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/sure.do,sure,/trading.do,1" routingType="0">
