@@ -25,7 +25,7 @@ public class SubmitOrderAction extends Action {
 		String userid = (String) obj;
 //		userid = "2";//临时用户ID
 //		System.out.println("付款方式"+of.getPay());
-		OrderInfo oi = pd.createOrder(userid,of.getReceiver(),of.getAddress(),of.getPhone(),of.getPay());
+		OrderInfo oi = pd.createOrder(userid,of.getReceiver(),of.getAddress(),of.getPhone());
 		request.setAttribute("orderedGoodsList", oi.getGoodsList());
 		request.setAttribute("orderMoney", oi.getSumMoney());
 		request.getSession().setAttribute("goodsnumincart", "0");

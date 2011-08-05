@@ -896,11 +896,10 @@ public class PetDAO {
 	 * @param receiver 接收者
 	 * @param address 地址
 	 * @param phone 电话号码
-	 * @param pay 付款方式
 	 * @return 返回一个OrderInfo对象
 	 */
 	public OrderInfo createOrder(String userid, String receiver,
-			String address, String phone ,int pay) {
+			String address, String phone) {
 		Connection con=null;
 		Statement st=null;
 		OrderInfo oi=new OrderInfo();
@@ -917,8 +916,8 @@ public class PetDAO {
 		try {
 			con=getConnection();
 			st=con.createStatement();
-			String sql="insert into p_orders (u_id,o_time,o_receiver,o_address,o_phone,o_type,o_sum) " +
-					"values("+userid+",sysdate,'"+receiver+"','"+address+"','"+phone+"',"+pay+","+Double.valueOf(cart.getSumMoney())+")";
+			String sql="insert into p_orders (u_id,o_time,o_receiver,o_address,o_phone,o_sum) " +
+					"values("+userid+",sysdate,'"+receiver+"','"+address+"','"+phone+"',"+Double.valueOf(cart.getSumMoney())+")";
 			//System.out.println("sql: "+sql);
 			st.executeUpdate(sql);
 			updateGoodsLeftNum(cart.getGoodsList());
