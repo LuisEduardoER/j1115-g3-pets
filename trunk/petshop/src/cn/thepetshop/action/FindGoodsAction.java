@@ -29,7 +29,7 @@ public class FindGoodsAction extends Action {
 			page = Integer.parseInt(nowpage);
 		}
 		int count = pd.getCountOfFindGoods(searchcategory,searchkey);
-		//System.out.println("count::"+count);
+//		System.out.println("getCountOfFindGoods::"+searchcategory);
 		int pageCount = count / PAGEROW;
 		//System.out.println("pageCount::"+pageCount);
 		if (count % PAGEROW != 0) {

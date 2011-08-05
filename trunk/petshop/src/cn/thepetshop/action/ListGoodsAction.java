@@ -31,9 +31,11 @@ public class ListGoodsAction extends Action {
 		if(goodsList.size()==0){
 			goodsList = null;
 		}
-		
+//		int num = pd.getCountOfFindGoods(category, "");
+//		int endPage = (num%PAGEROW==0?(num/PAGEROW):(num/PAGEROW+1));
 		request.setAttribute("goodsList", goodsList);
 		request.setAttribute("category", category);
+//		request.setAttribute("endPage",endPage);
 		request.setAttribute("page", page);
 		return new ActionForward("GoodsListView");
 	}
