@@ -194,4 +194,4 @@
 </table>
 </div>
 <br />
-<div align="center"><html:link action="/inputCustomerInfo" >提交</html:link></div>
+<div align="center"><html:link action="/inputCustomerInfo" >下一步</html:link></div>

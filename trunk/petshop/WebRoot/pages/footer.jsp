@@ -1,5 +1,9 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <link href="<%=request.getContextPath()%>/pages/css/footer.css" rel="stylesheet" type="text/css" />
-<div class="foot" >
-	<img alt="footer" src="<%=request.getContextPath()%>/pages/er.png">
+<div class="footer">
+	<div class="footerimg" >
+	</div>
+	<div class="copyright">
+		Copyright&copy;J1115-GROUP3 2011
+	</div>
 </div>

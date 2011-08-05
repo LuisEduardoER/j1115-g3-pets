@@ -57,7 +57,7 @@ type="text/css" />
 			</div>
 		</div>
 		<div class="template_footer">
-			<jsp:include page="/jsp/footer.jsp" />
+			<jsp:include page="/pages/footer.jsp" />
 		</div>
 	</body>
 </html>
