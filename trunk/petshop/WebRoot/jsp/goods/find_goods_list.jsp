@@ -32,7 +32,7 @@
 		</tbody>
 	</table>
 	<a href="findGoods.do?nowPage=${firstPage }&searchcategory=${searchcategory}&searchkey=${searchkey}">首页</a>
-			<a href="findGoods.do?nowPage=${page-1 }&searchcategory=${searchcategory}&findname=${searchkey}">上一页</a> 
-			<a href="findGoods.do?nowPage=${page+1 }&searchcategory=${searchcategory}&findname=${searchkey}">下一页</a> 
-			<a href="findGoods.do?nowPage=${endPage }&searchcategory=${searchcategory}&findname=${searchkey}">尾页</a>
-			<span class="pagenum">${page}/${endPage}</span>
+	<a href="findGoods.do?nowPage=${page-1 }&searchcategory=${searchcategory}&findname=${searchkey}">上一页</a> 
+	<a href="findGoods.do?nowPage=${page+1 }&searchcategory=${searchcategory}&findname=${searchkey}">下一页</a> 
+	<a href="findGoods.do?nowPage=${endPage }&searchcategory=${searchcategory}&findname=${searchkey}">尾页</a>
+	<span class="pagenum">${page}/${endPage}</span>

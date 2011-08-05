@@ -71,6 +71,7 @@
 				<a href="goodsPage.do?nowPage=${page-1 }&category=${category}">上一页</a> 
 				<a href="goodsPage.do?nowPage=${page+1 }&category=${category}">下一页</a> 
 				<a href="goodsPage.do?nowPage=${endPage }&category=${category}">尾页</a>
+				<span class="pagenum">${page}/${endPage}</span>
 			</center>
 		</logic:present>
 	</div>
