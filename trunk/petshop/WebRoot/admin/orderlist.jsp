@@ -124,6 +124,7 @@
 				<a href="showAllOrder.do?nPage=${orderpage-1 }">上一页</a>
 				<a href="showAllOrder.do?nPage=${orderpage+1 }">下一页</a>
 				<a href="showAllOrder.do?nPage=${orderendPage }">尾页</a>
+				<span class="pagenum">${orderpage}/${orderendPage}</span>
 				<br />
 			</td>
 		</tr>

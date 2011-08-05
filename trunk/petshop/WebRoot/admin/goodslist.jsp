@@ -103,6 +103,7 @@
 					<a href="showAllGoods.do?nowPage=${page-1}">上一页</a>
 					<a href="showAllGoods.do?nowPage=${page+1}">下一页</a>
 					<a href="showAllGoods.do?nowPage=${endPage}">尾页</a>
+					<span class="pagenum">${page}/${endPage}</span>
 					<br />
 				</td>
 			</tr>
