@@ -153,9 +153,14 @@
 	border:solid 1px #9FBE3F;
 	height:30px;
 }
+.webposition{
+	padding-top:20px;
+	color:#333;
+}
 -->
 </style>
 <hr />
+<div class="webposition">订单&gt;&gt;确认商品</div>
 <div class="carttablediv">
 <table width=100% class="carttable" border="0" id="carttable">
 	<tr>
