@@ -95,12 +95,12 @@
 				</logic:iterate>
 				<tr>
 					<td colspan="2"><span style="padding-right:15px;">总金额</span></td>
-					<td colspan="2"><center style="color:#ff6633;padding-left:15px;"><bean:write name="summoney" /></center></td>
+					<td colspan="2"><center>￥<span style="color:#ff6633;padding-left:2px;font-weight:700;"><bean:write name="summoney" /></span></center></td>
 				</tr>
 			</logic:present>
 		</table>
 		<br />
-		<center><html:submit value="确认信息" onclick="return orderformcheck()"></html:submit></center>
+		<center><html:submit value="去付款" onclick="return orderformcheck()"></html:submit></center>
 	</html:form>
 </div>
 <script type="text/javascript">
