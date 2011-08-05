@@ -62,12 +62,12 @@
 			<center><span style="font-size:20px; color:666px; height:30px; display:inline-block; font-weight:900; margin-top:60px;">Sorry, But No Goods Available Here...</span></center>
 		</logic:notPresent>
 		<logic:present name="goodsList">
-			<center>
-				<a href="findGoods.do?nowPage=${firstPage }&searchcategory=${searchcategory}&searchkey=${searchkey}">首页</a>
-				<a href="findGoods.do?nowPage=${page-1 }&searchcategory=${searchcategory}&findname=${searchkey}">上一页</a> 
-				<a href="findGoods.do?nowPage=${page+1 }&searchcategory=${searchcategory}&findname=${searchkey}">下一页</a> 
-				<a href="findGoods.do?nowPage=${endPage }&searchcategory=${searchcategory}&findname=${searchkey}">尾页</a>
-				<span class="pagenum">${page}/${endPage}</span>
+			<center style="font-size:14px;font-weight:900;">
+				<a href="findGoods.do?nowPage=${firstPage }&searchcategory=${searchcategory}&searchkey=${searchkey}">|&lt;&lt;</a>&nbsp;&nbsp;
+				<a href="findGoods.do?nowPage=${page-1 }&searchcategory=${searchcategory}&findname=${searchkey}">&lt;&lt;</a> &nbsp;&nbsp;
+				<span class="pagenum">${page}/${endPage}</span>&nbsp;&nbsp;
+				<a href="findGoods.do?nowPage=${page+1 }&searchcategory=${searchcategory}&findname=${searchkey}">&gt;&gt;</a> &nbsp;&nbsp;
+				<a href="findGoods.do?nowPage=${endPage }&searchcategory=${searchcategory}&findname=${searchkey}">&gt;&gt;|</a>
 			</center>
 		</logic:present>
 	</div>

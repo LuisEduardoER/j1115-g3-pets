@@ -67,11 +67,12 @@
 			<center><span style="font-size:20px; color:666px; height:30px; display:inline-block; font-weight:900; margin-top:60px;">Sorry, But No Goods Available Here...</span></center>
 		</logic:notPresent>
 		<logic:present name="goodsList">
-			<center><a href="goodsPage.do?nowPage=${firstPage }&category=${category}">首页</a>
-				<a href="goodsPage.do?nowPage=${page-1 }&category=${category}">上一页</a> 
-				<a href="goodsPage.do?nowPage=${page+1 }&category=${category}">下一页</a> 
-				<a href="goodsPage.do?nowPage=${endPage }&category=${category}">尾页</a>
-				<span class="pagenum">${page}/${endPage }</span>
+			<center style="font-size:14px;font-weight:900;">
+				<a href="goodsPage.do?nowPage=${firstPage }&category=${category}">|&lt;&lt;</a>&nbsp;&nbsp;
+				<a href="goodsPage.do?nowPage=${page-1 }&category=${category}">&lt;&lt;</a>&nbsp;&nbsp;
+				<span class="pagenum">${page}/${endPage }</span>&nbsp;&nbsp;
+				<a href="goodsPage.do?nowPage=${page+1 }&category=${category}">&gt;&gt;</a>&nbsp;&nbsp;
+				<a href="goodsPage.do?nowPage=${endPage }&category=${category}">&gt;&gt;|</a>
 			</center>
 		</logic:present>
 	</div>

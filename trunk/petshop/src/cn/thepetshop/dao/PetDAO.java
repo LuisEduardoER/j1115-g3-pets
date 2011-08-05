@@ -1291,7 +1291,7 @@ public class PetDAO {
 			}else{
 				sql="select count(*) from (select * from p_goods g,p_category c where g.c_id=c.c_id and p_id="+category+" and g_name like '%"+findname+"%')";
 			}
-			//System.out.println(sql);
+//			System.out.println("PetDAO:getCountOfFindGoods  "+sql);
 			rs=st.executeQuery(sql);
 			if(rs.next()){
 				count=rs.getInt(1);
