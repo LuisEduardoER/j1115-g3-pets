@@ -44,25 +44,16 @@
 -->
 </style>
 <hr />
-<div class="webposition2">订单&gt;&gt;确认商品&gt;&gt;填写个人信息</div>
+<div class="webposition2">订单&gt;&gt;确认商品&gt;&gt;填写个人信息<span style="color:#ccc">&gt;&gt;付款</span></div>
 <div class="mySubmitOrder">
 	<html:form action="/submitOrder" method="post">
 		收货信息：
 		<table>
 			<tr>
 				<td width="80px">收件人</td>
-				<td>
+				<td width="520px">
 					<input name="receiver" id="receiver" type="text" style="width: 100px" />
-					<span id="receivermsg" /></span>
-				</td>
-			</tr>
-			<tr>
-				<td width="80px">
-					地址
-				</td>
-				<td>
-					<input name="address" id="address" type="text" style="width: 400px" />
-					<span id="addressmsg" /></span>
+					<span style="color:red;font-size:12px;" id="receivermsg" /></span>
 				</td>
 			</tr>
 			<tr>
@@ -70,8 +61,17 @@
 					联系电话
 				</td>
 				<td>
-					<input name="phone" id="phone" type="text" style="width: 400px" />
-					<span id="phonemsg" /></span>
+					<input name="phone" id="phone" type="text" style="width: 100px" />
+					<span style="color:red;font-size:12px;" id="phonemsg" /></span>
+				</td>
+			</tr>
+			<tr>
+				<td width="80px">
+					地址
+				</td>
+				<td>
+					<input name="address"  id="address" type="text" style="width: 400px" />
+					<span style="color:red;font-size:12px;" id="addressmsg" /></span>
 				</td>
 			</tr>
 		</table>
