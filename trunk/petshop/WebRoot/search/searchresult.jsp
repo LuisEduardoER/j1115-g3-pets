@@ -1,13 +1,13 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ include file="/taglib/common.jsp"%>
 <link href="<%=request.getContextPath()%>/pages/css/rightcontent.css" rel="stylesheet" type="text/css" />
+
 <div class="mycontent">
 	<div class="mygoodscontent">
 		<logic:present name="goodsList">
 			<% int goodsindex=0;%>
 			<logic:iterate id="goods" name="goodsList" >
-				
-			<% 
+				<% 
 				goodsindex++;
 				if(goodsindex%4 != 0){
 				%>
@@ -44,21 +44,24 @@
 						<span class="con_addtocart_btn" onclick="addtocart('${goods.goodsid}')"></span>
 					</div>
 				</div>
-				<%if(goodsindex!=16){
+				<hr/>
+				<%
+				}
+				%>
+			</logic:iterate>
+			<%
+				if(goodsindex%4!=0){
 				%>
 					<hr/>
 				<%
 				}
-				}
 			%>
-			</logic:iterate>
 		</logic:present>
 		
 		<logic:notPresent name="goodsList">
 			<center><span style="font-size:20px; color:666px; height:30px; display:inline-block; font-weight:900; margin-top:60px;">Sorry, But No Goods Available Here...</span></center>
 		</logic:notPresent>
 		<logic:present name="goodsList">
-			<hr/>
 			<center><a href="goodsPage.do?nowPage=${firstPage }&category=${category}">首页</a>
 				<a href="goodsPage.do?nowPage=${page-1 }&category=${category}">上一页</a> 
 				<a href="goodsPage.do?nowPage=${page+1 }&category=${category}">下一页</a> 
