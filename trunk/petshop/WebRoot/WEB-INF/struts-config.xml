@@ -345,6 +345,9 @@
     <action path="/checkNum" type="cn.thepetshop.action.CheckNumAction">
       <set-property property="cancellable" value="true" />
     </action>
+    <action path="/enterMyAccount" type="cn.thepetshop.action.EnterMyAccountAction">
+      <set-property property="cancellable" value="true" />
+    </action>
     
     
    </action-mappings>
