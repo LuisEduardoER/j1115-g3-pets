@@ -33,11 +33,13 @@
  		marg = arg;
  		if(isNaN(document.getElementById(arg).value)){
  			document.getElementById('msg'+arg).innerHTML = "请输入数字";
+ 			document.getElementById(arg).value = document.getElementById("prenum"+arg).innerHTML;
  			setTimeout('hidemsg()',1000);
  			return;
  		}
  		if(document.getElementById(arg).value<1){
  			document.getElementById('msg'+arg).innerHTML = "商品数不能小于1";
+ 			document.getElementById(arg).value = document.getElementById("prenum"+arg).innerHTML;
  			setTimeout('hidemsg()',1000);
  			return;
  		}
@@ -144,14 +146,15 @@
 }
 .carttablediv td{
 	border:solid 1px #9FBE3F;
-	height:30px;
+	padding:3px;
 }
 .carttablediv tr{
 	border:solid 1px #9FBE3F;
+	padding:3px;
 }
 .carttablediv th{
 	border:solid 1px #9FBE3F;
-	height:30px;
+	padding:3px;
 }
 .webposition{
 	padding-top:20px;
