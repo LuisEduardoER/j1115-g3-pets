@@ -59,7 +59,18 @@
 		</logic:notPresent>
 		<logic:present scope="session" name="username" >
 			<font color="#FF6600">Welcome to the Pet Shop</font>
-			<html:link action="/enterMyAccount">MyAccount</html:link>|
+				<%
+					String userid = (String) request.getAttribute("userid");
+					if(userid.length()>=5){
+				%>
+					<a href="<%=request.getContextPath()%>/myaccount/default.jsp">MyAccount</a>|
+				<%
+					}else{
+				%>
+					<a href="<%=request.getContextPath()%>/myaccount/adminIndex.do">MyAccount</a>|
+				<%
+				}
+				%>
 			<html:link action="/logoff">Log off</html:link>
 		</logic:present>
 	</div>
