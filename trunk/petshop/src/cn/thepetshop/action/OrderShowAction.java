@@ -29,7 +29,7 @@ public class OrderShowAction extends Action {
 		List<OrderInfo> list = new PetDAO().getOrderInfoByUserId(userId);
 		request.setAttribute("list", list);
 		
-		return mapping.findForward("show");
+		return new ActionForward("OldOrderShowView");
 	}
 
 }

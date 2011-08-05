@@ -37,10 +37,10 @@
     		<div class="p_category"><span class="p_category_sapn">订单管理</span></div>
             <div class="sub_category">
             	<span class="sub_category_span">
-					<a href="../petshop/trading.do" target="_top">订单ING</a>
+					<html:link action="/trading">订单ING</html:link>
 				</span>
 				<span class="sub_category_span">
-					<a href="../petshop/history.do" target="_top">历史订单</a>
+					<html:link action="/history">历史订单</html:link>
 				</span>
                 
             </div>
@@ -59,7 +59,7 @@
     		<div class="p_category"><span class="p_category_sapn">充值</span></div>
             <div class="sub_category">
             	<span class="sub_category_span">
-					<A href="<%=request.getContextPath()%>/jsp/recharge.jsp" target='_blank'>网银充值</A>
+					<html:link action="/eBank">网银充值</html:link>
 				</span>
             </div>
         </div>

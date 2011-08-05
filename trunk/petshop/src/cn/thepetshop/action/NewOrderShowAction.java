@@ -28,7 +28,7 @@ public class NewOrderShowAction extends Action {
 		List<OrderInfo> list = new PetDAO().getOrderInfoByUserId(userId);
 		request.setAttribute("list", list);
 		
-		return mapping.findForward("show1");
+		return new ActionForward("NewOrderShowView");
 	}
 
 }

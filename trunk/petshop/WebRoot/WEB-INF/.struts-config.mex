@@ -50,25 +50,20 @@
   <StrutsActivity path="/modAdminPassView.do" location="1059,738" dimension="304,84" />
   <StrutsActivity path="/checkNum.do" location="1850,650" dimension="256,84" />
   <StrutsActivity path="/enterMyAccount.do" location="1850,850" dimension="295,104" />
+  <StrutsActivity path="/modUserPassword.do" location="1850,1050" dimension="312,104" />
+  <StrutsActivity path="/eBank.do" location="1850,1250" dimension="237,104" />
   <StrutsActivity path="/jsp/payFailed.jsp" location="977,184" dimension="148,48" />
   <StrutsActivity path="/jsp/PayJsp.jsp" location="1225,184" dimension="130,48" />
   <StrutsActivity path="/jsp/paySucceed.jsp" location="1455,184" dimension="154,48" />
-  <StrutsActivity path="/jsp/orderShow.jsp" location="382,645" dimension="148,48" />
   <StrutsActivity path="/jsp/newOrderShow.jsp" location="371,368" dimension="166,48" />
   <StrutsActivity path="/admin/modAdminPass.jsp" location="51,461" dimension="178,48" />
   <StrutsActivity path="/jsp/goodslist.jsp" location="972,645" dimension="148,48" />
   <StrutsActivity path="/jsp/proPingJia.jsp" location="680,645" dimension="154,48" />
-  <StrutsActivity path="/modUserPassword.do" />
+  <StrutsActivity path="/jsp/orderShow.jsp" location="382,645" dimension="148,48" />
   <StrutsTransition id="/admin/modAdminPass.jsp,null,/modAdminPass.do,2" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="140,509" />
       <AbsolutePoint location="140,609" />
-    </AutomaticBendpoints>
-  </StrutsTransition>
-  <StrutsTransition id="/history.do,show,/jsp/orderShow.jsp,1" routingType="0">
-    <AutomaticBendpoints>
-      <AbsolutePoint location="456,545" />
-      <AbsolutePoint location="456,645" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/pay.do,payjsp,/jsp/PayJsp.jsp,1" routingType="0">

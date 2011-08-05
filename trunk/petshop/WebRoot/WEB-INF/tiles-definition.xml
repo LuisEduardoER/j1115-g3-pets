@@ -141,4 +141,28 @@
 		<put name="homecontent" value="/jsp/money.jsp"></put>
 		<put name="footer" value="/pages/footer.jsp"></put>
 	</definition>
+	
+	<definition name="EBankView" template="/admin/template/hometemplate.jsp">
+		<put name="topline" value="/pages/toplogin.jsp"></put>
+		<put name="topmenu" value="/pages/topmenu.jsp"></put>
+		<put name="leftmenu" value="/myaccount/left.jsp"></put>
+		<put name="homecontent" value="/jsp/recharge.jsp"></put>
+		<put name="footer" value="/pages/footer.jsp"></put>
+	</definition>
+	
+	<definition name="OldOrderShowView" template="/admin/template/hometemplate.jsp">
+		<put name="topline" value="/pages/toplogin.jsp"></put>
+		<put name="topmenu" value="/pages/topmenu.jsp"></put>
+		<put name="leftmenu" value="/myaccount/left.jsp"></put>
+		<put name="homecontent" value="/jsp/orderShow.jsp"></put>
+		<put name="footer" value="/pages/footer.jsp"></put>
+	</definition>
+	
+	<definition name="NewOrderShowView" template="/admin/template/hometemplate.jsp">
+		<put name="topline" value="/pages/toplogin.jsp"></put>
+		<put name="topmenu" value="/pages/topmenu.jsp"></put>
+		<put name="leftmenu" value="/myaccount/left.jsp"></put>
+		<put name="homecontent" value="/jsp/newOrderShow.jsp"></put>
+		<put name="footer" value="/pages/footer.jsp"></put>
+	</definition>
 </tiles-definitions>
