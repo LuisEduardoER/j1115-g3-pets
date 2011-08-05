@@ -25,6 +25,6 @@ public class GetGoodsInfoAction extends Action {
 		PetDAO petDAO = new PetDAO();
 		GetAllGoods list = petDAO.getGoodsListByGid(Integer.parseInt(gid));
 		request.setAttribute("onegoodslist", list);
-		return new ActionForward("/admin/modGoods.jsp");
+		return new ActionForward("AdminModGoodsView");
 	}
 }

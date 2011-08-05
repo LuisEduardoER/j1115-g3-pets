@@ -94,6 +94,14 @@
 		<put name="footer" value="/pages/footer.jsp"></put>
 	</definition>
 	
+	<definition name="AdminModGoodsView" template="/admin/template/hometemplate.jsp">
+		<put name="topline" value="/pages/toplogin.jsp"></put>
+		<put name="topmenu" value="/pages/topmenu.jsp"></put>
+		<put name="leftmenu" value="/admin/leftmenu.jsp"></put>
+		<put name="homecontent" value="/admin/modGoods.jsp"></put>
+		<put name="footer" value="/pages/footer.jsp"></put>
+	</definition>
+	
 	<definition name="MyCartView" template="/admin/template/hometemplate.jsp">
 		<put name="topline" value="/pages/toplogin.jsp"></put>
 		<put name="topmenu" value="/pages/topmenu.jsp"></put>
