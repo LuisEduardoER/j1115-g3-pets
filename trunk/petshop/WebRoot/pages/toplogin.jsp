@@ -60,14 +60,14 @@
 		<logic:present scope="session" name="username" >
 			<font color="#FF6600">Welcome to the Pet Shop</font>
 				<%
-					String userid = (String) request.getAttribute("userid");
-					if(userid.length()>=5){
+					String userid = (String) session.getAttribute("userid");
+					if(userid.length() >= 5){
 				%>
 					<html:link action="/enterMyAccount">MyAccount</html:link>|
 				<%
 					}else{
 				%>
-					<a href="<%=request.getContextPath()%>/myaccount/adminIndex.do">MyAccount</a>|
+					<a href="<%=request.getContextPath()%>/adminIndex.do">MyAdmin</a>|
 				<%
 				}
 				%>
