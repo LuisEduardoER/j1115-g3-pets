@@ -30,6 +30,6 @@ public class GetUserMoneyAction extends Action {
 		PetDAO petdao = new PetDAO();
 		User user = petdao.findUserById(userid);
 		request.setAttribute("user", user);
-		return new ActionForward("/jsp/money.jsp");
+		return new ActionForward("GetUserMoneyView");
 	}
 }

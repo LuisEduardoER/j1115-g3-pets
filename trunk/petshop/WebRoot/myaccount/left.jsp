@@ -24,7 +24,7 @@
 					<html:link action="/getUserMsg">查询信息</html:link>
             	</span>
             	<span class="sub_category_span">
-					<a href="<%=request.getContextPath()%>/jsp/updatepass.jsp">修改密码</a>
+            		<html:link action="/modUserPassword">修改密码</html:link>
             	</span>
             	<span class="sub_category_span">
 					<html:link action= "/getUserMoney">余额查询</html:link>
@@ -50,7 +50,7 @@
     		<div class="p_category"><span class="p_category_sapn">购物车</span></div>
             <div class="sub_category">
             	<span class="sub_category_span">
-					<A href="adsmgr.php" target="right">我的购物车</A>
+					<html:link action="/getCart.do">我的购物车</html:link>
 				</span>
             </div>
         </div>

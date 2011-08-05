@@ -125,4 +125,20 @@
 		<put name="homecontent" value="/jsp/usermsg.jsp"></put>
 		<put name="footer" value="/pages/footer.jsp"></put>
 	</definition>
+	
+	<definition name="ModUserPasswordView" template="/admin/template/hometemplate.jsp">
+		<put name="topline" value="/pages/toplogin.jsp"></put>
+		<put name="topmenu" value="/pages/topmenu.jsp"></put>
+		<put name="leftmenu" value="/myaccount/left.jsp"></put>
+		<put name="homecontent" value="/jsp/updatepass.jsp"></put>
+		<put name="footer" value="/pages/footer.jsp"></put>
+	</definition>
+	
+	<definition name="GetUserMoneyView" template="/admin/template/hometemplate.jsp">
+		<put name="topline" value="/pages/toplogin.jsp"></put>
+		<put name="topmenu" value="/pages/topmenu.jsp"></put>
+		<put name="leftmenu" value="/myaccount/left.jsp"></put>
+		<put name="homecontent" value="/jsp/money.jsp"></put>
+		<put name="footer" value="/pages/footer.jsp"></put>
+	</definition>
 </tiles-definitions>

@@ -49,6 +49,7 @@
   <StrutsActivity path="/adminIndex.do" location="313,1383" dimension="268,84" />
   <StrutsActivity path="/modAdminPassView.do" location="1059,738" dimension="304,84" />
   <StrutsActivity path="/checkNum.do" location="1850,650" dimension="256,84" />
+  <StrutsActivity path="/enterMyAccount.do" location="1850,850" dimension="295,104" />
   <StrutsActivity path="/jsp/payFailed.jsp" location="977,184" dimension="148,48" />
   <StrutsActivity path="/jsp/PayJsp.jsp" location="1225,184" dimension="130,48" />
   <StrutsActivity path="/jsp/paySucceed.jsp" location="1455,184" dimension="154,48" />
@@ -57,7 +58,7 @@
   <StrutsActivity path="/admin/modAdminPass.jsp" location="51,461" dimension="178,48" />
   <StrutsActivity path="/jsp/goodslist.jsp" location="972,645" dimension="148,48" />
   <StrutsActivity path="/jsp/proPingJia.jsp" location="680,645" dimension="154,48" />
-  <StrutsActivity path="/enterMyAccount.do" />
+  <StrutsActivity path="/modUserPassword.do" />
   <StrutsTransition id="/admin/modAdminPass.jsp,null,/modAdminPass.do,2" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="140,509" />
