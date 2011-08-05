@@ -93,7 +93,11 @@
 					<td><bean:write name="orderlist" property="oreceiver" /></td>
 					<td><bean:write name="orderlist" property="oaddress" /></td>
 					<td><bean:write name="orderlist" property="ophone" /></td>
-					<td><bean:write name="orderlist" property="otype" /></td>
+					<td>
+						<logic:equal value="0" name="orderlist" property="otype">网银支付</logic:equal>
+						<logic:equal value="1" name="orderlist" property="otype">余额支付</logic:equal>
+						<logic:equal value="2" name="orderlist" property="otype">货到付款</logic:equal>
+					</td>
 					<td><bean:write name="orderlist" property="osum" /></td>
 					<td>
 						<logic:equal value="0" name="orderlist" property="ostate">未发货</logic:equal>
