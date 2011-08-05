@@ -79,8 +79,8 @@
 			<tr>
 				<th>商品号</th>
 				<th>名称</th>
-				<th>单价</th>
-				<th width="200">数量</th>
+				<th width="60px">单价</th>
+				<th width="20px">数量</th>
 			</tr>
 			<logic:present name="orderedGoodsList">
 				<logic:iterate id="orderedGoods" name="orderedGoodsList">
