@@ -31,7 +31,7 @@ public class GetUserMsgAction extends Action {
 		PetDAO petdao = new PetDAO();
 		User user = petdao.findUserById(userid);
 		request.setAttribute("user", user);
-		return new ActionForward("/jsp/usermsg.jsp");
+		return new ActionForward("UserMessageView");
 		
 	}
 }
