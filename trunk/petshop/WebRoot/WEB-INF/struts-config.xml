@@ -351,6 +351,9 @@
     <action path="/modUserPassword" type="cn.thepetshop.action.ModUserPasswordAction">
       <set-property property="cancellable" value="true" />
     </action>
+    <action path="/eBank" type="cn.thepetshop.action.EBankAction">
+      <set-property property="cancellable" value="true" />
+    </action>
     
     
    </action-mappings>
