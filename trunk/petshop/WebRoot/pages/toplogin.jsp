@@ -63,7 +63,7 @@
 					String userid = (String) request.getAttribute("userid");
 					if(userid.length()>=5){
 				%>
-					<a href="<%=request.getContextPath()%>/myaccount/default.jsp">MyAccount</a>|
+					<html:link action="/enterMyAccount">MyAccount</html:link>|
 				<%
 					}else{
 				%>

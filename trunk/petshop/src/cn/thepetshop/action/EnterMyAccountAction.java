@@ -18,9 +18,7 @@ public class EnterMyAccountAction extends Action {
 
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-		HttpSession session = request.getSession();
-		String id = session.getId();
-		System.out.println(id);
-		return null;
+
+		return new ActionForward("MyAccountView");
 	}
 }
