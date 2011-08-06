@@ -17,7 +17,6 @@ public class UserPayAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		String oid = request.getParameter("orderid");
-		System.out.println("UserPay"+oid);
 		request.setAttribute("hqs_oid", oid);
 		return new ActionForward("UserPayView");
 	}

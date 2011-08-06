@@ -43,6 +43,16 @@
           }
 	   
 	</script>
+	<style type="text/css">
+		.regpage{
+			font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+			font-size: 12px;
+		}
+		input{
+			font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+			font-size: 11px;
+		}
+	</style>
    </head>
            <p align="center">
 					<img src="<%=request.getContextPath()%>/resource/dog2.jpg"/>
@@ -50,6 +60,7 @@
   <body >
     
 		<br>
+		<div class="regpage">
 		<form action="/petshop/regist.do" name="regform" method="post">
 			<table  align="center">
 				<tr  >
@@ -86,5 +97,6 @@
 			</table>
                  			
        </form>
+       </div>
    </body>
 </html>
