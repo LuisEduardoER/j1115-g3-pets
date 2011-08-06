@@ -21,7 +21,11 @@ public class GetCartAction extends Action {
 		String userid = (String)request.getSession().getAttribute("userid");
 		PetDAO pd = new PetDAO();
 		Cart cart = pd.getShoppingCart(userid);
-		request.setAttribute("cart", cart);
+		if(cart.getGoodsList().size() == 0){
+			request.setAttribute("cart", null);
+		}else{
+			request.setAttribute("cart", cart);
+		}
 		return new ActionForward("MyCartView");
 	}
 }
