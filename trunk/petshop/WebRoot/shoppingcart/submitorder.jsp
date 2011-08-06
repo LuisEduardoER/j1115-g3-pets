@@ -3,14 +3,9 @@
 <link href="<%=request.getContextPath()%>/pages/css/rightcontent.css" rel="stylesheet" type="text/css" />
 <style>
 <!--
-input{
-	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
-	font-size: 14px;
-}
 .mySubmitOrder{
-	padding-top:50px;
-	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
-	font-size: 12px;
+	padding-top:4px;
+	font-family: "Courier New","Comic Sans MS",宋体;
 }
 .mySubmitOrder a{
 	font-weight:600;
@@ -45,15 +40,14 @@ input{
 .webposition2{
 	padding-top:20px;
 	color:#333;
-	font-size:12px;
 	font-weight:900;
-	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+	font-family: "Courier New","Comic Sans MS",宋体;
 	font-size: 14px;
 }
 -->
 </style>
 <hr />
-<div class="webposition2">订单&gt;&gt;确认商品&gt;&gt;填写个人信息<span style="color:#ccc">&gt;&gt;付款</span></div>
+<div class="webposition2">购物车：确认商品&gt;&gt;填写收货信息<span style="color:#ccc">&gt;&gt;付款</span></div>
 <div class="mySubmitOrder">
 	<html:form action="/submitOrder" method="post">
 		收货信息：
@@ -109,7 +103,10 @@ input{
 			</logic:present>
 		</table>
 		<br />
-		<center><html:submit value="去付款" onclick="return orderformcheck()"></html:submit></center>
+		<center>
+			<input type="button" value="上一步" onclick="location.href='/petshop/getCart.do'" />
+			<html:submit value="下一步" onclick="return orderformcheck()"></html:submit>
+		</center>
 	</html:form>
 </div>
 <script type="text/javascript">
@@ -124,7 +121,6 @@ input{
 		var b = true;
 		
 		if(receiver.value==""){
-			alert(receiver.value);
 			document.getElementById("receivermsg").innerHTML = "收件人不能为空";
 			b = false;
 		}

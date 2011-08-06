@@ -5,15 +5,12 @@
 
 <style>
 <!--
-
 .newordershow{
-	padding-top:45px;
-	padding-left: 100px;
-	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
-	font-size: 12px;
+	font-family: "Courier New","Comic Sans MS";
+	font-size:12px;
 }
 .newordershow a{
-	font-weight:600;
+	font-weight:400;
 	text-decoration:none;
 	color:#69C;
 }

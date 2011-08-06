@@ -25,6 +25,7 @@ public class PayAction extends Action {
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 			double sum=0;
+			PetDAO pd = new PetDAO();
 			DynaActionForm payform=(DynaActionForm)form;
 			String value=(String)payform.get("paytype");
 			String orderid=((String)payform.get("orderid")).trim();
@@ -35,7 +36,7 @@ public class PayAction extends Action {
 				return mapping.findForward("GoPayView");
 			}
 			else if(Integer.parseInt(value)==1){
-				List<OrderInfo> list = new PetDAO().getOrderInfoByUserId(userId);
+				List<OrderInfo> list = pd.getOrderInfoByUserId(userId);
 				for(int i=0;i<list.size();i++){
 					OrderInfo order=list.get(i);
 					Order od=order.getOrder();
@@ -44,20 +45,19 @@ public class PayAction extends Action {
 						break;
 					}
 				}
-				User user=new PetDAO().findUserById(Integer.toString(userId));
+				User user=pd.findUserById(Integer.toString(userId));
 				double usermoney = Double.parseDouble(user.getMoney());
 				if(usermoney>=sum){
 					double money=usermoney-sum;
-					new PetDAO().updateOrderSatatus(Integer.parseInt(orderid), 1);
-					new PetDAO().updateusermoney(userId,money);
+					pd.updateOrderSatatus(Integer.parseInt(orderid), 1);
+					pd.updateusermoney(userId,money);
 					return new ActionForward("PaySucceedView");
 				}else{
 					request.setAttribute("msg","”‡∂Ó≤ª◊„£¨«Îœ»≥‰÷µ‘Ÿπ∫¬Ú");
 					return new ActionForward("PayFailView");
 				}	
-			}
-			else{
-				new PetDAO().updateOrderSatatus(Integer.parseInt(orderid), 1);
+			}else{
+				pd.updateOrderSatatus(Integer.parseInt(orderid), 2);
 				return new ActionForward("PaySucceedView");
 			}
 	}

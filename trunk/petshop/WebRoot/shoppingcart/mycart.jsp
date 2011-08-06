@@ -8,8 +8,8 @@
 <style>
 <!--
 .carttablediv{
-	padding-top:50px;
-	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+	padding-top:4px;
+	font-family: "Courier New","Comic Sans MS",宋体;
 }
 .carttablediv a{
 	font-weight:600;
@@ -46,14 +46,14 @@
 	color:#333;
 	font-size:12px;
 	font-weight:900;
-	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+	font-family: "Courier New","Comic Sans MS",宋体;
 	font-size: 14px;
 }
 -->
 </style>
 <hr />
 <logic:present name="cart">
-<div class="webposition">订单&gt;&gt;确认商品<span style="color:#ccc">&gt;&gt;填写个人信息&gt;&gt;付款</span></div>
+<div class="webposition">购物车：确认商品<span style="color:#ccc">&gt;&gt;填写收获信息&gt;&gt;付款</span></div>
 <div class="carttablediv">
 	<table width=100% class="carttable" border="0" id="carttable">
 		<tr>
@@ -76,7 +76,7 @@
 					<td width="250px">
 						<input id="${og.goodsid}" type="text" value="${og.num}" maxlength="3" style="width: 30px;" />
 						<input type="button" onclick="modify('${og.goodsid}')" value="修改" />
-						<font id="msg${og.goodsid}" color="red" size="3"></font>
+						<span id="msg${og.goodsid}" style="color:red; font-size:12px;"></span>
 					</td>
 					<td width="38px"><input type="button" onclick="delgoods('${og.goodsid}')" value="删除" /><span style="display:none;" id="prenum${og.goodsid}">${og.num}</span></td>
 				</tr>
@@ -94,11 +94,11 @@
 </div>
 <br />
 <div align="center">
-	<html:link action="/inputCustomerInfo" style="font-family:'Courier New','Comic Sans MS',微软雅黑,黑体;" >下一步</html:link>
+	<input type="button" value="下一步" onclick="location.href='/petshop/inputCustomerInfo.do'" />
 </div>
 </logic:present>
 <logic:notPresent name="cart">
-	<div class="carttablediv">您的购物车是空的，请先添加商品</div>
+	<div class="carttablediv"><center>您的购物车是空的，请先添加商品</center></div>
 </logic:notPresent>
 <script language="javascript" type="text/javascript">
 
