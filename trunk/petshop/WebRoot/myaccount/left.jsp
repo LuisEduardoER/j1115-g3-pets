@@ -3,19 +3,19 @@
 <link href="<%=request.getContextPath()%>/pages/css/leftmenu.css" rel="stylesheet" type="text/css" />
 <style>
 <!--
-	.sub_category_span a {
-		color: #666;
-	}
-	.sub_category_span a:visited{
-		color: #666;
-	}
-	.sub_category_span a:hover{
-		
-	}
+.sub_category_span a {
+	color: #666;
+}
+.sub_category_span a:visited{
+	color: #666;
+}
+.lmenu_items{
+	color: #CCFFCC;
+}
 -->
 </style>
 <div class="lmenu">
-	<div class="lmenu_items" style="font-weight: 600; color: #CCFFCC">
+	<div class="lmenu_items">
     	<div class="lmenu_title" style="font-family: 'Comic Sans MS'">MainMenu</div>
         <div class="lmenu_item" >
     		<div class="p_category" ><span class="p_category_sapn">个人信息</span></div>
