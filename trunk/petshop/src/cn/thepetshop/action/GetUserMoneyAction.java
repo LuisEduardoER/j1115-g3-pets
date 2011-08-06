@@ -17,7 +17,6 @@ import cn.thepetshop.dao.PetDAO;
 
 import cn.thepetshop.object.User;
 import cn.thepetshop.form.UserForm;
-import cn.thepetshop.object.User;
 
 
 public class GetUserMoneyAction extends Action {

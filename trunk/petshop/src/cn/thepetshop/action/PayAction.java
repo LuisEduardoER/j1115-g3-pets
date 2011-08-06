@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
@@ -17,8 +16,6 @@ import cn.thepetshop.dao.PetDAO;
 import cn.thepetshop.object.User;
 import cn.thepetshop.object.Order;
 import cn.thepetshop.object.OrderInfo;
-import cn.thepetshop.object.OrderShow;
-import cn.thepetshop.object.User;
 
 public class PayAction extends Action {
 	

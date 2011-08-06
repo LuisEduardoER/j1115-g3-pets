@@ -12,7 +12,6 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import cn.thepetshop.dao.PetDAO;
-import cn.thepetshop.form.DelCCategoryForm;
 
 
 public class DelCCategoryAction extends Action {
