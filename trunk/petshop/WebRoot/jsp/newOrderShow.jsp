@@ -5,13 +5,58 @@
 <html>
 	<head>
 		<title>未交易成功</title>
+<style>
+<!--
+*{
+	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+	font-size: 12px;
+}
+.newordershow{
+	padding-top:45px;
+	padding-left: 100px;
+}
+.newordershow a{
+	font-weight:600;
+	text-decoration:none;
+	color:#69C;
+}
+.newordershow a:visited{
+	color:#69C;
+}
+.newordershow a:hover{
+	color:#333;
+}
+.newordershow table{
+	border-spacing:3px;
+	border-collapse:collapse;
+	border-width:4px;
+	border-color:#9FBE3F;
+	border-style:double;
+	text-align:center;
+}
+.newordershow td{
+	border:solid 1px #9FBE3F;
+	padding:3px;
+}
+.newordershow tr{
+	border:solid 1px #9FBE3F;
+	padding:3px;
+}
+.newordershow th{
+	border:solid 1px #9FBE3F;
+	padding:3px;
+	text-align:center;
+}
+
+-->
+</style>
 	</head>
 	<body >
-		<center>
+		<div class="newordershow">
 		<%
 			List<OrderInfo> orderinfo = (List<OrderInfo>)request.getAttribute("list") ;
 		%>
-		<table border="1" bgcolor="#A1C037">
+		<table >
 			<tr>
 				<td>订单编号</td>
 				<td>收货人</td>
@@ -57,6 +102,6 @@
 	
 			
 		</table>
-		</center>
+		</div>
 	</body>
 </html>

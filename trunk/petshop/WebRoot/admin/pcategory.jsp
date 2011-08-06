@@ -5,6 +5,9 @@
 
 <style>
 <!--
+*{
+	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+}
 .adminpcategory{
 	padding-top:15px;
 }

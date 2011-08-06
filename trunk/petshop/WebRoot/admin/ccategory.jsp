@@ -53,9 +53,59 @@
 		}
 	}
 	</script>
+	
   </head>
   
+  <style>
+<!--
+*{
+	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+}
+.adminbutton{
+	padding-left: 120px;
+	padding-top:15px;
+}
+.adminccategory{
+	padding-left: 120px;
+	padding-top:15px;
+}
+.adminccategory a{
+	font-weight:600;
+	text-decoration:none;
+	color:#69C;
+}
+.adminccategory a:visited{
+	color:#69C;
+}
+.adminccategory a:hover{
+	color:#333;
+}
+.adminccategory table{
+	border-spacing:3px;
+	border-collapse:collapse;
+	border-width:4px;
+	border-color:#9FBE3F;
+	border-style:double;
+}
+.adminccategory td{
+	border:solid 1px #9FBE3F;
+	padding:3px;
+}
+.adminccategory tr{
+	border:solid 1px #9FBE3F;
+	padding:3px;
+}
+.adminccategory th{
+	border:solid 1px #9FBE3F;
+	padding:3px;
+	text-align:center;
+}
+
+-->
+</style>
+
   <body>
+  <div class="adminccategory">
   <html:form action="/delCCategory" method="post" onsubmit="return del()" >
 	
     	<table border="1" width="80%" style="border-collapse: collapse;">
@@ -97,11 +147,13 @@
     	<html:hidden property="parno" value="${cjb.pid}"/>
     	<html:submit value="删除选中的分类"></html:submit>
     	</html:form>
-
+	</div>
+	<div class="adminbutton">
 		<html:form action="/addCCategory.do?pno=${cjb.pid}" method="post">
     	 添加子分类:
     	 <html:text property="addCCategory" styleId="addCCategory" value=""></html:text>
     	 <html:submit value="添加分类"></html:submit>		
     	</html:form>
+    </div>
 </body>
 </html>

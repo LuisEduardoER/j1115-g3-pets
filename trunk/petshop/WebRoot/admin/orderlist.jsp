@@ -4,6 +4,10 @@
 
 <style>
 <!--
+*{
+	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+	font-size: 12px;
+}
 .adminorderlist{
 	padding-top:15px;
 }

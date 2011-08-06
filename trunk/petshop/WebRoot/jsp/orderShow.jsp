@@ -6,13 +6,58 @@
 <html>
 	<head>
 		<title>订单显示</title>
+<style>
+<!--
+*{
+	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+	font-size: 12px;
+}
+.oldordershow{
+	padding-top:45px;
+	padding-left: 100px;
+}
+.oldordershow a{
+	font-weight:600;
+	text-decoration:none;
+	color:#69C;
+}
+.oldordershow a:visited{
+	color:#69C;
+}
+.oldordershow a:hover{
+	color:#333;
+}
+.oldordershow table{
+	border-spacing:3px;
+	border-collapse:collapse;
+	border-width:4px;
+	border-color:#9FBE3F;
+	border-style:double;
+	text-align:center;
+}
+.oldordershow td{
+	border:solid 1px #9FBE3F;
+	padding:3px;
+}
+.oldordershow tr{
+	border:solid 1px #9FBE3F;
+	padding:3px;
+}
+.oldordershow th{
+	border:solid 1px #9FBE3F;
+	padding:3px;
+	text-align:center;
+}
+
+-->
+</style>
 	</head>
 	<body >
-		<center>
+		<div class="oldordershow">
 		<%
 			List<OrderInfo> orderinfo = (List<OrderInfo>)request.getAttribute("list") ;
 		%>
-		<table border="1" bgcolor="#A1C037">
+		<table >
 			<tr>
 				<td>订单编号</td>
 				<td>收货人</td>
@@ -43,6 +88,6 @@
 			 %>
 		
 		</table>
-		</center>
+	</div>
 	</body>
 </html>

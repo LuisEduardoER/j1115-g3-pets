@@ -7,6 +7,11 @@
     <title>添加新商品</title>
 	
 	<script src="/petshop/admin/js/selectgoods.js"></script>
+	<style type="text/css">
+		*{
+		font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+		}
+	</style>
   </head>
   
   <body>

@@ -5,10 +5,21 @@
 <html>
   <head>
     <title>修改商品信息</title>
+	<style type="text/css">
+		*{
+		font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
 	
+		}
+		.adminmodgoods{
+			padding-top: 60px;
+			padding-left: 150px;
+			
+		}
+	</style>
   </head>
   
   <body>
+  <div class="adminmodgoods">
   <html:form action="/modGoodsInfo">
   <html:hidden property="gid" value="${onegoodslist.gid }"/>
     商品名称<html:text property="gname" value="${onegoodslist.gname }"></html:text><br>
@@ -18,5 +29,6 @@
   <html:submit value="修改"></html:submit>
   <html:cancel value="取消"></html:cancel>
   </html:form>
+  </div>
   </body>
 </html>
