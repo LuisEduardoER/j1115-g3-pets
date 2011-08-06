@@ -6,13 +6,18 @@
   <head>
     <title>修改商品信息</title>
 	<style type="text/css">
-		*{
-		font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
-	
+		input {
+			font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+			font-size: 12px;
+		}
+		textarea{
+			font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+			font-size: 12px;
 		}
 		.adminmodgoods{
 			padding-top: 60px;
 			padding-left: 150px;
+			font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
 			
 		}
 	</style>

@@ -2,14 +2,13 @@
 <%@ include file="/taglib/common.jsp" %>
 <style>
 <!--
-*{
-	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
-}
+
 .modAdminPass{
 	margin-top:100px;
 	margin-left:auto;
 	margin-right:auto;
 	width:300px;
+	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
 }
 .modAdminPass td{
 	height:30px;

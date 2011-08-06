@@ -5,11 +5,14 @@
 
 <style>
 <!--
-*{
+input{
 	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+	font-size: 12px;
 }
 .adminpcategory{
 	padding-top:15px;
+	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+	font-size: 12px;
 }
 .adminpcategory a{
 	font-weight:600;

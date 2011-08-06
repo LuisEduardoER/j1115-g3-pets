@@ -58,16 +58,21 @@
   
   <style>
 <!--
-*{
+input{
 	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+	font-size: 12px;
 }
 .adminbutton{
 	padding-left: 120px;
 	padding-top:15px;
+	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+	font-size: 12px;
 }
 .adminccategory{
 	padding-left: 120px;
 	padding-top:15px;
+	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+	font-size: 12px;
 }
 .adminccategory a{
 	font-weight:600;

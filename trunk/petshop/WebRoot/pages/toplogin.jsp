@@ -21,6 +21,12 @@
 		});
 	});
 </script>
+<style>
+	.top{
+		font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+		font-size: 12px;
+	}
+</style>
 
 <div class="top">
 	<div class="topcontent">

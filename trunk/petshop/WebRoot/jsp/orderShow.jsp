@@ -8,13 +8,12 @@
 		<title>订单显示</title>
 <style>
 <!--
-*{
-	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
-	font-size: 12px;
-}
+
 .oldordershow{
 	padding-top:45px;
 	padding-left: 100px;
+	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+	font-size: 12px;
 }
 .oldordershow a{
 	font-weight:600;
@@ -59,14 +58,14 @@
 		%>
 		<table >
 			<tr>
-				<td>订单编号</td>
-				<td>收货人</td>
-				<td>收货地址</td>
-				<td>收货人电话</td>
-				<td>订单总价</td>
-				<td>订单状态</td>
-				<td>操作</td>
-				<td>下单时间</td>
+				<th>订单编号</th>
+				<th>收货人</th>
+				<th>收货地址</th>
+				<th>收货人电话</th>
+				<th>订单总价</th>
+				<th>订单状态</th>
+				<th>操作</th>
+				<th>下单时间</th>
 			</tr>
 			<%
 				for(int i=0;i<orderinfo.size();i++){

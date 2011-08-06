@@ -34,11 +34,9 @@ public class UpdateUserPassAction extends Action {
 		if(b){
 			//System.out.println("修改成功");
 		return new ActionForward("/getUserMsg.do");	
-		
-		
+
 		}
 		else{
-			//System.out.println("修改失败");
 			return new ActionForward("/jsp/updatepass.jsp");
 		}
 	}

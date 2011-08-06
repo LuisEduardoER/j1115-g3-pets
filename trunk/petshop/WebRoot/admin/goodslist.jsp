@@ -27,12 +27,14 @@
 
 <style>
 <!--
-*{
+input {
 	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
 	font-size: 12px;
 }
 .admingoodsinfo{
 	padding-top:15px;
+	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+	font-size: 12px;
 }
 .admingoodsinfo a{
 	font-weight:600;

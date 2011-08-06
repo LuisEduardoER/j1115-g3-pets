@@ -1,73 +1,76 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-
+<%@ include file="../taglib/common.jsp" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
     <title>My JSP 'updatepass.jsp' starting page</title>
     
-    <style type="text/css">
-		table{
-			border-collapse: collapse;
-			border-style: solid;
-			border-color: #999;
-			width: 400px;
-		}
-		td {
-			border-style: solid;
-			border-color: #999;
-			padding-left: 10px;
-		}
-		th{
-			border-style: solid;
-			border-color: #999;
-			text-align: right;
-			padding: 5px;
-			width: 100px;
-		}
-	</style>
+ <style>
+<!--
+table{
+	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+	font-size: 12px;
+}
+.moduserpass{
+	margin-top:100px;
+	margin-left:auto;
+	margin-right:auto;
+	width:300px;
+}
+.moduserpass td{
+	height:30px;
+}
+.moduserpass input{
+	width:190px;
+}
+.moduserpass center input{
+	width:80px;
+}
+-->
+</style>
  </head>
   
   <body>
-     <div align="center">
-			<h3> 
-				&gt;&gt;修改密码
-			</h3>
-			<font size="3" color="red">
+     <div class="moduserpass">
 			
-			</font>
 			<form action="/petshop/updateUserPass.do"  method="post">
-				<table border="1px;">
+				<table border="1" width="100%">
+				<tr>
+					<th colspan="2" align="center""> 
+						修改密码
+					</th>
+				</tr>
 					<tr>
-						<th>
+						<td>
 							原始密码
-						</th>
+						</td>
 						<td>
 							<input type="text" name="oldpass" />
 						</td>
 					</tr>
 					<tr>
-						<th>
+						<td>
 							新密码
-						</th>
+						</td>
 						<td>
 							<input type="text" name="newpass" />
 						</td>
 					</tr>
 					<tr>
-						<th>
+						<td>
 							确认密码
-						</th>
+						</td>
 						<td>
 							<input type="text" name="newpass1" />
 						</td>
 					</tr>
 					<tr>
-						<td colspan="2" align="center">
+						<td colspan="2">
 							<input type="submit" value=" 提交 " />
 						</td>
 					</tr>
 				</table>
 			</form>
-				
+		</div>		
   </body>
 </html>

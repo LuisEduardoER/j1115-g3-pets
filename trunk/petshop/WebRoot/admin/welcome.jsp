@@ -4,8 +4,19 @@
 <html>
   <head>
     <title>欢迎登陆</title> 
+    <style type="text/css">
+    .welcomeadmin{
+    	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+		font-size: 18px;
+		padding-left: 240px;
+		padding-top: 40px;
+    }
+    
+    </style>
   </head>
   <body>
-    	欢迎登陆管理员后台系统！
+    	<div class="welcomeadmin">
+    		欢迎登陆管理员后台系统！
+    	</div>
   </body>
 </html>
