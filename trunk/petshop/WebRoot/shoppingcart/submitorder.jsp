@@ -5,7 +5,7 @@
 <!--
 input{
 	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
-	font-size: 12px;
+	font-size: 14px;
 }
 .mySubmitOrder{
 	padding-top:50px;
@@ -33,6 +33,7 @@ input{
 .mySubmitOrder td{
 	border:solid 1px #9FBE3F;
 	height:30px;
+	padding:3px;
 }
 .mySubmitOrder tr{
 	border:solid 1px #9FBE3F;
@@ -85,9 +86,9 @@ input{
 		</table>
 		<br />
 			订单信息：
-		<table border="1" width=100%>
+		<table border="0" width=100%>
 			<tr>
-				<th><center>商品号</center></th>
+				<th width="50px"><center>商品号</center></th>
 				<th><center>名称</center></th>
 				<th width="60px"><center>单价</center></th>
 				<th width="40px"><center>数量</center></th>
@@ -102,7 +103,7 @@ input{
 					</tr>
 				</logic:iterate>
 				<tr>
-					<td colspan="2"><span style="padding-right:15px;">总金额</span></td>
+					<td colspan="2"><span style="padding-right:15px;float:right;">总金额</span></td>
 					<td colspan="2"><center>￥<span style="color:#ff6633;padding-left:2px;font-weight:700;"><bean:write name="summoney" /></span></center></td>
 				</tr>
 			</logic:present>
@@ -113,7 +114,7 @@ input{
 </div>
 <script type="text/javascript">
 	function orderformcheck(){
-		var receiver = document.getElementById("address");
+		var receiver = document.getElementById("receiver");
 		var diadd = document.getElementById("address");
 		var diphone = document.getElementById("phone");
 		document.getElementById("receivermsg").innerHTML = "";
@@ -123,6 +124,7 @@ input{
 		var b = true;
 		
 		if(receiver.value==""){
+			alert(receiver.value);
 			document.getElementById("receivermsg").innerHTML = "收件人不能为空";
 			b = false;
 		}
@@ -137,13 +139,6 @@ input{
 		}else if(isNaN(diphone.value)){
 			document.getElementById("phonemsg").innerHTML = "号码有误";
 			b = false;
-		}
-		var radios = document.getElementsByName("pay");
-		var radiocheck = false;
-		for(i=0;i<radios.length;i++){
-			if(radios[i].checked == true){
-				radiocheck = true;
-			}
 		}
 		return b;
 	}
