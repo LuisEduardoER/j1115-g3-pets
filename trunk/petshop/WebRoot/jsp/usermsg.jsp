@@ -2,10 +2,7 @@
 <%@include file="/taglib/common.jsp"%>
 
 
-<html>
-  <head>
-    <title>My JSP 'usermsg.jsp' starting page</title>
-    <style>
+<style>
 <!--
 .usermsg{
 	padding-top:100px;
@@ -39,57 +36,29 @@
 
 -->
 </style>
-  </head>
-  
-  <div class="usermsg">
-  <logic:present name="user">
-       <form action="" method="post">
-       	<table border="2" width="60%" class="table" >
+<hr/>
+<div class="usermsg">
+	<logic:present name="user">
+		<table width="60%">
+			<tr>
+				<th colspan="2" align="center"">会员个人信息</th>
+			</tr>
        		<tr >
-       		 <th colspan="2" align="center"">会员个人信息</th>
-       		 </tr>
-       		<tr >
-       		<td>
-				用户编号：
-			</td>
-			<td>
-				<bean:write name="user" property="id" />
-			</td>
+       			<td>用户编号：</td>
+				<td><bean:write name="user" property="id" /></td>
 			</tr>
 			<tr>
-			<td >
-				姓名：
-			</td>
-			<td>
-				<bean:write name="user" property="username" />
-			</td>
-		   </tr>
-		<tr>
-			<td>
-				密码：
-			</td>
-			<td>
-				<bean:write name="user" property="password" />
-			</td>
-		</tr>
-		<tr>
-			<td>
-				用户身份：
-			</td>
-			<td>
-				<bean:write name="user" property="identity" />
-			</td>
-		</tr>
-		<tr>
-			<td>
-				用户余额：
-			</td>
-			<td>
-				<bean:write name="user" property="money" />
-			</td>
-		</tr>
-	</table>
-       </form>
-</logic:present>
+				<td>用户名：</td>
+				<td><bean:write name="user" property="username" /></td>
+			</tr>
+			<tr>
+				<td>注册日期：</td>
+				<td>XXXX-XX-XX</td>
+			</tr>
+			<tr>
+				<td >累计消费：</td>
+				<td>XXX元</td>
+			</tr>
+		</table>
+	</logic:present>
 </div>
-</html>
