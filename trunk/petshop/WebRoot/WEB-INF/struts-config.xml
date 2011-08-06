@@ -215,7 +215,7 @@
 		</action>
 
 		<action path="/goods" type="cn.thepetshop.action.GoodsAction">
-			<forward name="goodslist" path="/jsp/goodslist.jsp"></forward>
+			
 		</action>
 		<action path="/getPCategoryMap" type="cn.thepetshop.action.GetPCategoryMapAction">
 			<set-property property="cancellable" value="true" />
@@ -297,9 +297,7 @@
       <set-property property="cancellable" value="true" />
     </action>    
   
-    <action path="/goods" type="cn.thepetshop.action.GoodsAction">
-      <forward name="goodslist" path="/jsp/goodslist.jsp"></forward>
-    </action>
+   
     <action path="/getPCategoryMap" type="cn.thepetshop.action.GetPCategoryMapAction">
       <set-property property="cancellable" value="true" />
     </action>

@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
@@ -21,9 +22,9 @@ public class OrderShowAction extends Action {
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 
-		//HttpSession session=request.getSession();
-		//int userId = (Integer)session.getAttribute("userid");
-		int userId=2;
+		HttpSession session=request.getSession();
+		String uid = (String) session.getAttribute("userid");
+		int userId = Integer.parseInt(uid);
 		List<OrderInfo> list = new PetDAO().getOrderInfoByUserId(userId);
 		request.setAttribute("list", list);
 		

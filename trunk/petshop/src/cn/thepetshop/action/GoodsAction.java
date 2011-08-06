@@ -25,8 +25,8 @@ public class GoodsAction extends Action {
 			HttpServletRequest request, HttpServletResponse response) {
 		int orderid=Integer.parseInt(request.getParameter("orderid"));
 		HttpSession session=request.getSession();
-		int userId = (Integer)session.getAttribute("userid");
-//		int userId=2;
+		String uid = (String) session.getAttribute("userid");
+		int userId = Integer.parseInt(uid);
 		List<OrderInfo> list = new PetDAO().getOrderInfoByUserId(userId);
 		for(int i=0;i<list.size();i++){
 			OrderInfo orderinfo=list.get(i);
@@ -36,6 +36,6 @@ public class GoodsAction extends Action {
 				break;
 			}
 		}
-		return mapping.findForward("goodslist");
+		return new ActionForward("OrderGoodsListView");
 	}
 }

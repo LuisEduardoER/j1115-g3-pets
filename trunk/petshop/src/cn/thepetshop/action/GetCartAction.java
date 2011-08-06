@@ -17,9 +17,8 @@ import cn.thepetshop.object.Cart;
 public class GetCartAction extends Action {
 	
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
-			HttpServletRequest request, HttpServletResponse response) {
+		HttpServletRequest request, HttpServletResponse response) {
 		String userid = (String)request.getSession().getAttribute("userid");
-//		userid = "2";//¡Ÿ ±
 		PetDAO pd = new PetDAO();
 		Cart cart = pd.getShoppingCart(userid);
 		request.setAttribute("cart", cart);

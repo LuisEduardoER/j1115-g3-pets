@@ -73,7 +73,7 @@
 					Order order=os.getOrder();
 					if(order.getState()==4){%>
 			<tr>
-				<td><a href="goods.do?orderid=<%=order.getOrderId() %>"><%=order.getOrderId() %></a></td>
+				<td><a href="../petshop/goods.do?orderid=<%=order.getOrderId() %>"><%=order.getOrderId() %></a></td>
 				<td><%=order.getReceiver() %></td>
 				<td><%=order.getAddress() %></td>
 				<td><%=order.getPhone() %></td>
