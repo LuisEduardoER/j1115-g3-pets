@@ -1,6 +1,16 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@include file="/taglib/common.jsp"%>
-
+<style>
+<!--
+table{
+	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+}
+input{
+	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+	font-size:12px;
+}
+-->
+</style>
 <table>
 	<tbody>
 		<tr>
@@ -36,7 +46,6 @@
 							<td>
 								<input type="button" value="加入购物车"
 									onclick="addtocart('${goods.gid}')" />
-								<html:button property="" value="立即购买" />
 							</td>
 						</tr>
 					</tbody>
