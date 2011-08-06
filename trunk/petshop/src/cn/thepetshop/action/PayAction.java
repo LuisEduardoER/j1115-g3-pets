@@ -61,5 +61,4 @@ public class PayAction extends Action {
 				return new ActionForward("PaySucceedView");
 			}
 	}
-
 }
