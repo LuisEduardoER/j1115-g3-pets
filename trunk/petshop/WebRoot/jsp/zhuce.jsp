@@ -41,7 +41,16 @@
                 document.getElementById("submit").disabled = true;
               }
           }
-	   
+	   	function checknull(){
+	   		var name = document.getElementById("username").value;
+	   		var pass1 = document.getElementById("password").value;
+	   		var pass2 = document.getElementById("password2").value;
+	   		if(name=="" || pass1=="" || pass2==""){
+	   			return false;
+	   		}else{
+	   			return true;
+	   		}
+	   	}
 	</script>
 	<style type="text/css">
 		.regpage{
@@ -61,14 +70,14 @@
     
 		<br>
 		<div class="regpage">
-		<form action="/petshop/regist.do" name="regform" method="post">
+		<form action="/petshop/regist.do" name="regform" method="post" onsubmit="return checknull()">
 			<table  align="center">
 				<tr  >
 					<td width="80px">
 						用户名：
 					</td>
 					<td>
-						<input type="text" name="username" onblur="check()" />
+						<input type="text" id="username" name="username" onblur="check()" />
 						<font color="red" id="umsg"></font>
 					</td>
 				</tr>
@@ -77,7 +86,7 @@
 						密码：
 					</td>
 					<td>
-						<input type="password" name="password" />
+						<input type="password" id="password" name="password" />
 					</td>
 				</tr>
 				<tr>
@@ -85,7 +94,7 @@
 						确认密码：
 					</td>
 					<td>
-						<input type="password" name="password2" onkeyup="validate()"/><span id="tishi">
+						<input type="password" id="password2" name="password2" onkeyup="validate()"/><span id="tishi">
 					</td>
 				</tr>
 				<tr>
