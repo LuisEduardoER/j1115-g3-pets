@@ -24,7 +24,6 @@ public class SubmitOrderAction extends Action {
 		Object obj = request.getSession().getAttribute("userid");
 		String userid = (String) obj;
 
-
 		OrderInfo oi = pd.createOrder(userid,of.getReceiver(),of.getAddress(),of.getPhone());
 		request.setAttribute("orderedGoodsList", oi.getGoodsList());
 		request.setAttribute("hqs_orderid", oi.getOrder().getOrderId());

@@ -2,9 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
 <%@page import="cn.thepetshop.object.*"%>
-<html>
-	<head>
-		<title>未交易成功</title>
+
 <style>
 <!--
 
@@ -49,13 +47,12 @@
 
 -->
 </style>
-	</head>
-	<body >
-		<div class="newordershow">
+<hr />
+<div class="newordershow">
 		<%
-			List<OrderInfo> orderinfo = (List<OrderInfo>)request.getAttribute("list") ;
+			List<OrderInfo> orderinfo = (List<OrderInfo>)request.getAttribute("list");
 		%>
-		<table >
+		<table width="100%">
 			<tr>
 				<th>订单编号</th>
 				<th>收货人</th>
@@ -97,10 +94,6 @@
 				<td><%=od.getTime() %></td>
 			</tr>
 			<%	}
-			} %>
-	
-			
-		</table>
-		</div>
-	</body>
-</html>
+			} %>	
+	</table>
+</div>

@@ -102,7 +102,7 @@
 		<put name="footer" value="/pages/footer.jsp"></put>
 	</definition>
 	
-	<definition name="MyCartView" template="/admin/template/hometemplate.jsp">
+	<definition name="MyCartView" template="/template/hometemplate.jsp">
 		<put name="topline" value="/pages/toplogin.jsp"></put>
 		<put name="topmenu" value="/pages/topmenu.jsp"></put>
 		<put name="leftmenu" value="/pages/leftmenu.jsp"></put>
@@ -110,7 +110,7 @@
 		<put name="footer" value="/pages/footer.jsp"></put>
 	</definition>
 	
-	<definition name="SubmitOrderView" template="/admin/template/hometemplate.jsp">
+	<definition name="SubmitOrderView" template="/template/hometemplate.jsp">
 		<put name="topline" value="/pages/toplogin.jsp"></put>
 		<put name="topmenu" value="/pages/topmenu.jsp"></put>
 		<put name="leftmenu" value="/pages/leftmenu.jsp"></put>
@@ -118,7 +118,7 @@
 		<put name="footer" value="/pages/footer.jsp"></put>
 	</definition>
 	
-	<definition name="MyAccountView" template="/admin/template/hometemplate.jsp">
+	<definition name="MyAccountView" template="/template/hometemplate.jsp">
 		<put name="topline" value="/pages/toplogin.jsp"></put>
 		<put name="topmenu" value="/pages/topmenu.jsp"></put>
 		<put name="leftmenu" value="/myaccount/left.jsp"></put>
@@ -126,7 +126,7 @@
 		<put name="footer" value="/pages/footer.jsp"></put>
 	</definition>
 	
-	<definition name="UserMessageView" template="/admin/template/hometemplate.jsp">
+	<definition name="UserMessageView" template="/template/hometemplate.jsp">
 		<put name="topline" value="/pages/toplogin.jsp"></put>
 		<put name="topmenu" value="/pages/topmenu.jsp"></put>
 		<put name="leftmenu" value="/myaccount/left.jsp"></put>
@@ -134,7 +134,7 @@
 		<put name="footer" value="/pages/footer.jsp"></put>
 	</definition>
 	
-	<definition name="ModUserPasswordView" template="/admin/template/hometemplate.jsp">
+	<definition name="ModUserPasswordView" template="/template/hometemplate.jsp">
 		<put name="topline" value="/pages/toplogin.jsp"></put>
 		<put name="topmenu" value="/pages/topmenu.jsp"></put>
 		<put name="leftmenu" value="/myaccount/left.jsp"></put>
@@ -142,7 +142,7 @@
 		<put name="footer" value="/pages/footer.jsp"></put>
 	</definition>
 	
-	<definition name="GetUserMoneyView" template="/admin/template/hometemplate.jsp">
+	<definition name="GetUserMoneyView" template="/template/hometemplate.jsp">
 		<put name="topline" value="/pages/toplogin.jsp"></put>
 		<put name="topmenu" value="/pages/topmenu.jsp"></put>
 		<put name="leftmenu" value="/myaccount/left.jsp"></put>
@@ -150,7 +150,7 @@
 		<put name="footer" value="/pages/footer.jsp"></put>
 	</definition>
 	
-	<definition name="EBankView" template="/admin/template/hometemplate.jsp">
+	<definition name="EBankView" template="/template/hometemplate.jsp">
 		<put name="topline" value="/pages/toplogin.jsp"></put>
 		<put name="topmenu" value="/pages/topmenu.jsp"></put>
 		<put name="leftmenu" value="/myaccount/left.jsp"></put>
@@ -158,7 +158,7 @@
 		<put name="footer" value="/pages/footer.jsp"></put>
 	</definition>
 	
-	<definition name="OldOrderShowView" template="/admin/template/hometemplate.jsp">
+	<definition name="OldOrderShowView" template="/template/hometemplate.jsp">
 		<put name="topline" value="/pages/toplogin.jsp"></put>
 		<put name="topmenu" value="/pages/topmenu.jsp"></put>
 		<put name="leftmenu" value="/myaccount/left.jsp"></put>
@@ -166,7 +166,7 @@
 		<put name="footer" value="/pages/footer.jsp"></put>
 	</definition>
 	
-	<definition name="NewOrderShowView" template="/admin/template/hometemplate.jsp">
+	<definition name="NewOrderShowView" template="/template/hometemplate.jsp">
 		<put name="topline" value="/pages/toplogin.jsp"></put>
 		<put name="topmenu" value="/pages/topmenu.jsp"></put>
 		<put name="leftmenu" value="/myaccount/left.jsp"></put>
@@ -174,7 +174,7 @@
 		<put name="footer" value="/pages/footer.jsp"></put>
 	</definition>
 	
-	<definition name="OrderGoodsListView" template="/admin/template/hometemplate.jsp">
+	<definition name="OrderGoodsListView" template="/template/hometemplate.jsp">
 		<put name="topline" value="/pages/toplogin.jsp"></put>
 		<put name="topmenu" value="/pages/topmenu.jsp"></put>
 		<put name="leftmenu" value="/myaccount/left.jsp"></put>
@@ -182,7 +182,7 @@
 		<put name="footer" value="/pages/footer.jsp"></put>
 	</definition>
 	
-	<definition name="GoPayView" template="/admin/template/hometemplate.jsp">
+	<definition name="GoPayView" template="/template/hometemplate.jsp">
 		<put name="topline" value="/pages/toplogin.jsp"></put>
 		<put name="topmenu" value="/pages/topmenu.jsp"></put>
 		<put name="leftmenu" value="/myaccount/left.jsp"></put>
@@ -190,7 +190,7 @@
 		<put name="footer" value="/pages/footer.jsp"></put>
 	</definition>
 	
-	<definition name="PayFailView" template="/admin/template/hometemplate.jsp">
+	<definition name="PayFailView" template="/template/hometemplate.jsp">
 		<put name="topline" value="/pages/toplogin.jsp"></put>
 		<put name="topmenu" value="/pages/topmenu.jsp"></put>
 		<put name="leftmenu" value="/myaccount/left.jsp"></put>
@@ -198,7 +198,7 @@
 		<put name="footer" value="/pages/footer.jsp"></put>
 	</definition>
 	
-	<definition name="PaySucceedView" template="/admin/template/hometemplate.jsp">
+	<definition name="PaySucceedView" template="/template/hometemplate.jsp">
 		<put name="topline" value="/pages/toplogin.jsp"></put>
 		<put name="topmenu" value="/pages/topmenu.jsp"></put>
 		<put name="leftmenu" value="/myaccount/left.jsp"></put>
@@ -206,7 +206,7 @@
 		<put name="footer" value="/pages/footer.jsp"></put>
 	</definition>
 	
-	<definition name="PingJiaView" template="/admin/template/hometemplate.jsp">
+	<definition name="PingJiaView" template="/template/hometemplate.jsp">
 		<put name="topline" value="/pages/toplogin.jsp"></put>
 		<put name="topmenu" value="/pages/topmenu.jsp"></put>
 		<put name="leftmenu" value="/myaccount/left.jsp"></put>
@@ -214,7 +214,7 @@
 		<put name="footer" value="/pages/footer.jsp"></put>
 	</definition>
 	
-	<definition name="UserPayView" template="/admin/template/hometemplate.jsp">
+	<definition name="UserPayView" template="/template/hometemplate.jsp">
 		<put name="topline" value="/pages/toplogin.jsp"></put>
 		<put name="topmenu" value="/pages/topmenu.jsp"></put>
 		<put name="leftmenu" value="/myaccount/left.jsp"></put>

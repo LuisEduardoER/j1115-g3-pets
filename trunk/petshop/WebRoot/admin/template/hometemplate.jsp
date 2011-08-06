@@ -21,17 +21,22 @@ type="text/css" />
 }
 .template_left{
 	float:left;
-	width:220px;
+	width:200px;
 }
 .template_right{
 	float:left;
-	width:760px;
+	width:780px;
 }
 .template_footer{
 	clear:both;
 	width:980px;
 	margin-left:auto;
 	margin-right:auto;
+}
+hr{
+	color:#999;
+	border:none;
+	border-top:#9FBE3F double 3px;
 }
 </style>
 		
