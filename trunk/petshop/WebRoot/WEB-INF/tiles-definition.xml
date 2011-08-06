@@ -126,12 +126,12 @@
 		<put name="right" value="/myaccount/welcome.jsp"></put>
 	</definition>
 	
-	<definition name="UserMessageView" template="/template/hometemplate.jsp">
+	<definition name="UserMessageView" template="/template/public_template.jsp">
 		<put name="topline" value="/pages/toplogin.jsp"></put>
 		<put name="topmenu" value="/pages/topmenu.jsp"></put>
 		<put name="searchbar" value="/search/search.jsp"></put>
-		<put name="leftmenu" value="/myaccount/left.jsp"></put>
-		<put name="homecontent" value="/jsp/usermsg.jsp"></put>
+		<put name="left" value="/myaccount/left.jsp"></put>
+		<put name="right" value="/jsp/usermsg.jsp"></put>
 	</definition>
 	
 	<definition name="ModUserPasswordView" template="/template/public_template.jsp">
@@ -214,7 +214,7 @@
 		<put name="right" value="/jsp/proPingJia.jsp"></put>
 	</definition>
 	
-	<definition name="UserPayView" template="/template/hometemplate.jsp">
+	<definition name="UserPayView" template="/template/public_template.jsp">
 		<put name="topline" value="/pages/toplogin.jsp"></put>
 		<put name="topmenu" value="/pages/topmenu.jsp"></put>
 		<put name="searchbar" value="/search/search.jsp"></put>
