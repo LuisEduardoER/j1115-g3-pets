@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
@@ -26,13 +27,12 @@ public class PayAction extends Action {
 			double sum=0;
 			DynaActionForm payform=(DynaActionForm)form;
 			String value=(String)payform.get("paytype");
-			String orderid=(String)payform.get("orderid");
-//			System.out.println(value);
-			//HttpSession session=request.getSession();
-			//int userId = (Integer)session.getAttribute("userid");
-			int userId=2;
+			String orderid=((String)payform.get("orderid")).trim();
+			HttpSession session=request.getSession();
+			String uid = (String)session.getAttribute("userid");
+			int userId= Integer.parseInt(uid);
 			if(Integer.parseInt(value)==0){
-				return mapping.findForward("payjsp");
+				return mapping.findForward("GoPayView");
 			}
 			else if(Integer.parseInt(value)==1){
 				List<OrderInfo> list = new PetDAO().getOrderInfoByUserId(userId);
@@ -45,20 +45,20 @@ public class PayAction extends Action {
 					}
 				}
 				User user=new PetDAO().findUserById(Integer.toString(userId));
-				int usermoney=Integer.parseInt(user.getMoney());
+				double usermoney = Double.parseDouble(user.getMoney());
 				if(usermoney>=sum){
 					double money=usermoney-sum;
 					new PetDAO().updateOrderSatatus(Integer.parseInt(orderid), 1);
 					new PetDAO().updateusermoney(userId,money);
-					return mapping.findForward("paySucceed");
+					return new ActionForward("PaySucceedView");
 				}else{
 					request.setAttribute("msg","”‡∂Ó≤ª◊„£¨«Îœ»≥‰÷µ‘Ÿπ∫¬Ú");
-					return mapping.findForward("payfailed");
+					return new ActionForward("PayFailView");
 				}	
 			}
 			else{
 				new PetDAO().updateOrderSatatus(Integer.parseInt(orderid), 1);
-				return mapping.findForward("paySucceed");
+				return new ActionForward("PaySucceedView");
 			}
 	}
 

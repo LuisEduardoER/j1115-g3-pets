@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
@@ -23,9 +24,9 @@ public class ProShowAction extends Action{
 			throws Exception {
 		
 		int orderid=Integer.parseInt(request.getParameter("orderid"));
-		//HttpSession session=request.getSession();
-		//int userId = (Integer)session.getAttribute("userid");
-		int userId=2;//¡Ÿ ±µ˜ ‘
+		HttpSession session=request.getSession();
+		String uid = (String)session.getAttribute("userid");
+		int userId=Integer.parseInt(uid);
 		List<OrderInfo> list = new PetDAO().getOrderInfoByUserId(userId);
 		for(int i=0;i<list.size();i++){
 			OrderInfo orderinfo=list.get(i);
@@ -36,6 +37,6 @@ public class ProShowAction extends Action{
 				break;
 			}
 		}
-		return mapping.findForward("pingJia");
+		return new ActionForward("PingJiaView");
 	}
 }

@@ -902,6 +902,7 @@ public class PetDAO {
 			String address, String phone) {
 		Connection con=null;
 		Statement st=null;
+		ResultSet rs = null;
 		OrderInfo oi=new OrderInfo();
 		Order o=new Order();
 		o.setAddress(address);
@@ -909,16 +910,23 @@ public class PetDAO {
 		o.setReceiver(receiver);
 		Date d = new Date();
 		o.setTime(d);
-		oi.setOrder(o);
-		Cart cart=getShoppingCart(userid);		
-		oi.setGoodsList(cart.getGoodsList());
-		oi.setSumMoney(Double.valueOf(cart.getSumMoney()));
+		Cart cart = null;
+		int orderid = 0;
 		try {
 			con=getConnection();
 			st=con.createStatement();
-			String sql="insert into p_orders (u_id,o_time,o_receiver,o_address,o_phone,o_sum) " +
-					"values("+userid+",sysdate,'"+receiver+"','"+address+"','"+phone+"',"+Double.valueOf(cart.getSumMoney())+")";
-			//System.out.println("sql: "+sql);
+			String sql="select o_id_seq.nextval from dual";
+			rs = st.executeQuery(sql);
+			if (rs.next()) {
+				orderid = rs.getInt(1);
+				o.setOrderId(orderid);
+				oi.setOrder(o);
+				cart=getShoppingCart(userid);		
+				oi.setGoodsList(cart.getGoodsList());
+				oi.setSumMoney(Double.valueOf(cart.getSumMoney()));
+			}
+			sql="insert into p_orders (o_id,u_id,o_time,o_receiver,o_address,o_phone,o_sum) " +
+					"values("+orderid+","+userid+",sysdate,'"+receiver+"','"+address+"','"+phone+"',"+Double.valueOf(cart.getSumMoney())+")";
 			st.executeUpdate(sql);
 			updateGoodsLeftNum(cart.getGoodsList());
 			addSoldNum(cart.getGoodsList());
@@ -928,7 +936,7 @@ public class PetDAO {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}finally{
-			free(con,st,null);
+			free(con,st,rs);
 		}
 		return oi;
 	}

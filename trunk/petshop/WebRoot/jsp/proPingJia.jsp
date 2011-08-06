@@ -5,24 +5,60 @@
 <html>
 	<head>
 		<title>商品评价</title>
+		<style>
+<!--
+input {
+	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+	font-size: 12px;
+}
+.goodpingjia{
+	padding-top:15px;
+	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+	font-size: 12px;
+}
+
+.goodpingjia table{
+	border-spacing:3px;
+	border-collapse:collapse;
+	border-width:4px;
+	border-color:#9FBE3F;
+	border-style:double;
+}
+.goodpingjia td{
+	border:solid 1px #9FBE3F;
+	padding:3px;
+}
+.goodpingjia tr{
+	border:solid 1px #9FBE3F;
+	padding:3px;
+}
+.goodpingjia th{
+	border:solid 1px #9FBE3F;
+	padding:3px;
+	text-align:center;
+}
+
+-->
+</style>
 	</head>
 	<body>
 		<% List<OrderedGoods> list = (List<OrderedGoods>)request.getAttribute("elist"); 
 		   int orderid=(Integer)request.getAttribute("orderid");
 		%>
+		<div class="goodpingjia">
 		<form action="scort.do" method="post">
 				<table>
 					<tr>
-						<TD>商品编号</TD>
-						<td>商品名称</td>
-						<td>商品简介</td>
-						<td>商品评分</td>
+						<th>商品编号</th>
+						<th>商品名称</th>
+						<th>商品简介</th>
+						<th>商品评分</th>
 					</tr>
 					<%for(int i=0;i<list.size();i++){
 						OrderedGoods og = list.get(i);
 						%>
 						<tr>
-						<TD><%=og.getGoodsid() %></TD>
+						<td><%=og.getGoodsid() %></td>
 						<td><%=og.getGoodsName() %></td>
 						<td><%=og.getGoodsBrief() %></td>
 						<td>
@@ -37,9 +73,10 @@
 					<%} %>
 					<tr>
 						<td colspan="4" align="center"><input type="submit" value="提交"></td>
-					</tr>
 					<input type="hidden" name="orderid" value="<%=orderid %>" />
+					</tr>
 			</table>
 		</form>
+		</div>
 	</body>
 </html>

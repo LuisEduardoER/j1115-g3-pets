@@ -181,4 +181,44 @@
 		<put name="homecontent" value="/jsp/goodslist.jsp"></put>
 		<put name="footer" value="/pages/footer.jsp"></put>
 	</definition>
+	
+	<definition name="GoPayView" template="/admin/template/hometemplate.jsp">
+		<put name="topline" value="/pages/toplogin.jsp"></put>
+		<put name="topmenu" value="/pages/topmenu.jsp"></put>
+		<put name="leftmenu" value="/myaccount/left.jsp"></put>
+		<put name="homecontent" value="/jsp/PayJsp.jsp"></put>
+		<put name="footer" value="/pages/footer.jsp"></put>
+	</definition>
+	
+	<definition name="PayFailView" template="/admin/template/hometemplate.jsp">
+		<put name="topline" value="/pages/toplogin.jsp"></put>
+		<put name="topmenu" value="/pages/topmenu.jsp"></put>
+		<put name="leftmenu" value="/myaccount/left.jsp"></put>
+		<put name="homecontent" value="/jsp/payFailed.jsp"></put>
+		<put name="footer" value="/pages/footer.jsp"></put>
+	</definition>
+	
+	<definition name="PaySucceedView" template="/admin/template/hometemplate.jsp">
+		<put name="topline" value="/pages/toplogin.jsp"></put>
+		<put name="topmenu" value="/pages/topmenu.jsp"></put>
+		<put name="leftmenu" value="/myaccount/left.jsp"></put>
+		<put name="homecontent" value="/jsp/paySucceed.jsp"></put>
+		<put name="footer" value="/pages/footer.jsp"></put>
+	</definition>
+	
+	<definition name="PingJiaView" template="/admin/template/hometemplate.jsp">
+		<put name="topline" value="/pages/toplogin.jsp"></put>
+		<put name="topmenu" value="/pages/topmenu.jsp"></put>
+		<put name="leftmenu" value="/myaccount/left.jsp"></put>
+		<put name="homecontent" value="/jsp/proPingJia.jsp"></put>
+		<put name="footer" value="/pages/footer.jsp"></put>
+	</definition>
+	
+	<definition name="UserPayView" template="/admin/template/hometemplate.jsp">
+		<put name="topline" value="/pages/toplogin.jsp"></put>
+		<put name="topmenu" value="/pages/topmenu.jsp"></put>
+		<put name="leftmenu" value="/myaccount/left.jsp"></put>
+		<put name="homecontent" value="/jsp/userpay.jsp"></put>
+		<put name="footer" value="/pages/footer.jsp"></put>
+	</definition>
 </tiles-definitions>

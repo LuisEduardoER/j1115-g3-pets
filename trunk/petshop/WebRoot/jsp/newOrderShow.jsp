@@ -79,7 +79,7 @@
 				<td><%=od.getMoney() %></td>
 				<%if(od.getState()==0){ %>
 					<td>未付款未发货</td>
-					<td><a href="jsp/PayJsp.jsp?orderid=<%=od.getOrderId() %>">付款</a>||
+					<td><a href="userPay.do?orderid=<%=od.getOrderId() %>">付款</a>||
 					<A href="delete.do?orderid=<%=od.getOrderId() %>">取消订单</A></td>
 				<%} %>
 				<%if(od.getState()==1) {%>

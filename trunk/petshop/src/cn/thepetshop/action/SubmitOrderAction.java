@@ -23,13 +23,13 @@ public class SubmitOrderAction extends Action {
 		PetDAO pd = new PetDAO();
 		Object obj = request.getSession().getAttribute("userid");
 		String userid = (String) obj;
-//		userid = "2";//临时用户ID
-//		System.out.println("付款方式"+of.getPay());
+
+
 		OrderInfo oi = pd.createOrder(userid,of.getReceiver(),of.getAddress(),of.getPhone());
 		request.setAttribute("orderedGoodsList", oi.getGoodsList());
+		request.setAttribute("hqs_orderid", oi.getOrder().getOrderId());
 		request.setAttribute("orderMoney", oi.getSumMoney());
 		request.getSession().setAttribute("goodsnumincart", "0");
-//		System.out.println("订单提交 submit order");
-		return null;//暂时为null。转到结算页面
+		return new ActionForward("GoPayView");
 	}
 }

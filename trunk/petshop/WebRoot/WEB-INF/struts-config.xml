@@ -61,10 +61,7 @@
     <form-bean name="addNewGoodsForm" type="cn.thepetshop.form.AddNewGoodsForm" />
     <form-bean name="modGoodsInfoForm" type="cn.thepetshop.form.ModGoodsInfoForm" />
     
-    <form-bean name="payForm" type="org.apache.struts.action.DynaActionForm">
-    <form-property name="paytype" type="java.lang.String" /> 
-    <form-property name="orderid" type="java.lang.String" /> 
-    </form-bean>
+
     
 	</form-beans>
 
@@ -244,7 +241,7 @@
 		</action>
 
 		<action path="/pingJia" type="cn.thepetshop.action.ProShowAction">
-			<forward name="pingJia" path="/jsp/proPingJia.jsp"></forward>
+			
 		</action>
 
 		<action path="/scort" type="cn.thepetshop.action.AddScoreAction">
@@ -349,6 +346,9 @@
       <set-property property="cancellable" value="true" />
     </action>
     <action path="/eBank" type="cn.thepetshop.action.EBankAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action path="/userPay" type="cn.thepetshop.action.UserPayAction">
       <set-property property="cancellable" value="true" />
     </action>
     
