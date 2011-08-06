@@ -15,7 +15,7 @@
 -->
 </style>
 <div class="lmenu">
-	<div class="lmenu_items" style="font-family: 微软雅黑,黑体; font-weight: 600; color: #CCFFCC">
+	<div class="lmenu_items" style="font-weight: 600; color: #CCFFCC">
     	<div class="lmenu_title" style="font-family: 'Comic Sans MS'">MainMenu</div>
         <div class="lmenu_item" >
     		<div class="p_category" ><span class="p_category_sapn">个人信息</span></div>
@@ -32,7 +32,6 @@
             </div>
         </div>
         
-        
         <div class="lmenu_item">
     		<div class="p_category"><span class="p_category_sapn">订单管理</span></div>
             <div class="sub_category">
@@ -46,7 +45,7 @@
             </div>
         </div>
  
- 		 <div class="lmenu_item">
+		<div class="lmenu_item">
     		<div class="p_category"><span class="p_category_sapn">购物车</span></div>
             <div class="sub_category">
             	<span class="sub_category_span">

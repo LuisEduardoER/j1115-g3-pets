@@ -6,9 +6,10 @@
 <!--
 .usermsg{
 	padding-top:100px;
-	padding-left: 240px;
+	width:300px;
+	margin-left:auto;
+	margin-right:auto;
 	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
-	font-size: 12px;
 }
 
 .usermsg table{
@@ -33,13 +34,12 @@
 	text-align:center;
 	font-weight: bold;
 }
-
 -->
 </style>
 <hr/>
 <div class="usermsg">
 	<logic:present name="user">
-		<table width="60%">
+		<table width="100%">
 			<tr>
 				<th colspan="2" align="center"">会员个人信息</th>
 			</tr>

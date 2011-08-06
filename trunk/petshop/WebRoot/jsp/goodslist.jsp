@@ -1,22 +1,12 @@
 <%@ page language="java" import="java.util.*" pageEncoding="GBK"%>
 <%@ include file="../taglib/common.jsp" %>
-
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-  <head>
-    
-    <title>My JSP 'goodslist.jsp' starting page</title>
-	<style>
+<style>
 <!--
-
 .goodsdetail{
 	padding-top:45px;
 	padding-left:100px;
 	font-family: "Courier New","Comic Sans MS",Œ¢»Ì—≈∫⁄,∫⁄ÃÂ;
-	font-size: 12px;
 }
-
 .goodsdetail table{
 	border-spacing:3px;
 	border-collapse:collapse;
@@ -38,10 +28,8 @@
 	text-align:center;
 }
 </style>
-  </head>
   
-  <body>
-  <div class="goodsdetail">
+<div class="goodsdetail">
   	<table >
   		<tr>
   			<th>…Ã∆∑±‡∫≈</th>
@@ -62,6 +50,4 @@
     		</logic:iterate>
     	</logic:present>
     </table>
-    </div>
-  </body>
-</html>
+</div>

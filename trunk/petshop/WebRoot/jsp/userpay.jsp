@@ -9,15 +9,12 @@
 <!--
 input{
 	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
-	font-size: 12px;
-	
 }
 
 .userpay{
 	padding-left: 240px;
 	padding-top:100px;
 	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
-	font-size: 12px;
 }
 
 .userpay table{
@@ -43,37 +40,28 @@ input{
 
 -->
 </style>
-  </head>
-  
-  <body>
-  <%
-  	String oid = (String)request.getAttribute("hqs_oid");
-  %>
+
+<%
+  String oid = (String)request.getAttribute("hqs_oid");
+%>
 <div class="userpay">
-     <html:form action="/pay" method="post">
-     <table width="60%">
-     	<tr>
-     		<th colspan="3"> 付款方式</th>
-     	</tr>
-     	<tr>
-     		<td>
-     			<html:hidden property="orderid" value="<%=oid %>"/>
-     			<html:radio property="paytype" value="0">网银付款</html:radio>
-     		</td>
-     		<td>
-     			<html:radio property="paytype" value="1">余额付款</html:radio>
-     		</td>
-     		<td>
-     			<html:radio property="paytype" value="2">货到付款</html:radio><br/>
-     		</td>
-     	</tr>
-     	<tr>
-     		<td colspan="3" align="center""><html:submit value="确认付款"></html:submit></td>
-     	</tr>
-     </table>
-     	
-     	
-     </html:form>
-     </div>
-  </body>
-</html>
+	<html:form action="/pay" method="post">
+		<table width="60%">
+			<tr>
+				<th colspan="3"> 付款方式</th>
+			</tr>
+			<tr>
+				<td>
+					<html:hidden property="orderid" value="<%=oid %>"/>
+					<html:radio property="paytype" value="0">网银付款</html:radio>
+				</td>
+				<td><html:radio property="paytype" value="1">余额付款</html:radio></td>
+				<td><html:radio property="paytype" value="2">货到付款</html:radio></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center""><html:submit value="确认付款"></html:submit></td>
+			</tr>
+		</table>
+	</html:form>
+</div>
+

@@ -75,25 +75,27 @@
 				<td><%=od.getPhone() %></td>
 				<td><%=od.getMoney() %></td>
 				<%if(od.getState()==0){ %>
-					<td>未付款未发货</td>
-					<td><a href="userPay.do?orderid=<%=od.getOrderId() %>">付款</a>||
-					<A href="delete.do?orderid=<%=od.getOrderId() %>">取消订单</A></td>
-				<%} %>
+					<td>等待付款</td>
+					<td>
+						<a href="userPay.do?orderid=<%=od.getOrderId() %>">付款</a>|
+						<a href="delete.do?orderid=<%=od.getOrderId() %>">取消</a>
+					</td>
+				<%}%>
 				<%if(od.getState()==1) {%>
-					<td>已付款未发货</td>
+					<td>未发货</td>
 					<td>等待发货</td>
 				<%}%>
 				<%if(od.getState()==2) {%>
-					<td>已付款已发货</td>
-					<td><A href="sure.do?orderid=<%=od.getOrderId() %>">确认收货</A></td>
+					<td>已发货</td>
+					<td><a href="sure.do?orderid=<%=od.getOrderId() %>">确认收货</a></td>
 				<%}%>
 				<%if(od.getState()==3) {%>
-					<td>已确认收货</td>
-					<td><A href="pingJia.do?orderid=<%=od.getOrderId()%>">评价</A></td>
+					<td>等待评价</td>
+					<td><a href="pingJia.do?orderid=<%=od.getOrderId()%>">评价</a></td>
 				<%}%>
 				<td><%=od.getTime() %></td>
 			</tr>
 			<%	}
-			} %>	
+			} %>
 	</table>
 </div>
