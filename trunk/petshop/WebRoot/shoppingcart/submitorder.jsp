@@ -131,7 +131,11 @@ input{
 			b = false;
 		}
 		if(diphone.value==""){
-			document.getElementById("phonemsg").innerHTML = "收货人不能为空";
+			document.getElementById("phonemsg").innerHTML = "号码不能为空";
+			diphone.value="";
+			b = false;
+		}else if(isNaN(diphone.value)){
+			document.getElementById("phonemsg").innerHTML = "号码有误";
 			b = false;
 		}
 		var radios = document.getElementsByName("pay");
