@@ -39,6 +39,11 @@ type="text/css" />
 	margin-left: auto;
 	margin-right: auto;
 }
+hr{
+	color:#999;
+	border:none;
+	border-top:#9FBE3F double 3px;
+}
 </style>
 	</head>
 	<body>
