@@ -3,8 +3,14 @@
 <link href="<%=request.getContextPath()%>/pages/css/rightcontent.css" rel="stylesheet" type="text/css" />
 <style>
 <!--
+input{
+	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+	font-size: 12px;
+}
 .mySubmitOrder{
 	padding-top:50px;
+	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+	font-size: 12px;
 }
 .mySubmitOrder a{
 	font-weight:600;
@@ -40,6 +46,8 @@
 	color:#333;
 	font-size:12px;
 	font-weight:900;
+	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+	font-size: 14px;
 }
 -->
 </style>

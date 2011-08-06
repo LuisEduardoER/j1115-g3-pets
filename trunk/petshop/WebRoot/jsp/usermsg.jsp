@@ -34,6 +34,7 @@
 	border:solid 1px #9FBE3F;
 	padding:3px;
 	text-align:center;
+	font-weight: bold;
 }
 
 -->

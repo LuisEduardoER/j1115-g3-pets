@@ -125,6 +125,8 @@
 <!--
 .carttablediv{
 	padding-top:50px;
+	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+	font-size: 12px;
 }
 .carttablediv a{
 	font-weight:600;
@@ -161,6 +163,8 @@
 	color:#333;
 	font-size:12px;
 	font-weight:900;
+	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+	font-size: 14px;
 }
 -->
 </style>
@@ -204,4 +208,4 @@
 </table>
 </div>
 <br />
-<div align="center"><html:link action="/inputCustomerInfo" >下一步</html:link></div>
+<div align="center"><html:link action="/inputCustomerInfo" style="font-family:'Courier New','Comic Sans MS',微软雅黑,黑体;" >下一步</html:link></div>

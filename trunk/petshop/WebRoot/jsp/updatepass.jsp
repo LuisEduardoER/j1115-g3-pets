@@ -5,43 +5,46 @@
   <head>
     <title>My JSP 'updatepass.jsp' starting page</title>
     
- <style>
-<!--
-table{
+  <style type="text/css">
+    .moduserpass{
+	padding-top:100px;
+	padding-left: 240px;
 	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
 	font-size: 12px;
+}
+input{
+	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+	font-size: 12px;
+}
+.moduserpass table{
+	border-spacing:3px;
+	border-collapse:collapse;
+	border-width:4px;
 	border-color:#9FBE3F;
 	border-style:double;
-}
-input {
-	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
-	font-size: 12px;
-}
-.moduserpass{
-	margin-top:100px;
-	margin-left:auto;
-	margin-right:auto;
-	width:300px;
+	text-align:center;
 }
 .moduserpass td{
-	height:30px;
+	border:solid 1px #9FBE3F;
+	padding:1px;
 }
 .moduserpass th{
-	padding-left: 130px;
+	text-align:center;
+	font-weight: bold;
 }
-.moduserpass input text{
-	width:190px;
+.moduserpass tr{
+	border:solid 1px #9FBE3F;
+	padding:3px;
 }
-
--->
-</style>
+ 
+    </style>
  </head>
   
   <body>
      <div class="moduserpass">
 			
 			<form action="/petshop/updateUserPass.do"  method="post">
-				<table border="2" width="100%">
+				<table border="2" width="60%">
 				<tr>
 					<th colspan="2"> 
 						修改密码
