@@ -8,8 +8,8 @@
     <style>
 <!--
 .usermsg{
-	padding-top:45px;
-	padding-left: 140px;
+	padding-top:100px;
+	padding-left: 240px;
 	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
 	font-size: 12px;
 }

@@ -10,6 +10,12 @@
 table{
 	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
 	font-size: 12px;
+	border-color:#9FBE3F;
+	border-style:double;
+}
+input {
+	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+	font-size: 12px;
 }
 .moduserpass{
 	margin-top:100px;
@@ -20,12 +26,13 @@ table{
 .moduserpass td{
 	height:30px;
 }
-.moduserpass input{
+.moduserpass th{
+	padding-left: 130px;
+}
+.moduserpass input text{
 	width:190px;
 }
-.moduserpass center input{
-	width:80px;
-}
+
 -->
 </style>
  </head>
@@ -34,9 +41,9 @@ table{
      <div class="moduserpass">
 			
 			<form action="/petshop/updateUserPass.do"  method="post">
-				<table border="1" width="100%">
+				<table border="2" width="100%">
 				<tr>
-					<th colspan="2" align="center""> 
+					<th colspan="2"> 
 						修改密码
 					</th>
 				</tr>
@@ -65,7 +72,7 @@ table{
 						</td>
 					</tr>
 					<tr>
-						<td colspan="2">
+						<td colspan="2" align="center"">
 							<input type="submit" value=" 提交 " />
 						</td>
 					</tr>
