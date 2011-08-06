@@ -49,10 +49,10 @@ hr{
 	</div>
 	<div class="template_content">
 		<div class="template_left">
-			<tiles:insert attribute="leftmenu" />
+			<tiles:insert attribute="left" />
 		</div>
 		<div class="template_right">
-			<tiles:insert attribute="goodscontent" />
+			<tiles:insert attribute="right" />
 		</div>
 	</div>
 	<div class="template_footer">
