@@ -2,10 +2,10 @@
 <%@include file="/taglib/common.jsp"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-  <head>
-    <title>My JSP 'regist.jsp' starting page</title>
-    
-    <script type="text/javascript">
+	<head>
+		<title>My JSP 'regist.jsp' starting page</title>
+
+		<script type="text/javascript">
 		var xmlhttp;
 		function check(){
 			if(window.XMLHttpRequest){
@@ -52,60 +52,64 @@
 	   		}
 	   	}
 	</script>
-	<style type="text/css">
-		.regpage{
-			font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
-			font-size: 12px;
-		}
-		input{
-			font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
-			font-size: 11px;
-		}
-	</style>
-   </head>
-           <p align="center">
-					<img src="<%=request.getContextPath()%>/resource/dog2.jpg"/>
-				</p>
-  <body >
-    
+		<style type="text/css">
+.regpage {
+	font-family: "Courier New", "Comic Sans MS", 微软雅黑, 黑体;
+	font-size: 12px;
+}
+
+input {
+	font-family: "Courier New", "Comic Sans MS", 微软雅黑, 黑体;
+	font-size: 14px;
+}
+</style>
+	</head>
+	<p align="center">
+		<img src="<%=request.getContextPath()%>/resource/dog2.jpg" />
+	</p>
+	<body>
+
 		<br>
 		<div class="regpage">
-		<form action="/petshop/regist.do" name="regform" method="post" onsubmit="return checknull()">
-			<table  align="center">
-				<tr  >
-					<td width="80px">
-						用户名：
-					</td>
-					<td>
-						<input type="text" id="username" name="username" onblur="check()" />
-						<font color="red" id="umsg"></font>
-					</td>
-				</tr>
-				<tr  >
-					<td>
-						密码：
-					</td>
-					<td>
-						<input type="password" id="password" name="password" />
-					</td>
-				</tr>
-				<tr>
-					<td>
-						确认密码：
-					</td>
-					<td>
-						<input type="password" id="password2" name="password2" onkeyup="validate()"/><span id="tishi">
-					</td>
-				</tr>
-				<tr>
-				     <td colspan="2" align="center">
-						<input type="submit" value="注册 &raquo" id="submit" />
-					</td>
-				</tr>
-				
-			</table>
-                 			
-       </form>
-       </div>
-   </body>
+			<form action="/petshop/regist.do" name="regform" method="post"
+				onsubmit="return checknull()">
+				<table align="center">
+					<tr>
+						<td width="80px">
+							用户名：
+						</td>
+						<td>
+							<input type="text" id="username" name="username" onblur="check()" />
+							<font color="red" id="umsg"></font>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							密码：
+						</td>
+						<td>
+							<input type="password" id="password" name="password" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							确认密码：
+						</td>
+						<td>
+							<input type="password" id="password2" name="password2"
+								onkeyup="validate()" />
+							<span id="tishi"></span>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center">
+							<input type="submit" value="注册 &raquo" id="submit" />
+						</td>
+					</tr>
+
+				</table>
+
+			</form>
+		</div>
+	</body>
 </html>
