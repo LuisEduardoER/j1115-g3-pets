@@ -1,37 +1,54 @@
 <%@ page language="java" import="java.util.*" pageEncoding="GBK"%>
 <%@ include file="../taglib/common.jsp" %>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
+
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <base href="<%=basePath%>">
     
     <title>My JSP 'goodslist.jsp' starting page</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
+	<style>
+<!--
 
+.goodsdetail{
+	padding-top:45px;
+	padding-left:100px;
+	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+	font-size: 12px;
+}
+
+.goodsdetail table{
+	border-spacing:3px;
+	border-collapse:collapse;
+	border-width:4px;
+	border-color:#9FBE3F;
+	border-style:double;
+}
+.goodsdetail td{
+	border:solid 1px #9FBE3F;
+	padding:3px;
+}
+.goodsdetail tr{
+	border:solid 1px #9FBE3F;
+	padding:3px;
+}
+.goodsdetail th{
+	border:solid 1px #9FBE3F;
+	padding:3px;
+	text-align:center;
+}
+</style>
   </head>
   
   <body>
-  <center>
-  	<table border="1" bgcolor="#A1C037">
+  <div class="goodsdetail">
+  	<table >
   		<tr>
-  			<td>商品编号</td>
-  			<td>商品分类</td>
-  			<td>商品名称</td>
-  			<td>商品单价</td>
-  			<td>商品简介</td>
+  			<th>商品编号</th>
+  			<th>商品分类</th>
+  			<th>商品名称</th>
+  			<th>商品单价</th>
+  			<th>商品简介</th>
   		</tr>
     	<logic:present name="elist" scope="request">
     		<logic:iterate id="goods" name="elist">
@@ -45,6 +62,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		</logic:iterate>
     	</logic:present>
     </table>
-    </center>
+    </div>
   </body>
 </html>

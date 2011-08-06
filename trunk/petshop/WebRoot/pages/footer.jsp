@@ -4,6 +4,6 @@
 	<div class="footerimg" >
 	</div>
 	<div class="copyright">
-		Copyright&copy;J1115-GROUP3 2011
+		CopyRight &copy; J1115-GROUP3 2011
 	</div>
 </div>
