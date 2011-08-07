@@ -210,8 +210,9 @@
 			<set-property property="cancellable" value="true" />
 		</action>
 
-		<action path="/goods" type="cn.thepetshop.action.GoodsAction">
-			
+		<action path="/goods" type="cn.thepetshop.action.GoodsAction">	
+		</action>
+		<action path="/adminGoods" type="cn.thepetshop.action.AdminGoodsAction">	
 		</action>
 		<action path="/getPCategoryMap" type="cn.thepetshop.action.GetPCategoryMapAction">
 			<set-property property="cancellable" value="true" />
@@ -291,7 +292,8 @@
       name="findForm"
       validate="false">
       <set-property property="cancellable" value="true" />
-    </action>    
+    </action>
+       
   
    
     <action path="/getPCategoryMap" type="cn.thepetshop.action.GetPCategoryMapAction">

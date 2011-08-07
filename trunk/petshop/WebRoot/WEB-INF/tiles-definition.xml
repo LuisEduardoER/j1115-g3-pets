@@ -102,6 +102,14 @@
 		<put name="footer" value="/pages/footer.jsp"></put>
 	</definition>
 	
+	<definition name="AdminOrderGoodsListView" template="/template/public_template.jsp">
+		<put name="topline" value="/pages/toplogin.jsp"></put>
+		<put name="topmenu" value="/pages/topmenu.jsp"></put>
+		<put name="searchbar" value="/search/search.jsp"></put>
+		<put name="left" value="/admin/leftmenu.jsp"></put>
+		<put name="right" value="/jsp/goodslist.jsp"></put>
+	</definition>
+	
 	<definition name="MyCartView" template="/template/public_template.jsp">
 		<put name="topline" value="/pages/toplogin.jsp"></put>
 		<put name="topmenu" value="/pages/topmenu.jsp"></put>

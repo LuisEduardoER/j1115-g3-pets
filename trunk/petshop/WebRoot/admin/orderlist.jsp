@@ -93,7 +93,7 @@ input{
 			<logic:iterate id="orderlist" name="allorderlist" indexId="i">
 				<tr>
 					<td><input type='checkbox' name='orders' value='${allorderlist[i].oid }'></td>
-					<td><bean:write name="orderlist" property="oid" /></td>
+					<td><a href="adminGoods.do?orderid=<bean:write name="orderlist" property="oid" />"><bean:write name="orderlist" property="oid" /></a></td>
 					<td><bean:write name="orderlist" property="uid" /></td>
 					<td><bean:write name="orderlist" property="otime" /></td>
 					<td><bean:write name="orderlist" property="oreceiver" /></td>
