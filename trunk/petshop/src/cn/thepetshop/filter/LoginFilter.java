@@ -27,14 +27,12 @@ public class LoginFilter implements Filter {
 		HttpServletRequest request = (HttpServletRequest) sreq;
 		HttpServletResponse response = (HttpServletResponse) sres;
 		HttpSession session = request.getSession();
-		
+		String userid = null;
 		boolean b = false;
 		
-		String regex = "";//对于一些普通的页面则直接给予放行，这里给出不过滤的类型
+		//对于一些普通的页面则直接给予放行，这里给出不过滤的类型
 //		if(request.getServletPath().matches(regex)){//正则判断页面是否需要过滤
-		if(true){//正则判断页面是否需要过滤
-			b = true;
-		}
+		
 		
 		if(session.getAttribute("username")!=null){
 			b = true;//session 存在用户名，则表示用户已经登录，放行
@@ -54,7 +52,7 @@ public class LoginFilter implements Filter {
 				}
 				if( username!=null && password!=null ){//判断是否从cookies得到了用户信息
 					PetDAO ed = new PetDAO();
-					String userid = ed.login(username, password);//尝试用cookies的信息进行登录验证
+					userid = ed.login(username, password);//尝试用cookies的信息进行登录验证
 //					System.out.println(userid);
 					if(userid != null){//登录验证通过，将username 和 userid 写入 session 并且放行
 						session.setAttribute("username", username);
@@ -65,6 +63,14 @@ public class LoginFilter implements Filter {
 						session.setAttribute("userid", null);
 					}
 				}
+			}
+		}
+		
+		if(request.getRequestURI().matches("*admin*||*Admin*")){//正则判断页面是否需要过滤
+			if(userid.length()<5){
+				b = true;
+			}else{
+				b = false;
 			}
 		}
 		
