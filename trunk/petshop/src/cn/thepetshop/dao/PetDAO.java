@@ -1679,7 +1679,7 @@ public class PetDAO {
 		try {
 			con=getConnection();
 			st=con.createStatement();
-			String sql="select g_score,g_sold from p_goods where g_id = "+goodsid;
+			String sql="select g_score,g_buyer from p_goods where g_id = "+goodsid;
 			rs=st.executeQuery(sql);
 			if(rs.next()){
 				str[0]=rs.getString(1);
