@@ -25,15 +25,12 @@ public class RegistAction extends Action {
 			HttpServletRequest request, HttpServletResponse response) {
 	
 			request.setAttribute("pagetitle", "ÓÃ»§×¢²á");
-		
+			
 			UserForm userForm = (UserForm)form;
 			
 			String username = userForm.getUsername();
 			String password = userForm.getPassword();
 			
-			HttpSession session = request.getSession();
-			session.setAttribute("username", username);
-			session.setAttribute("password",password);
 			PetDAO petdao = new PetDAO();
 			boolean b = petdao.register(username,password);
 			if(b){
