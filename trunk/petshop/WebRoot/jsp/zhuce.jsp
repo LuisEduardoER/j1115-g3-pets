@@ -1,6 +1,8 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@include file="/taglib/common.jsp"%>
-
+<head>
+	 <title>用户注册</title>
+</head>
 <script type="text/javascript">
 	var xmlhttp;
 	function check(){

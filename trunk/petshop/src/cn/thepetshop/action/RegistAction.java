@@ -34,7 +34,7 @@ public class RegistAction extends Action {
 			PetDAO petdao = new PetDAO();
 			boolean b = petdao.register(username,password);
 			if(b){
-				return new ActionForward("/index.do");
+				return new ActionForward("/jsp/regsuccess.jsp");
 			}
 			else{
 				request.setAttribute("regmsg", "◊¢≤· ß∞‹£¨«Î÷ÿ ‘");
