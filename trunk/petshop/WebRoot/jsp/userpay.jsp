@@ -55,8 +55,9 @@ input{
 					<html:hidden property="orderid" value="<%=oid %>"/>
 					<html:radio property="paytype" value="0">网银付款</html:radio>
 				</td>
-				<td><html:radio property="paytype" value="1">余额付款</html:radio></td>
+				<td><html:radio property="paytype" value="1" >余额付款</html:radio></td>
 				<td><html:radio property="paytype" value="2">货到付款</html:radio></td>
+			
 			</tr>
 			<tr>
 				<td colspan="3" align="center""><html:submit value="确认付款"></html:submit></td>

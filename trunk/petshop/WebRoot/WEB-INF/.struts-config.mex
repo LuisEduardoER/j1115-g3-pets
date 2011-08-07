@@ -5,7 +5,6 @@
   <StrutsActivity path="/delete.do" location="332,0" dimension="244,84" />
   <StrutsActivity path="/history.do" location="325,461" dimension="262,84" />
   <StrutsActivity path="/trading.do" location="314,184" dimension="280,84" />
-  <StrutsActivity path="/index.do" location="674,867" dimension="280,84" />
   <StrutsActivity path="/regist.do" location="0,1641" dimension="244,84" />
   <StrutsActivity path="/login.do" location="578,1641" dimension="238,84" />
   <StrutsActivity path="/getUserMsg.do" location="963,1254" dimension="268,84" />
@@ -53,6 +52,7 @@
   <StrutsActivity path="/modUserPassword.do" location="1850,1050" dimension="312,104" />
   <StrutsActivity path="/eBank.do" location="1850,1250" dimension="237,104" />
   <StrutsActivity path="/userPay.do" location="1550,1050" dimension="248,104" />
+  <StrutsActivity path="/index.do" location="674,867" dimension="280,84" />
   <StrutsActivity path="/jsp/payFailed.jsp" location="977,184" dimension="148,48" />
   <StrutsActivity path="/jsp/PayJsp.jsp" location="1225,184" dimension="130,48" />
   <StrutsActivity path="/jsp/paySucceed.jsp" location="1455,184" dimension="154,48" />

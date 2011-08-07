@@ -45,7 +45,7 @@
 		<form-bean name="modGoodsInfoForm" type="cn.thepetshop.form.ModGoodsInfoForm" />
 
 		<form-bean name="payForm" type="org.apache.struts.action.DynaActionForm">
-			<form-property name="paytype" type="java.lang.String" />
+			<form-property name="paytype" type="java.lang.String" initial="1"/>
 			<form-property name="orderid" type="java.lang.String" />
 		</form-bean>
 
