@@ -6,8 +6,7 @@
 <style>
 <!--
 .goodpingjia{
-	padding-top:15px;
-	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
+	padding-top:14px;
 }
 
 .goodpingjia table{
@@ -37,6 +36,7 @@
 	List<OrderedGoods> list = (List<OrderedGoods>)request.getAttribute("elist"); 
 	String orderid = (String)request.getAttribute("orderid");
 %>
+<hr/>
 <div class="goodpingjia">
 	<form action="scort.do" method="post">
 		<table width="100%">
