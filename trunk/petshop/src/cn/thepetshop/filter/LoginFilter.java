@@ -32,7 +32,7 @@ public class LoginFilter implements Filter {
 		
 		//对于一些普通的页面则直接给予放行，这里给出不过滤的类型
 //		if(request.getServletPath().matches(regex)){//正则判断页面是否需要过滤
-		
+		b = true;
 		
 		if(session.getAttribute("username")!=null){
 			b = true;//session 存在用户名，则表示用户已经登录，放行
