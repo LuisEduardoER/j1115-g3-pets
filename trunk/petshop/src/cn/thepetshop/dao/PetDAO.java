@@ -622,7 +622,7 @@ public class PetDAO {
 		try {
 			con=getConnection();
 			st=con.createStatement();
-			String sql="update p_goods set g_score = "+score+" , g_sold = "+num+" where g_id = "+goodid;
+			String sql="update p_goods set g_score = "+score+" , g_buyer = "+num+" where g_id = "+goodid;
 //			System.out.println(sql);
 			st.executeQuery(sql);
 			
