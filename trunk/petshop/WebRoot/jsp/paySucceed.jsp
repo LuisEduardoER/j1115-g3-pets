@@ -17,8 +17,8 @@ center a:hover{
 		color:#333;
 }
 </style>
-
+<hr />
 <center>
 	付款成功<br>
-	<a href="trading.do">返回</A>
+	<a href="trading.do">返回</a>
 </center>

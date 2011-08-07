@@ -18,7 +18,7 @@ center a:hover{
 }
 </style>
 
-  
+<hr />
 <center>
  	${msg}<br/>
 	<a href="eBank.do">Á¢¼´Ç°Íù³äÖµ</a>
