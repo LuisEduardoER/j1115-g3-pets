@@ -20,6 +20,7 @@ public class ModAdminPassAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		ModAdminPassForm modAdminPassForm = (ModAdminPassForm) form;
+		request.setAttribute("pagetitle", "ÃÜÂëÐÞ¸Ä");
 		String oldPass = modAdminPassForm.getOldPass();
 		String newPass1 = modAdminPassForm.getNewPass1();
 		String newPass2 = modAdminPassForm.getNewPass2();
