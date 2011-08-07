@@ -66,15 +66,16 @@ public class LoginFilter implements Filter {
 			}
 		}
 		
+		String tempuserid = (String)session.getAttribute("userid");
 		if(request.getRequestURI().matches("^.*admin.*$|^.*Admin.*$")){//正则判断页面是否需要过滤
-			if(userid != null && userid.length() < 5){
+			if(tempuserid != null && tempuserid.length() < 5){
 				b = true;
 			}else{
 				request.setAttribute("msg", "请以管理员身份登录");
 				b = false;
 			}
 		}else if(request.getRequestURI().matches("^.*getCart.*$")){
-			if(userid!=null){
+			if(tempuserid!=null){
 				b = true;
 			}else{
 				request.setAttribute("msg", "请以登录以后再操作");
