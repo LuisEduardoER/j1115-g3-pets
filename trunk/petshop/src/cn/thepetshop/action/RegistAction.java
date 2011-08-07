@@ -23,7 +23,7 @@ public class RegistAction extends Action {
 	
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-	
+			
 			request.setAttribute("pagetitle", "ÓÃ»§×¢²á");
 			
 			UserForm userForm = (UserForm)form;
