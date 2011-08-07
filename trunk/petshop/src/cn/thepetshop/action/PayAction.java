@@ -25,8 +25,6 @@ public class PayAction extends Action {
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 			
-			request.setAttribute("pagetitle", "我的订单- 结账");
-			
 			double sum=0;
 			PetDAO pd = new PetDAO();
 			DynaActionForm payform=(DynaActionForm)form;
