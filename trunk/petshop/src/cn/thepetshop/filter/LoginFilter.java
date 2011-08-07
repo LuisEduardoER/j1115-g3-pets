@@ -66,13 +66,13 @@ public class LoginFilter implements Filter {
 			}
 		}
 		
-		if(request.getRequestURI().matches("*admin*||*Admin*")){//正则判断页面是否需要过滤
-			if(userid.length()<5){
-				b = true;
-			}else{
-				b = false;
-			}
-		}
+//		if(request.getRequestURI().matches("*admin*||*Admin*")){//正则判断页面是否需要过滤
+//			if(userid.length()<5){
+//				b = true;
+//			}else{
+//				b = false;
+//			}
+//		}
 		
 		if(b){
 			chain.doFilter(request, response);
