@@ -16,7 +16,7 @@ public class ModUserPasswordAction extends Action {
 	
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-		
+		request.setAttribute("pagetitle", "我的账户 - 修改密码");
 		return new ActionForward("ModUserPasswordView");
 	}
 }

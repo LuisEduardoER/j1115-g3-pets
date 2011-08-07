@@ -16,7 +16,7 @@ public class EBankAction extends Action {
 	
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-		
+		request.setAttribute("pagetitle", "我的账户 - 充值");
 		return new ActionForward("EBankView");
 	}
 }
