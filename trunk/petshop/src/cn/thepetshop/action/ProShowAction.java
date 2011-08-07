@@ -22,21 +22,16 @@ public class ProShowAction extends Action{
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
-		request.setAttribute("pagetitle", "我的订单 - 商品评价");
-		int orderid=Integer.parseInt(request.getParameter("orderid"));
+		request.setAttribute("pagetiele","我的订单 - 商品评价");
+		String orderid = request.getParameter("orderid");
 		HttpSession session=request.getSession();
 		String uid = (String)session.getAttribute("userid");
 		int userId=Integer.parseInt(uid);
-		List<OrderInfo> list = new PetDAO().getOrderInfoByUserId(userId);
-		for(int i=0;i<list.size();i++){
-			OrderInfo orderinfo=list.get(i);
-			Order order=orderinfo.getOrder();
-			if(order.getOrderId()==orderid){
-				request.setAttribute("elist", orderinfo.getGoodsList());
-				request.setAttribute("orderid", orderid);
-				break;
-			}
-		}
+		PetDAO pd = new PetDAO();
+		
+		request.setAttribute("elist", pd.getOrderedGoods(Integer.parseInt(orderid)));
+		request.setAttribute("orderid", orderid);
+			
 		return new ActionForward("PingJiaView");
 	}
 }
