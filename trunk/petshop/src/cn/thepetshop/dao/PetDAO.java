@@ -951,7 +951,7 @@ public class PetDAO {
 			}
 			sql="insert into p_orders (o_id,u_id,o_time,o_receiver,o_address,o_phone,o_sum) " +
 					"values("+orderid+","+userid+",sysdate,'"+receiver+"','"+address+"','"+phone+"',"+Double.valueOf(cart.getSumMoney())+")";
-			System.out.println("dao createOrder:"+sql);
+//			System.out.println("dao createOrder:"+sql);
 			st.executeUpdate(sql);
 			addGoodsToOrder(orderid,cart.getGoodsList());
 			updateGoodsLeftNum(cart.getGoodsList());
