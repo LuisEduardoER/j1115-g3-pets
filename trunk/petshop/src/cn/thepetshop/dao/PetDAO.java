@@ -1736,7 +1736,7 @@ public class PetDAO {
 		try {
 			con=getConnection();
 			st=con.createStatement();
-			String sql="select g_id,g_name,g_price from (select g.*, rownum rn from p_goods g order by g_sold) where rn>=1 and rn<=16";
+			String sql="select g_id,g_name,g_price from (select g.*, rownum rn from p_goods g order by g_sold desc) where rn>=1 and rn<=16";
 			rs=st.executeQuery(sql);
 			while(rs.next()){
 				Goods g=new Goods();
