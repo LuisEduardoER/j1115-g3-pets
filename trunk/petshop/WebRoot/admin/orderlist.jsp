@@ -106,20 +106,17 @@ input{
 					</td>
 					<td><bean:write name="orderlist" property="osum" /></td>
 					<td>
-						<logic:equal value="0" name="orderlist" property="ostate">未发货</logic:equal>
-						<logic:equal value="1" name="orderlist" property="ostate">已付款，等待发货</logic:equal>
+						<logic:equal value="0" name="orderlist" property="ostate">等待付款</logic:equal>
+						<logic:equal value="1" name="orderlist" property="ostate">等待发货</logic:equal>
 						<logic:equal value="2" name="orderlist" property="ostate">已发货</logic:equal>
 						<logic:equal value="3" name="orderlist" property="ostate">已确认收货</logic:equal>
 						<logic:equal value="4" name="orderlist" property="ostate">已评价</logic:equal>
 						<logic:equal value="5" name="orderlist" property="ostate">已取消</logic:equal>
 					</td>
 					<td>
-						<logic:lessThan value="2" name="orderlist" property="ostate">
+						<logic:equal value="1" name="orderlist" property="ostate">
 							<input type="button" id="${allorderlist[i].oid }" onclick="hqs_delivery(${allorderlist[i].oid })" value="发货" />
-						</logic:lessThan>
-						<logic:greaterEqual value="2" name="orderlist" property="ostate">
-							<input type="button" disabled="disabled" value="发货" />
-						</logic:greaterEqual>
+						</logic:equal>
 					</td>
 				</tr>
 			</logic:iterate>
