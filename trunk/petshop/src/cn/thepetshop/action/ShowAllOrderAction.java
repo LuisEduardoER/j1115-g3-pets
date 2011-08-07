@@ -49,6 +49,7 @@ public class ShowAllOrderAction extends Action {
 		request.setAttribute("allorderlist", list);
 		request.setAttribute("orderpage", page);
 		request.setAttribute("orderendPage", pageCount);
+		request.setAttribute("pagetitle", "管理中心 - 订单管理");
 		return new ActionForward("AdminOrderListView");
 	}
 }

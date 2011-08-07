@@ -34,6 +34,7 @@ public class GetPCategoryMapAction extends Action {
 //	       System.out.println(key + " = " + value);            
 //	    }  
 		request.setAttribute("pcategorymap", map);
+		request.setAttribute("pagetitle", "管理中心 - 新增商品");
 		return new ActionForward("AdminAddNewGoodsView");
 	}
 }

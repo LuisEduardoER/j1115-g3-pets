@@ -20,6 +20,7 @@ public class GetGoodsInfoAction extends Action {
 	
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
+		request.setAttribute("pagetitle", "管理中心 - 商品修改");
 		String gid = request.getParameter("gid");
 		PetDAO petDAO = new PetDAO();
 		GetAllGoods list = petDAO.getGoodsListByGid(Integer.parseInt(gid));

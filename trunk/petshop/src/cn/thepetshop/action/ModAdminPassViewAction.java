@@ -16,7 +16,7 @@ public class ModAdminPassViewAction extends Action {
 	
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-		
+		request.setAttribute("pagetitle", "管理中心 - 密码修改");
 		return new ActionForward("ModAdminPassView");
 	}
 }

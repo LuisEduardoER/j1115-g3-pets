@@ -26,6 +26,7 @@ public class GetParentCategoryAction extends Action {
 		
 //		HttpSession session =request.getSession();
 //		session.setAttribute("parentList", list);
+		request.setAttribute("pagetitle", "管理中心 - 分类管理");
 		return new ActionForward("AdminParentCategoryListView");
 	}
 }

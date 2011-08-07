@@ -22,7 +22,7 @@ public class ShowAllGoodsAction extends Action {
 	
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-		
+		request.setAttribute("pagetitle", "管理中心 - 商品管理");
 		DynaActionForm gf = (DynaActionForm) form;
 		PetDAO pd = new PetDAO();
 		int page = 1;

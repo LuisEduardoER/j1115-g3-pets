@@ -21,6 +21,7 @@ public class ChildrenAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		PetDAO pdao = new PetDAO();
+		request.setAttribute("pagetitle", "管理中心 - 子分类管理");
 		String cidstring = request.getParameter("parentno");
 		if (cidstring==null || cidstring.equals("")) {
 			return new ActionForward("AdminCCategoryView");
