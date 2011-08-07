@@ -7,4 +7,4 @@ alter table p_orders add o_type number(1) check(o_type between 0 and 2);
 --订单表增加一列o_sum，用于记录订单总额
 alter table p_orders add o_sum number;
 --商品表增加一列g_buyer,用于记录购买的人数
-alter table p_goods add g_buyer number not null default 0;
+alter table p_goods add g_buyer number default 0 not null ;
