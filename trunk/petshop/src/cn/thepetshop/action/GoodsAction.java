@@ -33,6 +33,7 @@ public class GoodsAction extends Action {
 			Order order=orderinfo.getOrder();
 			if(order.getOrderId()==orderid){
 				request.setAttribute("elist", orderinfo.getGoodsList());
+				request.setAttribute("orderid", orderid);
 				break;
 			}
 		}
