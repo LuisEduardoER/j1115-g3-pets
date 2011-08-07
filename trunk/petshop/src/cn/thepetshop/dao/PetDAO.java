@@ -568,6 +568,24 @@ public class PetDAO {
 	 * @param orderid
 	 * @param tradeStatus
 	 */
+	public void updateOrderSatatus(int orderid,int tradeStatus,int paymethod){
+		Connection con=null;
+		Statement st=null;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			String sql="update p_orders set o_state = "+tradeStatus+", o_type = "+paymethod+" where o_id = "+orderid;
+			st.executeUpdate(sql);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			free(con,st,null);
+		}
+	}
 	public void updateOrderSatatus(int orderid,int tradeStatus){
 		Connection con=null;
 		Statement st=null;
