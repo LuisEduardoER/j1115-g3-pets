@@ -65,14 +65,17 @@ public class LoginFilter implements Filter {
 				}
 			}
 		}
-//		
-//		if(request.getRequestURI().matches("^.*admin.*$|^.*Admin.*$")){//正则判断页面是否需要过滤
-//			if(userid.length()<5){
-//				b = true;
-//			}else{
-//				b = false;
-//			}
-//		}
+		
+		if(request.getRequestURI().matches("^.*admin.*$|^.*Admin.*$")){//正则判断页面是否需要过滤
+			if(userid != null && userid.length() < 5){
+				b = true;
+			}else{
+				b = false;
+			}
+		}
+		
+//		System.out.println(request.getRequestURI());
+//		System.out.println(request.getRequestURI().matches("^.*admin.*$|^.*Admin.*$"));
 		
 		if(b){
 			chain.doFilter(request, response);
@@ -80,7 +83,7 @@ public class LoginFilter implements Filter {
 //			session.setAttribute("preurl", request.getRequestURL().toString());
 			//将url存入session中，名字为preurl，以便登录成功后跳回登录前的的网页，
 			//需要在登录action实现判断是否存在preurlattribute如果存在则进行跳转，否则就返回默认页面
-			response.sendRedirect("IndexView");//登入界面
+			response.sendRedirect("/petshop/index.do");//登入界面
 		}
 	}
 
