@@ -1757,6 +1757,11 @@ public class PetDAO {
 		return list;
 	}
 	
+	/**
+	 * 根据订单号取得订单信息
+	 * @param orderid
+	 * @return
+	 */
 	public OrderInfo getOrderInfoByOrderId(String orderid){
 		Connection con=null;
 		Statement st=null;
