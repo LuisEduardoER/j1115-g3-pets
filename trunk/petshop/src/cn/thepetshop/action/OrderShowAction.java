@@ -21,6 +21,7 @@ public class OrderShowAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
+		request.setAttribute("pagetitle", "我的账户 - 历史订单");
 
 		HttpSession session=request.getSession();
 		String uid = (String) session.getAttribute("userid");

@@ -95,7 +95,8 @@
 		</action>
 
 		<action path="/index" type="org.apache.struts.actions.ForwardAction"
-			parameter="IndexView"></action>
+			parameter="IndexView">
+		</action>
 
 		<action path="/regist" type="cn.thepetshop.action.RegistAction"
 			name="userForm" validate="false">

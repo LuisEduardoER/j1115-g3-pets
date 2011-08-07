@@ -18,6 +18,7 @@ public class GetCartAction extends Action {
 	
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 		HttpServletRequest request, HttpServletResponse response) {
+		request.setAttribute("pagetitle", "我的账户 - 我的购物车");
 		String userid = (String)request.getSession().getAttribute("userid");
 		PetDAO pd = new PetDAO();
 		Cart cart = pd.getShoppingCart(userid);

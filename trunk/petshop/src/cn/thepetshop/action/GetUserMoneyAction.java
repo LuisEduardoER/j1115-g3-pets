@@ -24,6 +24,7 @@ public class GetUserMoneyAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		UserForm userForm = (UserForm)form;
+		request.setAttribute("pagetitle", "我的账户 - 账户余额");
 		HttpSession session = request.getSession();
 		String userid = (String)session.getAttribute("userid");
 		PetDAO petdao = new PetDAO();

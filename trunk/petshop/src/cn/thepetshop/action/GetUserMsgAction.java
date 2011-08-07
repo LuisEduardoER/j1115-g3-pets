@@ -24,6 +24,8 @@ public class GetUserMsgAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		
+		request.setAttribute("pagetitle", "我的账户 - 个人信息");
+		
 		UserForm userForm = (UserForm)form;
 		HttpSession session = request.getSession();
 		String userid = (String)session.getAttribute("userid");

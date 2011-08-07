@@ -51,14 +51,6 @@
 				<td>用户名：</td>
 				<td><bean:write name="user" property="username" /></td>
 			</tr>
-			<tr>
-				<td>注册日期：</td>
-				<td>XXXX-XX-XX</td>
-			</tr>
-			<tr>
-				<td >累计消费：</td>
-				<td>XXX元</td>
-			</tr>
 		</table>
 	</logic:present>
 </div>

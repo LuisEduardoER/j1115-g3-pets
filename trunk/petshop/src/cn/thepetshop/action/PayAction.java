@@ -24,6 +24,9 @@ public class PayAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
+			
+		request.setAttribute("pagetitle", "我的账户 - 结账");
+			
 			double sum=0;
 			PetDAO pd = new PetDAO();
 			DynaActionForm payform=(DynaActionForm)form;

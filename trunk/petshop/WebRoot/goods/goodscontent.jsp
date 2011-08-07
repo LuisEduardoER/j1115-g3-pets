@@ -4,7 +4,7 @@
 <div class="mycontent">
 	<div class="category_topimage">
 		<hr />
-		<img src="<%=request.getContextPath()%>/resource/dog.jpg" />
+		<img src="<%=request.getContextPath()%>/pages/pic/${category}.jpg" />
 		<hr />
 	</div>
 	<div class="mygoodscontent">

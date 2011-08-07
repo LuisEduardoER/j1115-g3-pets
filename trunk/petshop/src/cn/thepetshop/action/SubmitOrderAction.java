@@ -19,6 +19,9 @@ public class SubmitOrderAction extends Action {
 	
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
+		
+		request.setAttribute("pagetitle", "订单 - 付款方式");
+		
 		OrderForm of = (OrderForm)form;
 		PetDAO pd = new PetDAO();
 		Object obj = request.getSession().getAttribute("userid");

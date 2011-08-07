@@ -21,7 +21,7 @@ public class InputCustomerInfoAction extends Action {
 	
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-		
+		request.setAttribute("pagetitle", "我的订单 - 收货人");
 		String userid = (String)(request.getSession().getAttribute("userid"));
 //		userid = "2";//临时用户
 		PetDAO pd = new PetDAO();

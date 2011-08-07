@@ -15,8 +15,9 @@ public class MySessionListener implements HttpSessionListener{
 		
 		PetDAO pd = new PetDAO();
 		List<Menu> categoryMenuList = pd.getMenuList();
-		arg0.getSession().setAttribute("categoryMenuList", categoryMenuList);
 		
+		arg0.getSession().setAttribute("categoryMenuList", categoryMenuList);
+		arg0.getSession().setAttribute("pagetitle","The Pet Shop");
 	}
 	
 	public void sessionDestroyed(HttpSessionEvent arg0) {
