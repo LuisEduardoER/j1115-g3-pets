@@ -62,7 +62,7 @@ create table p_cart(
 --自增序列,用于u_id
 create sequence u_id_seq
 minvalue 1
-start with 1
+start with 10000
 increment by 1
 ;
 
@@ -74,19 +74,6 @@ begin
 select u_id_seq.nextval into :new.u_id from dual;    
 end u_id_trigger; 
   
---自增序列,用于g_id
-create sequence g_id_seq
-minvalue 1
-start with 1
-increment by 1;
-
---相应触发器
-create or replace trigger g_id_trigger       
-before insert on p_goods       
-for each row       
-begin       
-select g_id_seq.nextval into :new.g_id from dual;    
-end g_id_trigger;   
 
 --自增序列,用于c_id
 create sequence c_id_seq
@@ -107,14 +94,6 @@ create sequence o_id_seq
 minvalue 1
 start with 1
 increment by 1;
-
---相应触发器
-create or replace trigger o_id_trigger       
-before insert on p_orders       
-for each row       
-begin       
-select o_id_seq.nextval into :new.o_id from dual;  
-end o_id_trigger;   
 
 
 
