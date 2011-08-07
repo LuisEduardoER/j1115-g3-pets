@@ -94,9 +94,7 @@
 			validate="false">
 		</action>
 
-		<action path="/index" type="org.apache.struts.actions.ForwardAction"
-			parameter="IndexView">
-		</action>
+		
 
 		<action path="/regist" type="cn.thepetshop.action.RegistAction"
 			name="userForm" validate="false">
@@ -350,6 +348,12 @@
       <set-property property="cancellable" value="true" />
     </action>
     <action path="/userPay" type="cn.thepetshop.action.UserPayAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action
+      path="/index"
+      type="cn.thepetshop.action.IndexAction"
+      validate="false">
       <set-property property="cancellable" value="true" />
     </action>
     
