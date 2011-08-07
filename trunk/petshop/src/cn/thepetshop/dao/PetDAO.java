@@ -928,6 +928,7 @@ public class PetDAO {
 			sql="insert into p_orders (o_id,u_id,o_time,o_receiver,o_address,o_phone,o_sum) " +
 					"values("+orderid+","+userid+",sysdate,'"+receiver+"','"+address+"','"+phone+"',"+Double.valueOf(cart.getSumMoney())+")";
 			st.executeUpdate(sql);
+			addGoodsToOrder(orderid,cart.getGoodsList());
 			updateGoodsLeftNum(cart.getGoodsList());
 			addSoldNum(cart.getGoodsList());
 			clearCart(userid);
@@ -939,6 +940,33 @@ public class PetDAO {
 			free(con,st,rs);
 		}
 		return oi;
+	}
+	
+	/**
+	 * 将goods内容放入order——info中
+	 * @param oid
+	 * @param goods
+	 */
+	public void addGoodsToOrder(int oid,List<OrderedGoods> goods){
+		Connection con=null;
+		Statement st=null;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			String sql="";
+			for(int i=0;i<goods.size();i++){
+				sql="insert into p_orders_info (o_id,g_id,i_num,i_price) values ("+oid+","+goods.get(i).getGoodsid()+","+goods.get(i).getNum()+","+goods.get(i).getGoodsPrice()+")";
+				st.executeUpdate(sql);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			free(con,st,null);
+		}
 	}
 	
 	/**
