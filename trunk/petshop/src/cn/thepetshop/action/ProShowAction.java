@@ -22,7 +22,7 @@ public class ProShowAction extends Action{
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
-		
+		request.setAttribute("pagetitle", "我的订单 - 商品评价");
 		int orderid=Integer.parseInt(request.getParameter("orderid"));
 		HttpSession session=request.getSession();
 		String uid = (String)session.getAttribute("userid");

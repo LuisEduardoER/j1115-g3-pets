@@ -5,9 +5,6 @@
 
 <style>
 <!--
-input {
-	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
-}
 .goodpingjia{
 	padding-top:15px;
 	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
@@ -42,12 +39,15 @@ input {
 %>
 <div class="goodpingjia">
 	<form action="scort.do" method="post">
-		<table>
+		<table width="100%">
 			<tr>
-				<th>商品编号</th>
+				<td colspan="4">订单号:${orderid }</td>
+			</tr>
+			<tr>
+				<th width="60px">商品编号</th>
 				<th>商品名称</th>
 				<th>商品简介</th>
-				<th>商品评分</th>
+				<th width="260px">商品评分</th>
 			</tr>
 				<%for(int i=0;i<list.size();i++){
 					OrderedGoods og = list.get(i);
