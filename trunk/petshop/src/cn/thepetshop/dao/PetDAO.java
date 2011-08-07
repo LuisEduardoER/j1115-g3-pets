@@ -1670,7 +1670,43 @@ public class PetDAO {
 		}
 		return count;
 	}
-
+	
+	/**
+	 * 获得主页上显示的一页商品，只取销售最高的16个
+	 * @return
+	 */
+	public List<Goods> getIndexGoods(){
+		List<Goods> list=new ArrayList<Goods>();
+		Connection con=null;
+		Statement st=null;
+		ResultSet rs=null;
+		try {
+			con=getConnection();
+			st=con.createStatement();
+			String sql="select g_id,g_name,g_price from (select g.*, rownum rn from p_goods g order by g_sold) where rn>=1 and rn<=16";
+			rs=st.executeQuery(sql);
+			while(rs.next()){
+				Goods g=new Goods();
+				g.setGoodsid(rs.getInt(1));
+				g.setGoodsName(rs.getString(2));
+				g.setGoodsPrice(rs.getDouble(3));
+				list.add(g);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			free(con,st,rs);
+		}
+		return list;
+	}
 }
+
+	
+
+
 
 
