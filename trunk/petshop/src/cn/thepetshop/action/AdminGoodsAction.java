@@ -25,7 +25,7 @@ public class AdminGoodsAction extends Action {
 			HttpServletRequest request, HttpServletResponse response) {
 		String orderid=(String)request.getParameter("orderid");
 		
-		OrderInfo oi = new PetDAO().getOrderInfoByOrderId(orderid);
+		OrderInfo oi = new PetDAO().getOrderInfoByOrderId(Integer.parseInt(orderid));
 		
 		request.setAttribute("elist", oi.getGoodsList());
 		request.setAttribute("orderid", orderid);
