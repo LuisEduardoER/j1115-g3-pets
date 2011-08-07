@@ -37,7 +37,8 @@ public class RegistAction extends Action {
 				return new ActionForward("/index.do");
 			}
 			else{
-				return null;
+				request.setAttribute("regmsg", "◊¢≤· ß∞‹£¨«Î÷ÿ ‘");
+				return new ActionForward("RegView");
 			}
 		}
 

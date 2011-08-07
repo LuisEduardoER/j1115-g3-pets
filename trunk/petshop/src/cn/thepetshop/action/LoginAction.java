@@ -45,7 +45,7 @@ public class LoginAction extends Action {
 		}else if(!checknum.equals(checknum1)){
 			String msg = "ÑéÖ¤Âë´íÎó";
 			request.setAttribute("msg", msg);
-			return new ActionForward("/jsp/login.jsp");
+			return new ActionForward("LoginView");
 		}
 		
 		PetDAO petdao = new PetDAO();
@@ -55,7 +55,7 @@ public class LoginAction extends Action {
 			ActionMessages messages = new ActionMessages();
 			messages.add("username", new ActionMessage("error.logon"));
 			this.saveErrors(request, messages);
-			return new ActionForward("/jsp/login.jsp");
+			return new ActionForward("LoginView");
 		}
 		
 		session.setAttribute("goodsnumincart", petdao.getNumInCart(userid));
@@ -76,6 +76,6 @@ public class LoginAction extends Action {
 			response.addCookie(cid);
 			response.addCookie(cpass);
 		}
-		return new ActionForward("/index.do",true);
+		return new ActionForward("/index.do");
 	}
 }

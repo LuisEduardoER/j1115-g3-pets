@@ -51,7 +51,7 @@
 <style type="text/css">
 .regpage {
 	font-family: "Courier New", "Comic Sans MS", 微软雅黑, 黑体;
-	font-size: 12px;
+	font-size: 14px;
 }
 
 input {
@@ -59,14 +59,14 @@ input {
 	font-size: 14px;
 }
 </style>
+<hr/>
 <p align="center">
 	<img src="<%=request.getContextPath()%>/resource/dog2.jpg" />
 </p>
 
 <br>
 <div class="regpage">
-	<form action="/petshop/regist.do" name="regform" method="post"
-		onsubmit="return checknull()">
+	<form action="/petshop/regist.do" name="regform" method="post" onsubmit="return checknull()">
 		<table align="center" width="360px">
 			<tr>
 				<td width="80px">
@@ -90,8 +90,7 @@ input {
 					确认密码：
 				</td>
 				<td>
-					<input type="password" id="password2" name="password2"
-						onkeyup="validate()" />
+					<input type="password" id="password2" name="password2" onkeyup="validate()" />
 					<span id="tishi" style="font-size: 12px;"></span>
 				</td>
 			</tr>
@@ -102,5 +101,6 @@ input {
 			</tr>
 		</table>
 		<input type="radio" style="display: none;" name="remember" />
+		${regmsg }
 	</form>
 </div>

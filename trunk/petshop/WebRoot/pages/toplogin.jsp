@@ -34,7 +34,7 @@
 			<font color="#FF6600">Welcome to the Pet Shop</font>
 			<a href="" class="signin"><span>Login</span>
 			</a>|
-			<a href="<%=request.getContextPath() %>/jsp/zhuce.jsp">Create Account</a>
+			<a href="<%=request.getContextPath() %>/reg.do">Create Account</a>
 			<fieldset id="signin_menu">
 				<form method="post" id="signin" action="/petshop/login.do">
 					<p>
