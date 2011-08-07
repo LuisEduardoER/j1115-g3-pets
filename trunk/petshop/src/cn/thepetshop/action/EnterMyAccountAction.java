@@ -17,7 +17,7 @@ public class EnterMyAccountAction extends Action {
 
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-
+		request.setAttribute("pagetitle", "Œ“µƒ’Àªß ");
 		return new ActionForward("MyAccountView");
 	}
 }
