@@ -222,14 +222,6 @@
 		<put name="right" value="/jsp/userpay.jsp"></put>
 	</definition>
 	
-	<definition name="RegView" template="/template/public_template.jsp">
-		<put name="topline" value="/pages/toplogin.jsp"></put>
-		<put name="topmenu" value="/pages/topmenu.jsp"></put>
-		<put name="searchbar" value="/search/search.jsp"></put>
-		<put name="left" value="/pages/leftmenu.jsp"></put>
-		<put name="right" value="/jsp/zhuce.jsp"></put>
-	</definition>
-	
 	<definition name="LoginView" template="/template/public_template.jsp">
 		<put name="topline" value="/pages/toplogin.jsp"></put>
 		<put name="topmenu" value="/pages/topmenu.jsp"></put>
