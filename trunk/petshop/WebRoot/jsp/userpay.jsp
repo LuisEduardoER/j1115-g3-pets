@@ -1,18 +1,12 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ include file="../taglib/common.jsp" %>
+<%@ include file="/taglib/common.jsp" %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-  <head>
-    <title>My JSP 'userpay.jsp' starting page</title>
-	 <style>
+<style>
 <!--
-input{
-	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
-}
-
 .userpay{
-	padding-left: 240px;
+	width:300px;
+	margin-left:auto;
+	margin-right:auto;
 	padding-top:100px;
 	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
 }
@@ -44,9 +38,10 @@ input{
 <%
   String oid = (String)request.getAttribute("hqs_oid");
 %>
+<hr/>
 <div class="userpay">
 	<html:form action="/pay" method="post">
-		<table width="60%">
+		<table width="100%">
 			<tr>
 				<th colspan="3"> 付款方式</th>
 			</tr>

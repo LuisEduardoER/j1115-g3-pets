@@ -4,14 +4,12 @@
 
 <style>
 <!--
-input{
-	font-family: "Courier New","Comic Sans MS",Î¢ÈíÑÅºÚ,ºÚÌå;
-}
 
 .payjsp{
-	padding-left: 240px;
+	margin-left:auto;
+	margin-right:auto;
+	width:300px;
 	padding-top:100px;
-	font-family: "Courier New","Comic Sans MS",Î¢ÈíÑÅºÚ,ºÚÌå;
 }
 
 .payjsp table{
@@ -36,10 +34,10 @@ input{
 }
 -->
 </style>
-  
+<hr/>
 <div class="payjsp">
 	<html:form action="/pay" method="post">
-		<table width="60%">
+		<table width="100%">
 	     	<tr>
 	     		<th colspan="3">¸¶¿î·½Ê½</th>
 	     	</tr>
