@@ -1,8 +1,20 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ include file="/taglib/common.jsp"%>
 <link href="<%=request.getContextPath()%>/pages/css/rightcontent.css" rel="stylesheet" type="text/css" />
-
+<style>
+<!--
+.indeximg{
+	width:778px;
+	height:278px;
+}
+-->
+</style>
+<hr/>
 <div class="mycontent">
+	<div class="indeximg">
+		<img src="<%=request.getContextPath()%>/pages/pic/home.jpg"/>
+	</div>
+	<hr/>
 	<div class="mygoodscontent">
 		<logic:present name="goodsList">
 			<% int goodsindex=0;%>
@@ -26,7 +38,7 @@
 						<span class="con_addtocart_btn" onclick="addtocart('${goods.goodsid}')"></span>
 					</div>
 				</div>
-				<%	
+				<%
 				}else{
 				%>
 				<div class="goodsshowbox_noborder">
@@ -61,8 +73,5 @@
 		<logic:notPresent name="goodsList">
 			<center><span style="font-size:20px; color:666px; height:30px; display:inline-block; font-weight:900; margin-top:60px;">Sorry, But No Goods Available Here...</span></center>
 		</logic:notPresent>
-		<logic:present name="goodsList">
-			
-		</logic:present>
 	</div>
 </div>
