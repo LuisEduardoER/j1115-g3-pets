@@ -1474,7 +1474,7 @@ public class PetDAO {
 		try {
 			con=getConnection();
 			st=con.createStatement();
-			String sql="select * from (select g.*, rownum rn from p_orders g) where rn>="+start+" and rn<="+end;
+			String sql="select * from (select g.*, rownum rn from(select * from p_orders order by o_time desc) g ) where rn>="+start+" and rn<="+end;
 			rs = st.executeQuery(sql);
 			while (rs.next()) {
 				GetAllOrder gao = new GetAllOrder();
