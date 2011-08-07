@@ -59,9 +59,9 @@
 				<td>
 					<input type="radio" name="<%=i%>" value="1"/>1分
 					<input type="radio" name="<%=i %>" value="2"/>2分
-					<input type="radio" name="<%=i %>" value="3"/>3分
+					<input type="radio" name="<%=i %>" value="3" />3分
 					<input type="radio" name="<%=i %>" value="4"/>4分
-					<input type="radio" name="<%=i %>" value="5"/>5分
+					<input type="radio" name="<%=i %>" value="5" checked="checked"/>5分
 					<input type="hidden" name="pro<%=i %>" value="<%=og.getGoodsid() %>">
 				</td>
 			</tr>
