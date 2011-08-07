@@ -38,8 +38,7 @@ public class RegistAction extends Action {
 			}
 			else{
 				request.setAttribute("regmsg", "◊¢≤· ß∞‹£¨«Î÷ÿ ‘");
-				return new ActionForward("RegView");
+				return new ActionForward("/jsp/zhuce.jsp");
 			}
 		}
-
 }
