@@ -3,8 +3,6 @@
 <style>
 <!--
 .goodsdetail{
-	padding-top:45px;
-	padding-left:100px;
 	font-family: "Courier New","Comic Sans MS",微软雅黑,黑体;
 }
 .goodsdetail table{
@@ -28,9 +26,9 @@
 	text-align:center;
 }
 </style>
-  
+<hr />
 <div class="goodsdetail">
-  	<table >
+  	<table width="100%">
   		<tr>
   			<th>商品编号</th>
   			<th>商品分类</th>
