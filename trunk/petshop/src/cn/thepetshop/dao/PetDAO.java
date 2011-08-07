@@ -533,7 +533,7 @@ public class PetDAO {
 		try {
 			con=getConnection();
 			st=con.createStatement();
-			String sql="select * from p_orders where u_id="+userid;;
+			String sql="select * from p_orders where u_id="+userid+" order by o_time desc";
 			rs=st.executeQuery(sql);
 			while(rs.next()){
 				Order o=new Order();
@@ -586,6 +586,12 @@ public class PetDAO {
 			free(con,st,null);
 		}
 	}
+	
+	/**
+	 * ¸üÐÂ¶©µ¥×´Ì¬
+	 * @param orderid
+	 * @param tradeStatus
+	 */
 	public void updateOrderSatatus(int orderid,int tradeStatus){
 		Connection con=null;
 		Statement st=null;
