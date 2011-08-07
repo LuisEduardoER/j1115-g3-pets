@@ -1757,49 +1757,44 @@ public class PetDAO {
 		return list;
 	}
 	
-	public OrderInfo getOrderInfoByOrderId(int orderid){
+	public OrderInfo getOrderInfoByOrderId(String orderid){
 		Connection con=null;
 		Statement st=null;
 		ResultSet rs=null;
-		ResultSet rs2 = null;
-		OrderInfo oInfo = null;
+		OrderInfo oInfo = new OrderInfo();
+		
 		try {
-			con=getConnection();
-			st=con.createStatement();
-			String sql="select * from p_orders_info where o_id="+orderid;
-			rs=st.executeQuery(sql);
-			while(rs.next()){
-				Order order = new Order();
-				List<OrderedGoods> goods =new ArrayList<OrderedGoods>();
-				goods=getOrderedGoods(rs.getInt(1));
-				oInfo.setGoodsList(goods);
-				oInfo.setSumMoney(rs.getDouble(4));
-				sql = "select * from p_orders where o_id="+rs.getInt(1);
-				rs2 = st.executeQuery(sql);
-				while (rs2.next()) {
-					order.setOrderId(rs2.getInt(1));
-					order.setTime(rs2.getDate(3));
-					order.setReceiver(rs2.getString(4));
-					order.setAddress(rs2.getString(5));
-					order.setPhone(rs2.getString(6));
-					order.setState(rs2.getInt(7));
-					order.setPay(rs.getInt(8));
-					order.setMoney(rs2.getDouble(9));
-					oInfo.setOrder(order);
-				}
+			con = getConnection();
+			st = con.createStatement();
+			String sql = "select * from p_orders where o_id = "+orderid;
+			rs = st.executeQuery(sql);
+			Order order = new Order();
+			if(rs.next()){
+				order.setOrderId(rs.getInt(1));
+				order.setMoney(rs.getDouble(9));
 			}
+			oInfo.setOrder(order);
+			List<OrderedGoods> goodsList = new ArrayList<OrderedGoods>();
+			sql = "select pg.g_id,pg.g_name,pg.g_price,pi.i_num,pg.g_brief from p_orders_info pi,p_goods pg where pi.g_id = pg.g_id AND o_id ="+orderid;
+			rs = st.executeQuery(sql);
+			while(rs.next()){
+				OrderedGoods og = new OrderedGoods();
+				og.setGoodsid(rs.getInt(1));
+				og.setGoodsName(rs.getString(2));
+				og.setGoodsPrice(rs.getDouble(3));
+				og.setNum(rs.getInt(4));
+				og.setGoodsBrief(rs.getString(5));
+				goodsList.add(og);
+			}
+			oInfo.setGoodsList(goodsList);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-		}finally{
-			try {
-				rs2.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+		} finally {
 			free(con,st,rs);
 		}
+		
 		return oInfo;
 	}
 }
