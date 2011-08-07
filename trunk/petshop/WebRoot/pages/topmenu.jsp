@@ -27,9 +27,9 @@
  		createRequest();
  		marg = arg;
  		var amount = 1;//需要购买的商品数量
- 		var inputbuy = document.getElementById('byamount'+arg);
+ 		var inputbuy = document.getElementById('buyamount'+arg);
  		if(inputbuy!=null){
- 			if(!isNaN(inputbuy)){
+ 			if(!isNaN(inputbuy.value)){
  			 	amount = inputbuy.value;
  			}else{
  				alert("请输入数字");
