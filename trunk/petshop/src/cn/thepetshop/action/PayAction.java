@@ -52,7 +52,7 @@ public class PayAction extends Action {
 				double usermoney = Double.parseDouble(user.getMoney());
 				if(usermoney>=sum){
 					double money=usermoney-sum;
-					pd.updateOrderSatatus(Integer.parseInt(orderid), 1);
+					pd.updateOrderSatatus(Integer.parseInt(orderid), 1,1);
 					pd.updateusermoney(userId,money);
 					return new ActionForward("PaySucceedView");
 				}else{
@@ -60,7 +60,7 @@ public class PayAction extends Action {
 					return new ActionForward("PayFailView");
 				}	
 			}else{
-				pd.updateOrderSatatus(Integer.parseInt(orderid), 1);
+				pd.updateOrderSatatus(Integer.parseInt(orderid), 1,2);
 				return new ActionForward("PaySucceedView");
 			}
 	}
