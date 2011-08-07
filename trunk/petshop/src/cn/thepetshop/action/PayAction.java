@@ -60,7 +60,7 @@ public class PayAction extends Action {
 					return new ActionForward("PayFailView");
 				}	
 			}else{
-				pd.updateOrderSatatus(Integer.parseInt(orderid), 2);
+				pd.updateOrderSatatus(Integer.parseInt(orderid), 1);
 				return new ActionForward("PaySucceedView");
 			}
 	}
