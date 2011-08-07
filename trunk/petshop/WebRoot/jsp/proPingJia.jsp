@@ -33,9 +33,9 @@
 
 -->
 </style>
-<% 
+<%
 	List<OrderedGoods> list = (List<OrderedGoods>)request.getAttribute("elist"); 
-	int orderid=(Integer)request.getAttribute("orderid");
+	String orderid = (String)request.getAttribute("orderid");
 %>
 <div class="goodpingjia">
 	<form action="scort.do" method="post">
