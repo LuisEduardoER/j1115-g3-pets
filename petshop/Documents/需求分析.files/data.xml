@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisioDocument>
+	<DocumentProperties>
+		<Title></Title>
+		<HyperlinkBase href=""></HyperlinkBase>
+	</DocumentProperties>
+	<Pages>
+		<Page ID="0" Name="页-1" NameU="Page-1">
+			<Layer IX="0">
+				<Name>连接线</Name>
+				<NameUniv>Connector</NameUniv>
+				<Visible>1</Visible>
+			</Layer>
+			<Shapes>
+				<Shape ID="1" UniqueID="{1745C077-FFBA-4B04-AC7A-39BC3EAB78FB}" Name="矩形" NameU="Rectangle" Master="0">
+					<Text>宠物系统</Text>
+					<XForm>
+						<PinX Unit="MM">3.937007874015748</PinX>
+						<PinY Unit="MM">11.299212598425196</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="2" UniqueID="{A0D9996F-52B4-4D68-8CAD-1BDA60EE764E}" Name="直线-曲线连接线" NameU="Line-curve connector" Master="2">
+					<XForm>
+						<PinX Unit="MM">3.937007874015746</PinX>
+						<PinY Unit="MM">10.865731982673791</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="3" UniqueID="{75D1E733-E09B-4C0C-A61A-AFEF0FF7B014}" Name="直线-曲线连接线.3" NameU="Line-curve connector.3" Master="2">
+					<XForm>
+						<PinX Unit="MM">3.991001284778338</PinX>
+						<PinY Unit="MM">10.629921259842519</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="7" UniqueID="{B9EABB55-5CA7-44CC-82DA-1E086D6A3DA4}" Name="直线-曲线连接线.7" NameU="Line-curve connector.7" Master="2">
+					<XForm>
+						<PinX Unit="MM">1.781355615487000</PinX>
+						<PinY Unit="MM">10.423961266318265</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="8" UniqueID="{DF5AB4C0-08AD-4BE2-BABF-5500C7A2585B}" Name="矩形.8" NameU="Rectangle.8" Master="0">
+					<Text>会员</Text>
+					<XForm>
+						<PinX Unit="MM">1.771653543307088</PinX>
+						<PinY Unit="MM">9.863791551551275</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="4" UniqueID="{3737774F-1A23-4EF1-960D-91067C56302B}" Name="直线-曲线连接线.4" NameU="Line-curve connector.4" Master="2">
+					<XForm>
+						<PinX Unit="MM">6.200646954069674</PinX>
+						<PinY Unit="MM">10.423961266318265</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="5" UniqueID="{93FD1564-CE4B-478A-A83F-90FEB68D74E0}" Name="矩形.5" NameU="Rectangle.5" Master="0">
+					<Text>管理员</Text>
+					<XForm>
+						<PinX Unit="MM">6.210629921259842</PinX>
+						<PinY Unit="MM">9.863791551551275</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="6" UniqueID="{87D10DEA-3363-41FD-BFF2-DE2D9F58957D}" Name="直线-曲线连接线.6" NameU="Line-curve connector.6" Master="2">
+					<XForm>
+						<PinX Unit="MM">2.465480957349799</PinX>
+						<PinY Unit="MM">9.251968503937007</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="9" UniqueID="{3E3EC8A5-377D-4953-97CB-779D55F1A3D1}" Name="直线-曲线连接线.9" NameU="Line-curve connector.9" Master="2">
+					<XForm>
+						<PinX Unit="MM">1.771653543307087</PinX>
+						<PinY Unit="MM">9.380245247286851</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="10" UniqueID="{560079A5-E579-45A3-9208-84DCF2119DF9}" Name="直线-曲线连接线.10" NameU="Line-curve connector.10" Master="2">
+					<XForm>
+						<PinX Unit="MM">0.403402859581487</PinX>
+						<PinY Unit="MM">9.046008510412754</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="11" UniqueID="{FA163C89-9A53-42BC-82E4-ABED355BB254}" Name="矩形.11" NameU="Rectangle.11" Master="0">
+					<Text>注册
+/
+注销</Text>
+					<XForm>
+						<PinX Unit="MM">0.393700787401575</PinX>
+						<PinY Unit="MM">8.199612311208709</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="12" UniqueID="{A4735AD2-946A-4B63-BE00-4256714851AD}" Name="直线-曲线连接线.12" NameU="Line-curve connector.12" Master="2">
+					<XForm>
+						<PinX Unit="MM">0.964566929133859</PinX>
+						<PinY Unit="MM">9.055118416665728</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="13" UniqueID="{4C2E00A4-3FAA-413B-BD08-F49E3BA46426}" Name="矩形.13" NameU="Rectangle.13" Master="0">
+					<Text>登录</Text>
+					<XForm>
+						<PinX Unit="MM">0.984251968503937</PinX>
+						<PinY Unit="MM">8.208661417322833</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="14" UniqueID="{1092A2C2-6A13-4254-A60D-CFB546A5CCFF}" Name="直线-曲线连接线.14" NameU="Line-curve connector.14" Master="2">
+					<XForm>
+						<PinX Unit="MM">1.564820182416133</PinX>
+						<PinY Unit="MM">9.050531704691673</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="15" UniqueID="{0166DC68-2C1F-4DFB-80DE-5D876AA9692B}" Name="矩形.15" NameU="Rectangle.15" Master="0">
+					<Text>修改注册信息</Text>
+					<XForm>
+						<PinX Unit="MM">1.584645669291339</PinX>
+						<PinY Unit="MM">8.208661417322833</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="16" UniqueID="{98BC9C94-6A05-4B1F-A828-8B3170B8E04F}" Name="直线-曲线连接线.16" NameU="Line-curve connector.16" Master="2">
+					<XForm>
+						<PinX Unit="MM">2.155371363518495</PinX>
+						<PinY Unit="MM">9.050531704691673</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="17" UniqueID="{8337D0A9-80E4-4257-BA02-C385E2EA4E62}" Name="矩形.17" NameU="Rectangle.17" Master="0">
+					<Text>修改订单</Text>
+					<XForm>
+						<PinX Unit="MM">2.165354330708662</PinX>
+						<PinY Unit="MM">8.208661417322835</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="18" UniqueID="{E1973573-7A77-497E-83C9-86F01B0C6876}" Name="直线-曲线连接线.18" NameU="Line-curve connector.18" Master="2">
+					<XForm>
+						<PinX Unit="MM">2.155371363518495</PinX>
+						<PinY Unit="MM">7.366667424979017</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="19" UniqueID="{7FCAC344-2D6C-41A8-ADBA-A7B165BDEA05}" Name="矩形.19" NameU="Rectangle.19" Master="0">
+					<Text>确认收货</Text>
+					<XForm>
+						<PinX Unit="MM">2.155511811023623</PinX>
+						<PinY Unit="MM">6.555118110236219</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="20" UniqueID="{3B26C36C-F8F5-48A7-8BCA-7CF2A27F2820}" Name="直线-曲线连接线.20" NameU="Line-curve connector.20" Master="2">
+					<XForm>
+						<PinX Unit="MM">2.755905511811024</PinX>
+						<PinY Unit="MM">9.055118110236219</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="21" UniqueID="{E85A02BD-224F-40C1-82D6-AFD2A027F29F}" Name="矩形.21" NameU="Rectangle.21" Master="0">
+					<Text>查看购买记录</Text>
+					<XForm>
+						<PinX Unit="MM">2.755905511811024</PinX>
+						<PinY Unit="MM">8.208661417322833</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="22" UniqueID="{36A8A595-F03F-4773-B05B-A8E8FE14D6BE}" Name="直线-曲线连接线.22" NameU="Line-curve connector.22" Master="2">
+					<XForm>
+						<PinX Unit="MM">3.346456692913385</PinX>
+						<PinY Unit="MM">9.050531704691673</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="23" UniqueID="{AD9138CA-005D-483B-90DE-3D9B7068FC02}" Name="矩形.23" NameU="Rectangle.23" Master="0">
+					<Text>浏览购买商品</Text>
+					<XForm>
+						<PinX Unit="MM">3.346456692913386</PinX>
+						<PinY Unit="MM">8.208661417322835</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="24" UniqueID="{EB9ED35C-9F0A-44A1-A947-F44125827630}" Name="直线-曲线连接线.24" NameU="Line-curve connector.24" Master="2">
+					<XForm>
+						<PinX Unit="MM">3.937007874015747</PinX>
+						<PinY Unit="MM">9.050531704691673</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="25" UniqueID="{DAC9B9D2-1CDC-446E-BBEF-AB6822B440DF}" Name="矩形.25" NameU="Rectangle.25" Master="0">
+					<Text>充值</Text>
+					<XForm>
+						<PinX Unit="MM">3.937007874015748</PinX>
+						<PinY Unit="MM">8.208661417322833</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="26" UniqueID="{C1085E3C-CB1B-4706-A5E8-E26849D1E390}" Name="直线-曲线连接线.26" NameU="Line-curve connector.26" Master="2">
+					<XForm>
+						<PinX Unit="MM">6.205638437664758</PinX>
+						<PinY Unit="MM">9.251476685147622</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="27" UniqueID="{FEEEEBB9-F9B0-4147-A17C-8D20FF9D17E3}" Name="直线-曲线连接线.27" NameU="Line-curve connector.27" Master="2">
+					<XForm>
+						<PinX Unit="MM">6.210629921259841</PinX>
+						<PinY Unit="MM">9.380245247286851</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="28" UniqueID="{F4C89126-BB54-4FBA-81A5-028D5F5C1B58}" Name="直线-曲线连接线.28" NameU="Line-curve connector.28" Master="2">
+					<XForm>
+						<PinX Unit="MM">5.334505221786210</PinX>
+						<PinY Unit="MM">9.045516691623369</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="29" UniqueID="{D8AA0810-E49C-479B-9E36-B42EBB0B2B6A}" Name="矩形.29" NameU="Rectangle.29" Master="0">
+					<Text>修改基本信息</Text>
+					<XForm>
+						<PinX Unit="MM">5.324803149606298</PinX>
+						<PinY Unit="MM">8.199120492419324</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="30" UniqueID="{F8647273-A5F1-41DB-A339-0FEE1200CAED}" Name="直线-曲线连接线.30" NameU="Line-curve connector.30" Master="2">
+					<XForm>
+						<PinX Unit="MM">5.895669291338582</PinX>
+						<PinY Unit="MM">9.054626597876343</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="31" UniqueID="{E5E109CC-B0C0-4878-9994-DF6171E08F8C}" Name="矩形.31" NameU="Rectangle.31" Master="0">
+					<Text>分类信息管理</Text>
+					<XForm>
+						<PinX Unit="MM">5.915354330708659</PinX>
+						<PinY Unit="MM">8.208169598533448</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="32" UniqueID="{3405B1E2-4A36-43F4-AFB4-A01CEE618EE0}" Name="直线-曲线连接线.32" NameU="Line-curve connector.32" Master="2">
+					<XForm>
+						<PinX Unit="MM">6.495922544620855</PinX>
+						<PinY Unit="MM">9.050039885902288</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="33" UniqueID="{D474712A-4D99-4EFD-813B-8EC2C31B2250}" Name="矩形.33" NameU="Rectangle.33" Master="0">
+					<Text>管理商品</Text>
+					<XForm>
+						<PinX Unit="MM">6.515748031496061</PinX>
+						<PinY Unit="MM">8.208169598533448</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="34" UniqueID="{35B3A563-7B81-4ADF-82CC-24B7F1B2E419}" Name="直线-曲线连接线.34" NameU="Line-curve connector.34" Master="2">
+					<XForm>
+						<PinX Unit="MM">7.086473725723217</PinX>
+						<PinY Unit="MM">9.050039885902288</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="35" UniqueID="{A2BDF6AE-D4A4-4FE2-9C0A-C4A6FA8B5EDE}" Name="矩形.35" NameU="Rectangle.35" Master="0">
+					<Text>确认发货</Text>
+					<XForm>
+						<PinX Unit="MM">7.096456692913385</PinX>
+						<PinY Unit="MM">8.208169598533450</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="36" UniqueID="{7276AEE2-19DC-4077-8E2A-9609BCA9E67E}" Name="直线-曲线连接线.36" NameU="Line-curve connector.36" Master="2">
+					<XForm>
+						<PinX Unit="MM">6.520599067586019</PinX>
+						<PinY Unit="MM">7.282972748139748</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="37" UniqueID="{11778D55-4D50-4A6A-87DF-5CC390B33FF3}" Name="直线-曲线连接线.37" NameU="Line-curve connector.37" Master="2">
+					<XForm>
+						<PinX Unit="MM">6.505905511811022</PinX>
+						<PinY Unit="MM">7.429839522507226</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="38" UniqueID="{BB7E5C58-3FF3-48C1-8C5E-1838F7938679}" Name="直线-曲线连接线.38" NameU="Line-curve connector.38" Master="2">
+					<XForm>
+						<PinX Unit="MM">5.944741442258652</PinX>
+						<PinY Unit="MM">7.077012754615494</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="39" UniqueID="{D38D8610-9C4A-4C83-9ECD-1D5176BFA912}" Name="矩形.39" NameU="Rectangle.39" Master="0">
+					<Text>添加商品信息</Text>
+					<XForm>
+						<PinX Unit="MM">5.935039370078741</PinX>
+						<PinY Unit="MM">6.230616555411450</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="40" UniqueID="{5BA72B2E-CE4A-434B-8FDF-B856E73F1BAC}" Name="直线-曲线连接线.40" NameU="Line-curve connector.40" Master="2">
+					<XForm>
+						<PinX Unit="MM">6.505905511811025</PinX>
+						<PinY Unit="MM">7.086122660868469</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="41" UniqueID="{8ABD8EAB-C2AB-453D-B754-B859521B0B14}" Name="矩形.41" NameU="Rectangle.41" Master="0">
+					<Text>修改商品信息</Text>
+					<XForm>
+						<PinX Unit="MM">6.525590551181102</PinX>
+						<PinY Unit="MM">6.239665661525574</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="42" UniqueID="{CF49F601-DA01-4F5E-8954-BAC54B1B95EA}" Name="直线-曲线连接线.42" NameU="Line-curve connector.42" Master="2">
+					<XForm>
+						<PinX Unit="MM">7.106158765093298</PinX>
+						<PinY Unit="MM">7.081535948894414</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="43" UniqueID="{F80ED58A-6CBB-46E1-9289-9E879BAC2AED}" Name="矩形.43" NameU="Rectangle.43" Master="0">
+					<Text>删除商品信息</Text>
+					<XForm>
+						<PinX Unit="MM">7.125984251968504</PinX>
+						<PinY Unit="MM">6.239665661525574</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="44" UniqueID="{0B215812-5532-4196-98FB-CB10E0842A95}" Name="直线-曲线连接线.44" NameU="Line-curve connector.44" Master="2">
+					<XForm>
+						<PinX Unit="MM">4.537261127298021</PinX>
+						<PinY Unit="MM">9.046008510412754</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="45" UniqueID="{82FA4503-130B-4231-A1B2-A873C7180F51}" Name="矩形.45" NameU="Rectangle.45" Master="0">
+					<Text>购物车</Text>
+					<XForm>
+						<PinX Unit="MM">4.527559055118109</PinX>
+						<PinY Unit="MM">8.199612311208709</PinY>
+					</XForm>
+				</Shape>
+			</Shapes>
+		</Page>
+	</Pages>
+</VisioDocument>

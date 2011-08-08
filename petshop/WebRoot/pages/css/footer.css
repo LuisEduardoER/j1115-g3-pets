@@ -1,0 +1,16 @@
+.footerimg{
+	background-image: url(../images/footer.png);
+	width:980px;
+	height:114px;
+	display:block;
+}
+.footer{
+	width:980px;
+	height:144px;
+}
+.copyright{
+	text-align:center;
+	padding-top:3px;
+	font-family: "Courier New","Comic Sans MS",Î¢ÈíÑÅºÚ,ºÚÌå;
+	font-size:13px;
+}
